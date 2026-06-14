@@ -291,3 +291,26 @@ fundamento (`RiskIndicator`, `PrivacyIndicator`, `SourceIndicator`, `ReviewIndic
 Ver `TODO.md` y `ARCHITECTURE.md`. En resumen: parser con LLM, versionado de
 documentos, comparación entre versiones, exportación PDF/CSV, revisión humana formal,
 soporte multiidioma.
+
+---
+
+## Autoría y créditos
+
+Proyecto de **UP Law — Laboratorio de Inteligencia Artificial, Facultad de Derecho,
+Universidad de Palermo**.
+
+Co-creadores y autores intelectuales:
+
+- **Guido Barosio** — [LinkedIn](https://www.linkedin.com/in/gbarosio) · [@gbs1977](https://x.com/gbs1977)
+- **Juan Cruz Romano**
+- **Hernán Quadri**
+- **Aníbal Ramírez**
+
+## Licencia
+
+Distribuido bajo licencia **BSD 3-Clause**. Ver [`LICENSE`](./LICENSE).
+
+> La licencia BSD 3-Clause cubre el **software** (código de este repositorio). No
+> alcanza al texto de las licencias, EULA o políticas de terceros almacenadas en
+> `data/`, cuyos derechos pertenecen a sus respectivos proveedores y se incluyen
+> únicamente con fines de análisis, cita y trazabilidad.
