@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "description": "UP-Law-AILO — Observatorio simple de licencias, EULA y condiciones legales de proveedores de IA.",
+  "license": "BSD-3-Clause",
+  "author": "Guido Barosio (https://www.linkedin.com/in/gbarosio)",
+  "contributors": [
+    "Universidad de Palermo — Laboratorio de IA, Facultad de Derecho",
+    "Juan Cruz Romano",
+    "Hernán Quadri",
+    "Aníbal Ramírez"
+  ],
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
