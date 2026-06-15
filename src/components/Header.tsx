@@ -20,10 +20,10 @@ export function Header() {
         <nav className="flex flex-wrap items-center gap-1 text-sm">
           {[
             { href: "/", label: "Inicio" },
+            { href: "/escenarios", label: "Escenarios" },
             { href: "/analyses", label: "Evidencia" },
             { href: "/providers", label: "Proveedores" },
             { href: "/compare", label: "Comparar" },
-            { href: "/differences", label: "Diferencias" },
             { href: "/criteria", label: "Criterio" },
           ].map((l) => (
             <Link key={l.href} href={l.href} className="rounded-md px-2 py-1 text-slate-200 hover:bg-white/10 hover:text-white">

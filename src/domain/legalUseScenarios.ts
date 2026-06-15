@@ -25,6 +25,8 @@ export interface LegalUseScenario {
   title: string;
   /** Etiqueta para la tarjeta de la home ("Usar IA con…"). */
   cardLabel: string;
+  /** Descripción breve (una línea) para tarjetas livianas. */
+  short: string;
   description: string;
   sensitivity: Sensitivity;
   /** Claves de categoría (src/lib/categories.ts) que pesan en este escenario. */
@@ -37,7 +39,7 @@ export interface LegalUseScenario {
   warning: string;
   plainLanguageExplanation: string;
   legalExplanation: string;
-  /** Si aparece como tarjeta en la home (las 8 curadas). */
+  /** Si aparece como tarjeta principal en la home (las 4 curadas). */
   featuredOnHome: boolean;
   /** Solo para kind "navigation". */
   targetHref?: string;
@@ -49,6 +51,7 @@ export const LEGAL_USE_SCENARIOS: LegalUseScenario[] = [
     kind: "evaluable",
     title: "Información pública",
     cardLabel: "Usar IA con información pública",
+    short: "Evalúa uso comercial, propiedad del output y restricciones de uso.",
     description:
       "Evalúa el uso de IA cuando no se ingresan datos personales ni información reservada: el foco está en uso comercial, propiedad del output, restricciones y responsabilidad.",
     sensitivity: "low",
@@ -69,6 +72,7 @@ export const LEGAL_USE_SCENARIOS: LegalUseScenario[] = [
     kind: "evaluable",
     title: "Datos personales",
     cardLabel: "Usar IA con datos personales",
+    short: "Evalúa privacidad, entrenamiento con datos, retención, eliminación y DPA.",
     description:
       "Evalúa proveedores y modalidades considerando privacidad, entrenamiento con datos, retención, eliminación, seguridad, DPA y jurisdicción.",
     sensitivity: "high",
@@ -87,8 +91,9 @@ export const LEGAL_USE_SCENARIOS: LegalUseScenario[] = [
   {
     id: "confidential_business_information",
     kind: "evaluable",
-    title: "Información comercial confidencial",
+    title: "Información confidencial",
     cardLabel: "Usar IA con información confidencial",
+    short: "Evalúa confidencialidad, entrenamiento, retención, eliminación y modalidad contractual.",
     description:
       "Evalúa proveedores y modalidades considerando no-entrenamiento, confidencialidad, retención, eliminación, seguridad, licencias al proveedor y modalidad business/enterprise/API.",
     sensitivity: "high",
@@ -107,8 +112,9 @@ export const LEGAL_USE_SCENARIOS: LegalUseScenario[] = [
   {
     id: "client_confidential_information",
     kind: "evaluable",
-    title: "Información de clientes",
+    title: "Trabajo jurídico de clientes",
     cardLabel: "Usar IA para trabajo jurídico de clientes",
+    short: "Evalúa confidencialidad, no-entrenamiento, DPA, retención y modalidad contractual.",
     description:
       "Evalúa el uso de IA cuando se procesan antecedentes, documentos o información entregada por clientes.",
     sensitivity: "high",
@@ -129,6 +135,7 @@ export const LEGAL_USE_SCENARIOS: LegalUseScenario[] = [
     kind: "evaluable",
     title: "Secreto profesional / información privilegiada",
     cardLabel: "Usar IA bajo secreto profesional o información privilegiada",
+    short: "Escenario restrictivo para información privilegiada o bajo secreto profesional.",
     description:
       "Escenario más restrictivo: información amparada por secreto profesional o privilegio abogado-cliente.",
     sensitivity: "critical",
@@ -142,13 +149,14 @@ export const LEGAL_USE_SCENARIOS: LegalUseScenario[] = [
       "Para información privilegiada, salvo una modalidad empresarial con compromisos claros, la orientación es no usarla sin revisión contractual previa.",
     legalExplanation:
       "Bajo secreto profesional el análisis es restrictivo: exige modalidad enterprise/business/API con confidencialidad y exclusión de entrenamiento explícitas, DPA y seguridad. En ausencia de evidencia diferenciada, no se emite orientación favorable.",
-    featuredOnHome: true,
+    featuredOnHome: false,
   },
   {
     id: "academic_research",
     kind: "evaluable",
     title: "Investigación académica",
     cardLabel: "Usar IA para investigación académica",
+    short: "Evalúa uso permitido, propiedad del output y entrenamiento con datos.",
     description:
       "Evalúa uso permitido, propiedad intelectual, uso de datos para entrenamiento y restricciones de contenido (privacidad si hay datos personales).",
     sensitivity: "medium",
@@ -169,6 +177,7 @@ export const LEGAL_USE_SCENARIOS: LegalUseScenario[] = [
     kind: "evaluable",
     title: "Operación legal interna",
     cardLabel: "Usar IA para operación legal interna",
+    short: "Evalúa privacidad, seguridad, retención y confidencialidad en uso interno.",
     description:
       "Evalúa uso en flujos internos del área legal: privacidad, seguridad, retención, confidencialidad y responsabilidad, en modalidad team/business/enterprise.",
     sensitivity: "high",
@@ -189,6 +198,7 @@ export const LEGAL_USE_SCENARIOS: LegalUseScenario[] = [
     kind: "evaluable",
     title: "Modalidad enterprise / API",
     cardLabel: "Usar IA en modalidad enterprise/API",
+    short: "Evalúa términos de API/enterprise: DPA, seguridad, retención y no-entrenamiento.",
     description:
       "Evalúa términos de API/enterprise: DPA, seguridad, retención, no-entrenamiento, confidencialidad y limitación de responsabilidad.",
     sensitivity: "high",
@@ -202,7 +212,7 @@ export const LEGAL_USE_SCENARIOS: LegalUseScenario[] = [
       "Para uso por API o enterprise conviene revisar los términos específicos de esa modalidad: DPA, seguridad, retención y no-entrenamiento.",
     legalExplanation:
       "En uso enterprise/API el análisis prioriza términos de API, DPA, seguridad, retención, exclusión de entrenamiento, confidencialidad y limitación de responsabilidad, idealmente sobre documentos mode-specific.",
-    featuredOnHome: true,
+    featuredOnHome: false,
   },
   // --- Atajos de navegación (no pasan por el motor) ---
   {
@@ -210,6 +220,7 @@ export const LEGAL_USE_SCENARIOS: LegalUseScenario[] = [
     kind: "navigation",
     title: "Comparar proveedores y modalidades",
     cardLabel: "Comparar proveedores y modalidades",
+    short: "Matriz de categorías jurídicas por proveedor y modalidad.",
     description: "Matriz de categorías jurídicas por proveedor y modalidad.",
     sensitivity: "low",
     priorityCategories: [],
@@ -219,7 +230,7 @@ export const LEGAL_USE_SCENARIOS: LegalUseScenario[] = [
     warning: "",
     plainLanguageExplanation: "",
     legalExplanation: "",
-    featuredOnHome: true,
+    featuredOnHome: false,
     targetHref: "/compare",
   },
   {
@@ -227,6 +238,7 @@ export const LEGAL_USE_SCENARIOS: LegalUseScenario[] = [
     kind: "navigation",
     title: "Auditar documentos fuente",
     cardLabel: "Auditar documentos fuente",
+    short: "Registro documental: fuente, hash, texto y evidencia por análisis.",
     description: "Registro documental: fuente, hash, texto extraído, evidencia y parser por análisis.",
     sensitivity: "low",
     priorityCategories: [],
@@ -236,7 +248,7 @@ export const LEGAL_USE_SCENARIOS: LegalUseScenario[] = [
     warning: "",
     plainLanguageExplanation: "",
     legalExplanation: "",
-    featuredOnHome: true,
+    featuredOnHome: false,
     targetHref: "/analyses",
   },
 ];
@@ -248,7 +260,7 @@ export const SCENARIO_BY_ID: Record<string, LegalUseScenario> = Object.fromEntri
 /** Escenarios que pasan por el motor (tienen vista /escenarios/[id]). */
 export const EVALUABLE_SCENARIOS = LEGAL_USE_SCENARIOS.filter((s) => s.kind === "evaluable");
 
-/** Tarjetas curadas de la home, en orden de presentación. */
+/** Tarjetas principales de la home (las 4 curadas). */
 export const HOME_SCENARIO_CARDS = LEGAL_USE_SCENARIOS.filter((s) => s.featuredOnHome);
 
 export const SENSITIVITY_LABEL: Record<Sensitivity, string> = {
