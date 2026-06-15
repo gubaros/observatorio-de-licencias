@@ -81,7 +81,7 @@ export default async function HomePage() {
       </section>
 
       {/* Ensayo de cierre, firmado contra el corpus vigente */}
-      <section className="border-t border-slate-200 pt-8">
+      <section id="estado-del-arte" className="scroll-mt-24 border-t border-slate-200 pt-8">
         <h2 className="font-serif text-2xl font-semibold text-slate-900">
           Estado del arte: leer software con criterio jurídico
         </h2>

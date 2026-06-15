@@ -20,6 +20,7 @@ export function Header() {
         <nav className="flex flex-wrap items-center gap-1 text-sm">
           {[
             { href: "/", label: "Inicio" },
+            { href: "/#estado-del-arte", label: "Estado del arte" },
             { href: "/escenarios", label: "Escenarios" },
             { href: "/analyses", label: "Corpus documental" },
             { href: "/providers", label: "Proveedores" },
