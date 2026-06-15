@@ -16,9 +16,11 @@ export interface PendingDoc {
 export function ProviderDossier({
   analyses,
   pending,
+  context,
 }: {
   analyses: LicenseAnalysis[];
   pending: PendingDoc[];
+  context?: string | null;
 }) {
   const provider = analyses[0]?.providerName ?? "—";
   const products = Array.from(new Set(analyses.map((a) => a.productName))).sort();
@@ -47,6 +49,18 @@ export function ProviderDossier({
           </div>
         </dl>
       </header>
+
+      {/* Contexto editorial: antecede al análisis jurídico; fundado en los documentos del corpus. */}
+      {context && (
+        <section className="max-w-3xl rounded border border-l-4 border-slate-200 border-l-gold-500 bg-white p-4">
+          <h2 className="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-500">Contexto</h2>
+          <p className="text-base leading-relaxed text-slate-700">{context}</p>
+          <p className="mt-2 text-xs italic text-slate-400">
+            Nota editorial sobre los documentos disponibles en el corpus. No es asesoramiento legal ni una conclusión
+            jurídica sobre el proveedor.
+          </p>
+        </section>
+      )}
 
       {/* General */}
       <ModeSection

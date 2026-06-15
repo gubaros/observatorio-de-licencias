@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { loadAllLicenseAnalyses } from "@/lib/storage";
 import { loadRegistry, flattenDocuments } from "@/lib/sources";
 import { providerKey } from "@/lib/derive";
+import { getProviderContext } from "@/domain/providerContext";
+import { PageContainer } from "@/components/PageContainer";
 import { ProviderDossier, type PendingDoc } from "@/components/ProviderDossier";
 
 // Pre-genera una página por cada proveedor con análisis (export estático).
@@ -33,8 +35,8 @@ export default async function ProviderPage({ params }: { params: Promise<{ provi
   }
 
   return (
-    <div className="space-y-4">
-      <ProviderDossier analyses={analyses} pending={pending} />
-    </div>
+    <PageContainer>
+      <ProviderDossier analyses={analyses} pending={pending} context={getProviderContext(providerId)} />
+    </PageContainer>
   );
 }
