@@ -5,6 +5,8 @@ import { HOME_SCENARIO_CARDS } from "@/domain/legalUseScenarios";
 import { SCENARIO_ICON, CardIcon } from "@/components/icons";
 import { PageContainer } from "@/components/PageContainer";
 import { computeCorpusSignature } from "@/domain/corpusSignature";
+import { buildStateOfArtOpinion } from "@/domain/stateOfArt";
+import { StateOfArtReading } from "@/components/StateOfArtReading";
 
 const SECONDARY_LINKS: { href: string; label: string }[] = [
   { href: "/analyses", label: "Corpus documental" },
@@ -17,6 +19,7 @@ export default async function HomePage() {
   const analyses = await loadAllLicenseAnalyses();
   const m = computeMetrics(analyses);
   const sig = computeCorpusSignature(analyses);
+  const opinion = buildStateOfArtOpinion(analyses);
 
   return (
     <PageContainer className="space-y-10">
@@ -39,41 +42,12 @@ export default async function HomePage() {
         <h2 className="mt-1 font-serif text-2xl font-semibold text-slate-900">
           Estado del arte: leer software con criterio jurídico
         </h2>
-        <div className="mt-3 max-w-3xl space-y-4 text-base leading-relaxed text-slate-700">
-          <p>
-            Cuando una persona del derecho usa una herramienta de IA —o el correo, la suite de
-            productividad o la red social de todos los días— no solo usa un programa: acepta, casi siempre
-            por adhesión y sin negociar, un contrato. Esas condiciones definen cosas concretas: si el
-            proveedor puede usar tus conversaciones, prompts o archivos para entrenar o mejorar sus modelos;
-            cuánto los retiene y si los borra; de quién es lo que la herramienta genera; qué pasa si algo
-            sale mal; y bajo qué ley y tribunales se discute. Leer esas cláusulas no es un trámite técnico:
-            es parte del ejercicio profesional responsable.
-          </p>
-          <p>
-            ¿Dónde prestar atención? En el uso de datos para entrenamiento, la confidencialidad, la
-            retención y la eliminación, la seguridad, la propiedad del output, la limitación de
-            responsabilidad y la jurisdicción —con especial cuidado en la transferencia internacional de
-            datos cuando el proveedor es global y el usuario, latinoamericano—. Un punto central: las
-            condiciones cambian según la modalidad de contratación. Lo que ofrece un plan empresarial (un
-            DPA, un compromiso de no-entrenamiento, confidencialidad reforzada) no se traslada
-            automáticamente a una cuenta gratuita o individual. Conviene leer el documento que efectivamente
-            aplica a cómo se contrata, no el más favorable que exista en el ecosistema.
-          </p>
-          <p>
-            El estado del arte hoy es heterogéneo y cambiante. En los proveedores de IA, el uso de datos
-            para entrenamiento o "mejora del servicio" suele tener un papel central; en el software
-            tradicional, riesgos parecidos ya existían bajo fórmulas más generales de analytics o
-            personalización —por eso este observatorio los incorpora como corpus de referencia—. La mayoría
-            de los documentos no fue validada por una persona abogada, las fuentes son públicas y se
-            modifican con frecuencia, y la detección de cláusulas es preliminar y léxica. Nada de esto
-            reemplaza la lectura del texto fuente ni el criterio profesional.
-          </p>
-          <p>
-            En la práctica: elegí el escenario de uso, mirá la modalidad real, exigí la evidencia textual
-            que respalda cada lectura y, para información sensible o de clientes, preferí modalidades
-            empresariales con compromisos explícitos y revisión contractual previa. UP-Law-AILO ordena qué
-            leer y por qué; la decisión —y la revisión legal humana— siguen siendo indispensables.
-          </p>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-500">
+          Lectura objetiva del corpus, derivada de los documentos analizados. No es asesoramiento legal ni una
+          conclusión jurídica: identifica, con evidencia y enlaces a los dossiers, qué dice el corpus en su firma actual.
+        </p>
+        <div className="mt-6">
+          <StateOfArtReading opinion={opinion} />
         </div>
       </section>
 
