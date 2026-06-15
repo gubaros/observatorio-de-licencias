@@ -140,7 +140,7 @@ export function AnalysisTable({ analyses }: { analyses: LicenseAnalysis[] }) {
         <div className="overflow-x-auto rounded-md border border-slate-200 bg-white">
           <table className="min-w-[1100px] w-full border-collapse text-sm">
             <thead>
-              <tr className="border-b border-slate-200 bg-slate-50/70 text-left text-[11px] uppercase tracking-wide text-slate-500">
+              <tr className="border-b border-slate-200 bg-slate-50/70 text-left text-xs uppercase tracking-wide text-slate-500">
                 <Th onClick={() => toggleSort("provider")}>Proveedor / Producto{sortMark("provider")}</Th>
                 <Th onClick={() => toggleSort("modality")}>Modalidad / Documento{sortMark("modality")}</Th>
                 <Th onClick={() => toggleSort("privacy")}>Privacidad{sortMark("privacy")}</Th>
@@ -321,7 +321,7 @@ function QuickView({ a, onClose }: { a: LicenseAnalysis; onClose: () => void }) 
 function QvLine({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
-      <div className="text-[11px] uppercase tracking-wide text-slate-400">{label}</div>
+      <div className="text-xs uppercase tracking-wide text-slate-400">{label}</div>
       <div className="mt-0.5">{children}</div>
     </div>
   );
@@ -434,7 +434,7 @@ function Sel({
 }) {
   return (
     <label className="flex flex-col gap-1">
-      <span className="text-[11px] uppercase tracking-wide text-slate-400">{label}</span>
+      <span className="text-xs uppercase tracking-wide text-slate-400">{label}</span>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}

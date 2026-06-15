@@ -87,7 +87,7 @@ export default async function HomePage() {
       {/* E. Advertencia breve (el disclaimer único vive en el footer del layout) */}
 
       {/* F. Cobertura actual (una línea) */}
-      <p className="border-t border-slate-200 pt-4 text-xs text-slate-400">
+      <p className="border-t border-slate-200 pt-4 text-sm text-slate-500">
         Cobertura actual: {m.providers} proveedores · {m.total} documentos · IA y software tradicional · fuentes públicas
       </p>
     </div>

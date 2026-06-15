@@ -109,7 +109,7 @@ export function ComparisonMatrix({ analyses }: { analyses: LicenseAnalysis[] }) 
         </p>
       ) : (
         <div className="overflow-x-auto rounded border border-slate-200 bg-white">
-          <table className="min-w-full border-collapse text-xs">
+          <table className="min-w-full border-collapse text-sm">
             <thead>
               <tr className="border-b border-slate-200">
                 <th className="sticky left-0 z-10 min-w-40 bg-white px-3 py-2 text-left font-semibold text-slate-600">Categoría</th>
@@ -118,8 +118,8 @@ export function ComparisonMatrix({ analyses }: { analyses: LicenseAnalysis[] }) 
                     <Link href={`/analysis/${a.id}`} className="font-semibold text-slate-900 hover:underline">{a.providerName}</Link>
                     <div className="text-slate-500">{a.productName}</div>
                     <div className="mt-0.5 text-slate-700">{MODE_LABELS[a.contractingMode]}</div>
-                    <div className="text-[11px] text-slate-400">{a.documentType}</div>
-                    <div className="text-[11px] text-slate-400">{COMPARISON_GROUP_LABEL[a.comparisonGroup] ?? a.comparisonGroup}</div>
+                    <div className="text-xs text-slate-400">{a.documentType}</div>
+                    <div className="text-xs text-slate-400">{COMPARISON_GROUP_LABEL[a.comparisonGroup] ?? a.comparisonGroup}</div>
                   </th>
                 ))}
               </tr>
@@ -150,7 +150,7 @@ export function ComparisonMatrix({ analyses }: { analyses: LicenseAnalysis[] }) 
                           )}
                         </div>
                         {f.modeSpecificity === "mode_specific" && f.appliesToModes.length > 0 && (
-                          <div className="mt-0.5 text-[11px] text-gold-600">específico: {f.appliesToModes.map((m) => MODE_LABELS[m]).join(", ")}</div>
+                          <div className="mt-0.5 text-xs text-gold-600">específico: {f.appliesToModes.map((m) => MODE_LABELS[m]).join(", ")}</div>
                         )}
                         <p className="mt-1 line-clamp-2 text-slate-500">{summary}</p>
                         <Link href={`/analysis/${a.id}#cat-${cat.key}`} className="mt-1 inline-block text-sky-700 hover:underline">evidencia ({f.evidence.length})</Link>

@@ -48,6 +48,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Títulos en serif editorial (criterio jurídico/editorial). */

@@ -30,7 +30,7 @@ export default async function AnalysesPage() {
           {metrics.map((c) => (
             <div key={c.label} className="bg-white px-4 py-2.5">
               <dd className="font-serif text-2xl font-semibold leading-none text-slate-900">{c.value}</dd>
-              <dt className="mt-1 text-[11px] uppercase tracking-wide text-slate-500">{c.label}</dt>
+              <dt className="mt-1 text-xs uppercase tracking-wide text-slate-500">{c.label}</dt>
             </div>
           ))}
         </dl>

@@ -161,7 +161,7 @@ function Mini({ title, items, tone = "slate" }: { title: string; items: string[]
   if (items.length === 0) return null;
   return (
     <div>
-      <div className={`text-[11px] uppercase tracking-wide ${tone === "amber" ? "text-amber-700" : "text-slate-400"}`}>{title}</div>
+      <div className={`text-xs uppercase tracking-wide ${tone === "amber" ? "text-amber-700" : "text-slate-400"}`}>{title}</div>
       <ul className="mt-0.5 space-y-0.5 text-xs text-slate-600">
         {items.map((t, i) => (
           <li key={i}>· {t}</li>
