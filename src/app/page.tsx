@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { loadAllLicenseAnalyses } from "@/lib/storage";
+import { loadRegistry } from "@/lib/sources";
 import { PageContainer } from "@/components/PageContainer";
-import { buildStateOfArt } from "@/domain/stateOfArt";
+import { buildStateOfArt, type RegistryRegionSummary } from "@/domain/stateOfArt";
+import { providerRegionLabel } from "@/domain/taxonomies/providerRegions";
+import { isNonCommercialProject } from "@/domain/taxonomies/providerTypes";
 import { StateOfArtReading } from "@/components/StateOfArtReading";
 import { EscenariosGate } from "@/components/featureGates";
 
@@ -16,7 +19,24 @@ const ACCESS_LINKS: { href: string; label: string; desc: string; gated?: boolean
 
 export default async function HomePage() {
   const analyses = await loadAllLicenseAnalyses();
-  const state = buildStateOfArt(analyses);
+
+  // Resumen regional del registro para la nota del Estado del arte (no depende
+  // del parser ni de los análisis; describe la composición del registro).
+  let registrySummary: RegistryRegionSummary | undefined;
+  try {
+    const reg = await loadRegistry();
+    const nonUsChina = reg.providers.filter((p) => !["north_america", "asia"].includes(p.providerRegion));
+    registrySummary = {
+      totalProviders: reg.providers.length,
+      nonUsChinaProviders: nonUsChina.length,
+      nonCommercialProjects: reg.providers.filter((p) => isNonCommercialProject(p.providerType)).length,
+      regionsNonUsChina: Array.from(new Set(nonUsChina.map((p) => providerRegionLabel(p.providerRegion)))).sort(),
+    };
+  } catch {
+    registrySummary = undefined;
+  }
+
+  const state = buildStateOfArt(analyses, registrySummary);
 
   return (
     <PageContainer className="space-y-8">

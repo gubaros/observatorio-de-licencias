@@ -33,6 +33,7 @@ export const REVIEW_LABELS: Record<string, string> = {
 export const SOURCE_STATUS_LABELS: Record<string, string> = {
   verified: "Verificada",
   needs_manual_review: "Requiere revisión manual",
+  not_found_after_official_search: "No hallada tras búsqueda oficial",
   unavailable: "No disponible",
   failed_fetch: "Falló la descarga",
   unsupported_format: "Formato no soportado",

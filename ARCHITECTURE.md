@@ -316,6 +316,38 @@ per-documento). Los *escenarios académicos* (`kind: "academic"`) **no** pasan p
 vistas de comparación. Así la capa de decisión práctica (jurídica) y la capa de estudio (académica) conviven
 sin contaminarse.
 
+## Taxonomía regional y de tipo de proveedor
+
+Para mirar el ecosistema más allá del eje Estados Unidos/China, el modelo incorpora proveedores y proyectos
+de LLM de **América Latina, África y Europa**, y distingue **cómo** se ofrece cada uno. Las taxonomías son
+arrays centrales (fuente única de verdad), de los que se derivan el tipo TypeScript y el schema Zod:
+
+- **`providerRegion`** (`src/domain/taxonomies/providerRegions.ts`) — `latin_america` · `africa` · `europe` ·
+  `north_america` · `asia` · `global` · `unknown`. Vive a **nivel proveedor** en el registro.
+- **`providerType`** (`src/domain/taxonomies/providerTypes.ts`) — `commercial_provider` · `academic_project` ·
+  `sovereign_ai_project` · `open_source_project` · `research_lab` · `unknown`. También a nivel proveedor.
+- **`productNiche`** (`src/domain/taxonomies/productNiches.ts`) — nicho funcional a **nivel producto**
+  (`general_llm`, `image_generation`, `voice_generation`, `code_assistant`, `ml_platform`, `everyday_software`, …).
+
+**Proveedor comercial vs. proyecto académico/soberano.** La distinción es jurídicamente relevante: **no todos
+los modelos se ofrecen bajo la misma lógica contractual**. Un proveedor comercial (Maritaca, Lelapa, Mistral,
+Aleph Alpha) suele publicar Terms of Service y Privacy Policy. Un proyecto **académico o soberano** (Latam-GPT
+/ CENIA, BSC / Projecte AINA / Salamandra) muchas veces **no tiene ToS ni Privacy de servicio**: su artefacto
+real es una *model card* y una licencia de modelo (a menudo en Hugging Face/GitHub), válidos como fuente
+oficial **solo si están enlazados desde el dominio oficial** del proyecto.
+
+**Fuentes que no existen.** Cuando tras revisar el sitio oficial no hay ToS/Privacy propios, **no se inventan**:
+el documento se registra con `sourceStatus: "not_found_after_official_search"` (o `needs_manual_review` si es
+ambiguo), `sourceUrl: null`, el motivo y la página oficial revisada en `notes`, y `metadata.needsManualSourceReview`.
+Las fuentes localizadas pero aún no verificadas por el pipeline quedan `needs_manual_review` (nunca `verified`
+sin haber pasado por `sources:verify`).
+
+**Autoridad y defaults.** El registro (`data/sources/providers.json`) es la autoridad; los campos son
+opcionales-con-default (`unknown`), por lo que los datos previos validan sin tocarse. La UI los muestra en
+`/providers` (directorio por región) y en la cabecera de cada expediente (región · tipo · nicho). El Estado del
+arte deriva del registro un recuento (proveedores fuera del eje EE.UU./China y cuántos son proyectos
+académicos/soberanos) para su nota regional.
+
 ## Límites del MVP
 
 - Heurística léxica (no semántica): falsos positivos/negativos posibles.

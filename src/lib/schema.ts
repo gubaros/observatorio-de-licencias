@@ -22,6 +22,7 @@ export const ReviewStatusSchema = z.enum([
 export const SourceStatusSchema = z.enum([
   "verified",
   "needs_manual_review",
+  "not_found_after_official_search",
   "unavailable",
   "failed_fetch",
   "unsupported_format",

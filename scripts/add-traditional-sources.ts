@@ -38,19 +38,22 @@ async function main() {
   const reg = await loadRegistry();
   const byId = new Map(reg.providers.map((p) => [p.providerId, p]));
 
-  const upsertProduct = (providerId: string, product: Product) => {
+  const upsertProduct = (providerId: string, product: Omit<Product, "productNiche">) => {
     const prov = byId.get(providerId);
     if (!prov) throw new Error(`proveedor no encontrado: ${providerId}`);
     if (prov.products.some((p) => p.productId === product.productId)) {
       console.log(`  = ${providerId}/${product.productId} ya existe; se omite`);
       return;
     }
-    prov.products.push(product);
+    // Software tradicional de referencia -> nicho "everyday_software" por defecto.
+    prov.products.push({ productNiche: "everyday_software", ...product } as Product);
     console.log(`  + ${providerId}/${product.productId} (${product.softwareCategory})`);
   };
 
-  const ensureProvider = (p: Provider) => {
-    if (byId.has(p.providerId)) return byId.get(p.providerId)!;
+  const ensureProvider = (input: Omit<Provider, "providerRegion" | "providerType">) => {
+    if (byId.has(input.providerId)) return byId.get(input.providerId)!;
+    // Región/tipo por defecto "unknown"; se curan luego en el registro.
+    const p = { providerRegion: "unknown", providerType: "unknown", ...input } as Provider;
     reg.providers.push(p);
     byId.set(p.providerId, p);
     console.log(`  + proveedor ${p.providerId}`);

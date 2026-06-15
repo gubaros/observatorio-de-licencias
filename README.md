@@ -340,6 +340,27 @@ el software cotidiano.
 - Escenarios académicos (no pasan por el motor de recomendación): *Comparar IA con software tradicional*,
   *Software cotidiano del abogado*, *Lectura jurídica de software en América Latina*.
 
+## Proveedores y proyectos por región
+
+El observatorio mira el ecosistema **más allá del eje Estados Unidos/China**: incorpora proveedores y
+proyectos de LLM de **América Latina, África y Europa** (Maritaca AI · Brasil; Latam-GPT / CENIA · Chile;
+Lelapa AI · Sudáfrica; Mistral, Aleph Alpha, LightOn · Europa; BSC / Projecte AINA / Salamandra · España).
+
+Dos taxonomías centrales (arrays en `src/domain/taxonomies/`, con tipo TypeScript y validación Zod derivados):
+
+- **`providerRegion`** — región del proveedor/proyecto (`latin_america`, `africa`, `europe`, `north_america`,
+  `asia`, `global`, `unknown`).
+- **`providerType`** — **proveedor comercial** vs **proyecto académico/soberano** vs **open source** vs
+  laboratorio de investigación (`commercial_provider`, `academic_project`, `sovereign_ai_project`,
+  `open_source_project`, `research_lab`, `unknown`). Más `productNiche` (nicho funcional, p. ej. `general_llm`).
+
+**Por qué la distinción importa:** no todos se ofrecen bajo la misma lógica contractual. Un proveedor comercial
+publica ToS/Privacy; **un proyecto académico o soberano muchas veces no los tiene** —su artefacto es una *model
+card* y una licencia de modelo—. Cuando no hay ToS/Privacy propios, **no se inventan**: se registra
+`sourceStatus: "not_found_after_official_search"` (o `needs_manual_review`), con el motivo y la fuente oficial
+revisada en `notes`. Las fuentes localizadas pero no verificadas por el pipeline quedan `needs_manual_review`,
+nunca `verified`. La UI muestra región · tipo · nicho en `/providers` y en cada expediente. Ver `ARCHITECTURE.md`.
+
 ## Diseño de interfaz
 
 La UI se organiza en cuatro capas: **decisión** (home por escenario) → **orientación**

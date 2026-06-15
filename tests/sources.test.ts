@@ -34,8 +34,23 @@ describe("hostMatchesDomains", () => {
 describe("registro de proveedores (data/sources/providers.json)", () => {
   it("valida contra el schema e incluye proveedores de IA y software tradicional de referencia", async () => {
     const reg = await loadRealRegistry();
-    // 20 proveedores de IA + LinkedIn, X y Apple como software/redes de referencia.
-    expect(reg.providers.length).toBe(23);
+    // 23 base + proveedores/proyectos regionales (Maritaca, Latam-GPT, Lelapa, Aleph Alpha, LightOn, BSC/AINA).
+    expect(reg.providers.length).toBe(29);
+  });
+
+  it("todo proveedor tiene región y tipo; los regionales nuevos están registrados", async () => {
+    const reg = await loadRealRegistry();
+    for (const p of reg.providers) {
+      expect(p.providerRegion, `${p.providerId} sin región`).toBeTruthy();
+      expect(p.providerType, `${p.providerId} sin tipo`).toBeTruthy();
+    }
+    const ids = new Set(reg.providers.map((p) => p.providerId));
+    for (const id of ["maritaca", "latam-gpt", "lelapa", "aleph-alpha", "lighton", "bsc-aina"]) {
+      expect(ids.has(id), `falta ${id}`).toBe(true);
+    }
+    const latam = reg.providers.find((p) => p.providerId === "latam-gpt")!;
+    expect(latam.providerRegion).toBe("latin_america");
+    expect(latam.providerType).toBe("sovereign_ai_project");
   });
 
   it("ninguna fuente está 'verified' sin haberse chequeado (verificación ganada, no auto-asignada)", async () => {

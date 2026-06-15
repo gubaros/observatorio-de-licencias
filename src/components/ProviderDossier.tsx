@@ -2,6 +2,9 @@ import Link from "next/link";
 import type { LicenseAnalysis } from "@/lib/schema";
 import type { ContractingMode } from "@/lib/contractingModes";
 import { MODE_LABELS, SOURCE_STATUS_LABELS } from "@/lib/analysisMeta";
+import { providerRegionLabel } from "@/domain/taxonomies/providerRegions";
+import { providerTypeLabel } from "@/domain/taxonomies/providerTypes";
+import { productNicheLabel } from "@/domain/taxonomies/productNiches";
 import { RiskCompact, PrivacyCompact, SourceCompact, ReviewCompact } from "./indicators";
 
 const SPECIFIC_MODES: ContractingMode[] = ["free", "paid_individual", "team", "business", "enterprise", "api"];
@@ -12,15 +15,23 @@ export interface PendingDoc {
   sourceUrl: string | null;
 }
 
+export interface ProviderTaxonomy {
+  region: string;
+  type: string;
+  niches: string[];
+}
+
 /** Expediente de un proveedor, organizado por modalidad de contratación. */
 export function ProviderDossier({
   analyses,
   pending,
   context,
+  taxonomy,
 }: {
   analyses: LicenseAnalysis[];
   pending: PendingDoc[];
   context?: string | null;
+  taxonomy?: ProviderTaxonomy | null;
 }) {
   const provider = analyses[0]?.providerName ?? "—";
   const products = Array.from(new Set(analyses.map((a) => a.productName))).sort();
@@ -36,6 +47,12 @@ export function ProviderDossier({
       <header>
         <Link href="/providers" className="text-sm text-sky-700 hover:underline">← Proveedores</Link>
         <h1 className="mt-1 text-xl font-bold text-slate-900">{provider}</h1>
+        {taxonomy && (
+          <p className="mt-1 text-sm text-slate-600">
+            {providerRegionLabel(taxonomy.region)} · {providerTypeLabel(taxonomy.type)}
+            {taxonomy.niches.length > 0 && <> · {taxonomy.niches.map((n) => productNicheLabel(n)).join(", ")}</>}
+          </p>
+        )}
         <dl className="mt-2 space-y-1 text-sm">
           <div className="flex gap-2">
             <dt className="text-slate-500">Productos:</dt>

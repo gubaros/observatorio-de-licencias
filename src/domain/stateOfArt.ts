@@ -89,6 +89,7 @@ export interface StateOfArt {
   generalReading: string;
   whyLegalCriteria: string;
   aiVsEveryday: string;
+  regionalNote: string;
 
   // Hallazgos trazables.
   keyCautions: CautionZone[];
@@ -347,7 +348,38 @@ function buildDocumentsToReadFirst(
   return refs.slice(0, 4);
 }
 
-export function buildStateOfArt(analyses: LicenseAnalysis[]): StateOfArt {
+/**
+ * Resumen del registro para la nota regional del Estado del arte. Se calcula
+ * fuera (en la vista, desde el registro) y se inyecta acá; buildStateOfArt no
+ * depende del registro para el resto de la lectura.
+ */
+export interface RegistryRegionSummary {
+  totalProviders: number;
+  nonUsChinaProviders: number;
+  nonCommercialProjects: number;
+  regionsNonUsChina: string[];
+}
+
+function regionalNoteFrom(summary?: RegistryRegionSummary): string {
+  const base =
+    "Esta distinción importa porque no todos los modelos se ofrecen bajo la misma lógica contractual: algunos son " +
+    "servicios comerciales, otros son infraestructuras académicas, soberanas o abiertas, que pueden no tener ToS o " +
+    "Privacy equivalentes.";
+  if (!summary || summary.totalProviders === 0) {
+    return (
+      "El corpus incorpora proveedores comerciales y proyectos académicos o soberanos fuera del eje Estados " +
+      `Unidos/China. ${base}`
+    );
+  }
+  const regiones = summary.regionsNonUsChina.length > 0 ? ` (${summary.regionsNonUsChina.join(", ")})` : "";
+  return (
+    `Según el registro actual, el corpus incorpora ${summary.totalProviders} proveedores y proyectos, de los cuales ` +
+    `${summary.nonUsChinaProviders} están fuera del eje Estados Unidos/China${regiones} y ${summary.nonCommercialProjects} ` +
+    `son proyectos académicos o soberanos. ${base}`
+  );
+}
+
+export function buildStateOfArt(analyses: LicenseAnalysis[], registrySummary?: RegistryRegionSummary): StateOfArt {
   const signature = computeCorpusSignature(analyses);
   const products = aggregateByProduct(analyses);
   const aiProducts = products.filter((p) => !p.isBaseline);
@@ -409,6 +441,7 @@ export function buildStateOfArt(analyses: LicenseAnalysis[]): StateOfArt {
     generalReading,
     whyLegalCriteria,
     aiVsEveryday,
+    regionalNote: regionalNoteFrom(registrySummary),
     keyCautions,
     mostRestrictiveProduct,
     mostExposedLegalPracticeProduct,

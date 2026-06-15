@@ -4,7 +4,7 @@ import { loadRegistry, flattenDocuments } from "@/lib/sources";
 import { providerKey } from "@/lib/derive";
 import { getProviderContext } from "@/domain/providerContext";
 import { PageContainer } from "@/components/PageContainer";
-import { ProviderDossier, type PendingDoc } from "@/components/ProviderDossier";
+import { ProviderDossier, type PendingDoc, type ProviderTaxonomy } from "@/components/ProviderDossier";
 
 // Pre-genera una página por cada proveedor con análisis (export estático).
 export async function generateStaticParams() {
@@ -19,8 +19,9 @@ export default async function ProviderPage({ params }: { params: Promise<{ provi
   const analyses = all.filter((a) => providerKey(a) === providerId);
   if (analyses.length === 0) notFound();
 
-  // Documentos pendientes / no disponibles del registro para este proveedor.
+  // Documentos pendientes / no disponibles + taxonomía (región/tipo/nicho) del registro.
   let pending: PendingDoc[] = [];
+  let taxonomy: ProviderTaxonomy | null = null;
   try {
     const reg = await loadRegistry();
     pending = flattenDocuments(reg, providerId)
@@ -30,13 +31,26 @@ export default async function ProviderPage({ params }: { params: Promise<{ provi
         sourceStatus: d.document.sourceStatus,
         sourceUrl: d.document.sourceUrl,
       }));
+    const regProv = reg.providers.find((p) => p.providerName === analyses[0].providerName);
+    if (regProv) {
+      taxonomy = {
+        region: regProv.providerRegion,
+        type: regProv.providerType,
+        niches: Array.from(new Set(regProv.products.map((p) => p.productNiche))),
+      };
+    }
   } catch {
     pending = [];
   }
 
   return (
     <PageContainer>
-      <ProviderDossier analyses={analyses} pending={pending} context={getProviderContext(providerId)} />
+      <ProviderDossier
+        analyses={analyses}
+        pending={pending}
+        context={getProviderContext(providerId)}
+        taxonomy={taxonomy}
+      />
     </PageContainer>
   );
 }

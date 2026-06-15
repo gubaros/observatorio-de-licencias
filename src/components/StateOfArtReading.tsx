@@ -32,6 +32,14 @@ export function StateOfArtReading({ state }: { state: StateOfArt }) {
         <p>{state.aiVsEveryday}</p>
       </Section>
 
+      {/* 3b · Proveedores y proyectos fuera del eje EE.UU./China */}
+      <Section title="Proveedores y proyectos fuera del eje Estados Unidos/China">
+        <p>
+          {state.regionalNote}{" "}
+          <Link href="/providers" className="text-sky-700 hover:underline">Ver proveedores por región →</Link>
+        </p>
+      </Section>
+
       {/* 4 · Mayores cautelas */}
       {state.keyCautions.length > 0 && (
         <Section title="Dónde aparecen las mayores cautelas">

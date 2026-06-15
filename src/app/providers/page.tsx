@@ -1,9 +1,10 @@
 import { loadAllLicenseAnalyses } from "@/lib/storage";
-import { providerSummaries } from "@/lib/derive";
+import { providerSummaries, providerKey } from "@/lib/derive";
 import { loadRegistry } from "@/lib/sources";
 import { loadAllLegalBundles } from "@/lib/coverage";
 import { COMPARISON_GROUP_LABEL, SOFTWARE_CATEGORY_LABEL } from "@/lib/analysisMeta";
 import { ProviderOverview } from "@/components/ProviderOverview";
+import { RegionalProviders, type RegionalRow } from "@/components/RegionalProviders";
 import { PageContainer } from "@/components/PageContainer";
 import { LegalBundlePanel } from "@/components/LegalBundlePanel";
 
@@ -21,9 +22,14 @@ export default async function ProvidersPage() {
   const analyses = await loadAllLicenseAnalyses();
   const summaries = providerSummaries(analyses);
 
+  // Mapa providerName -> route id del expediente (solo proveedores con análisis).
+  const routeByName = new Map<string, string>();
+  for (const a of analyses) routeByName.set(a.providerName, providerKey(a));
+
   // Software de referencia (no IA) desde el registro, agrupado por grupo comparativo.
   const ingestedIds = new Set(analyses.map((a) => a.metadata.productId).filter(Boolean));
   const refByGroup = new Map<string, RefProduct[]>();
+  let regionalRows: RegionalRow[] = [];
   try {
     const reg = await loadRegistry();
     for (const prov of reg.providers) {
@@ -40,6 +46,23 @@ export default async function ProvidersPage() {
         refByGroup.set(prod.comparisonGroup, list);
       }
     }
+    // Directorio por región: una fila por proveedor/proyecto del registro.
+    regionalRows = reg.providers.map((prov): RegionalRow => {
+      const firstSourceUrl = prov.products
+        .flatMap((p) => p.documents)
+        .map((d) => d.sourceUrl)
+        .find((u): u is string => !!u);
+      return {
+        providerId: prov.providerId,
+        providerName: prov.providerName,
+        region: prov.providerRegion,
+        type: prov.providerType,
+        niches: Array.from(new Set(prov.products.map((p) => p.productNiche))),
+        dossierId: routeByName.get(prov.providerName) ?? null,
+        officialUrl: firstSourceUrl ?? (prov.officialDomains[0] ? `https://${prov.officialDomains[0]}` : null),
+        needsReview: prov.metadata.needsManualSourceReview === true,
+      };
+    });
   } catch {
     /* sin registro */
   }
@@ -56,8 +79,20 @@ export default async function ProvidersPage() {
         </p>
       </header>
 
+      {regionalRows.length > 0 && (
+        <section className="space-y-2">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Proveedores y proyectos por región</h2>
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-600">
+            Región, tipo de proveedor y nicho funcional de cada proveedor o proyecto del registro. La distinción
+            importa: no todos se ofrecen bajo la misma lógica contractual —algunos son servicios comerciales, otros
+            proyectos académicos, soberanos o abiertos, que pueden no tener ToS o Privacy equivalentes—.
+          </p>
+          <RegionalProviders rows={regionalRows} />
+        </section>
+      )}
+
       <section className="space-y-2">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Proveedores de IA</h2>
+        <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Proveedores de IA (con análisis)</h2>
         {summaries.length === 0 ? (
           <p className="text-sm text-slate-500">No hay proveedores cargados.</p>
         ) : (

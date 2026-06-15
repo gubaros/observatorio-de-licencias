@@ -77,13 +77,16 @@
               "finalUrl": "https://openai.com/policies/usage-policies/",
               "notes": "Obtenido con navegador stealth (evasión autorizada); contenido del dominio oficial."
             }
-          ]
+          ],
+          "productNiche": "general_llm"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "anthropic",
@@ -179,13 +182,16 @@
               "finalUrl": "https://www.anthropic.com/legal/commercial-terms",
               "notes": "Términos comerciales (business/enterprise/API); URL candidata a verificar."
             }
-          ]
+          ],
+          "productNiche": "general_llm"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "google",
@@ -256,7 +262,8 @@
               "finalUrl": "https://policies.google.com/terms/generative-ai/use-policy",
               "notes": "[headless] ingerido (4050 chars, 7 marcadores)"
             }
-          ]
+          ],
+          "productNiche": "general_llm"
         },
         {
           "productId": "gmail",
@@ -296,7 +303,8 @@
               "finalUrl": "https://policies.google.com/privacy",
               "notes": "[headless] contenido idéntico a google-gemini-privacy-policy-2026-06-15 (la URL probablemente apunta a una página índice, no al documento); requiere revisión manual"
             }
-          ]
+          ],
+          "productNiche": "everyday_software"
         },
         {
           "productId": "android",
@@ -333,13 +341,16 @@
               "finalUrl": "https://policies.google.com/privacy",
               "notes": "[headless] contenido idéntico a google-gemini-privacy-policy-2026-06-15 (la URL probablemente apunta a una página índice, no al documento); requiere revisión manual"
             }
-          ]
+          ],
+          "productNiche": "everyday_software"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "microsoft",
@@ -396,7 +407,8 @@
               "finalUrl": "https://www.microsoft.com/en-us/privacy/privacystatement",
               "notes": "URL candidata; verificar con sources:verify"
             }
-          ]
+          ],
+          "productNiche": "general_llm"
         },
         {
           "productId": "microsoft-365",
@@ -437,13 +449,16 @@
               "finalUrl": "https://www.microsoft.com/en-us/privacy/privacystatement",
               "notes": "Declaración de privacidad de Microsoft. Revisar manualmente."
             }
-          ]
+          ],
+          "productNiche": "everyday_software"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "meta",
@@ -496,13 +511,16 @@
               "finalUrl": null,
               "notes": "No se ubicó con certeza una URL oficial de la política de privacidad de Meta AI"
             }
-          ]
+          ],
+          "productNiche": "general_llm"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": "Términos de Meta AI dispersos entre dominios; requiere revisión manual"
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "open_source_project"
     },
     {
       "providerId": "mistral",
@@ -534,12 +552,12 @@
                 "api"
               ],
               "sourceScope": "general",
-              "sourceUrl": "https://mistral.ai/terms",
+              "sourceUrl": "https://legal.mistral.ai/terms",
               "sourceStatus": "needs_manual_review",
               "lastCheckedAt": "2026-06-14T17:59:35.405Z",
               "httpStatus": 200,
               "finalUrl": "https://legal.mistral.ai/terms",
-              "notes": "https://mistral.ai/terms es una página índice de documentos legales, no el documento en sí; ubicar la URL del documento específico"
+              "notes": "URL del documento legal real localizada (legal.mistral.ai/terms); pendiente de ingesta/verificación."
             },
             {
               "documentId": "privacy-policy",
@@ -551,20 +569,23 @@
                 "api"
               ],
               "sourceScope": "general",
-              "sourceUrl": null,
+              "sourceUrl": "https://legal.mistral.ai/terms/privacy-policy",
               "sourceStatus": "needs_manual_review",
               "lastCheckedAt": "2026-06-14T17:59:35.589Z",
               "httpStatus": null,
               "finalUrl": null,
-              "notes": "El #anchor resolvía a la página índice (mismo contenido que terms); requiere URL del documento real"
+              "notes": "URL del documento de privacidad real localizada (legal.mistral.ai/terms/privacy-policy); pendiente de ingesta/verificación."
             }
-          ]
+          ],
+          "productNiche": "general_llm"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "europe",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "xai",
@@ -620,13 +641,16 @@
               "finalUrl": "https://x.ai/legal/privacy-policy",
               "notes": "URL candidata; verificar con sources:verify"
             }
-          ]
+          ],
+          "productNiche": "general_llm"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "perplexity",
@@ -682,13 +706,16 @@
               "finalUrl": "https://www.perplexity.ai/hub/legal/privacy-policy",
               "notes": "Cloudflare con re-verificación persistente: ni GET, ni headless, ni stealth lo superan. Requiere captura manual (ingest:manual)."
             }
-          ]
+          ],
+          "productNiche": "search_assistant"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "cohere",
@@ -744,13 +771,16 @@
               "finalUrl": "https://cohere.com/privacy",
               "notes": "URL candidata; verificar con sources:verify"
             }
-          ]
+          ],
+          "productNiche": "general_llm"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "stability",
@@ -804,13 +834,16 @@
               "finalUrl": "https://stability.ai/privacy-policy",
               "notes": "URL candidata; verificar con sources:verify"
             }
-          ]
+          ],
+          "productNiche": "image_generation"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "europe",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "midjourney",
@@ -865,13 +898,16 @@
               "finalUrl": "https://docs.midjourney.com/hc/en-us/articles/32083472637453-Privacy-Policy",
               "notes": "Obtenido con navegador stealth (evasión autorizada); contenido del dominio oficial."
             }
-          ]
+          ],
+          "productNiche": "image_generation"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "runway",
@@ -929,13 +965,16 @@
               "finalUrl": "https://runwayml.com/privacy-policy",
               "notes": "URL candidata; verificar con sources:verify"
             }
-          ]
+          ],
+          "productNiche": "video_generation"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "elevenlabs",
@@ -993,13 +1032,16 @@
               "finalUrl": "https://elevenlabs.io/privacy-policy",
               "notes": "URL candidata; verificar con sources:verify"
             }
-          ]
+          ],
+          "productNiche": "voice_generation"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "huggingface",
@@ -1055,13 +1097,16 @@
               "finalUrl": "https://huggingface.co/privacy",
               "notes": "URL candidata; verificar con sources:verify"
             }
-          ]
+          ],
+          "productNiche": "ml_platform"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "aws",
@@ -1135,13 +1180,16 @@
               "finalUrl": "https://aws.amazon.com/aup/",
               "notes": "URL candidata; verificar con sources:verify"
             }
-          ]
+          ],
+          "productNiche": "ml_platform"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "ibm",
@@ -1197,13 +1245,16 @@
               "finalUrl": null,
               "notes": "Términos de watsonx en acuerdos de cliente (CSA); no se ubicó una URL pública única"
             }
-          ]
+          ],
+          "productNiche": "ml_platform"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "adobe",
@@ -1260,13 +1311,16 @@
               "finalUrl": "https://www.adobe.com/privacy/policy.html",
               "notes": "URL candidata; verificar con sources:verify"
             }
-          ]
+          ],
+          "productNiche": "image_generation"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "github",
@@ -1343,13 +1397,16 @@
               "finalUrl": "https://github.com/customer-terms/github-copilot-product-specific-terms",
               "notes": "URL candidata; verificar con sources:verify"
             }
-          ]
+          ],
+          "productNiche": "code_assistant"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "replit",
@@ -1405,13 +1462,16 @@
               "finalUrl": "https://replit.com/privacy-policy",
               "notes": "URL candidata; verificar con sources:verify"
             }
-          ]
+          ],
+          "productNiche": "code_assistant"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "databricks",
@@ -1481,13 +1541,16 @@
               "finalUrl": "https://www.databricks.com/legal/acceptable-use-policy",
               "notes": "URL candidata; verificar con sources:verify"
             }
-          ]
+          ],
+          "productNiche": "ml_platform"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "linkedin",
@@ -1534,13 +1597,16 @@
               "finalUrl": "https://www.linkedin.com/legal/privacy-policy",
               "notes": "Software tradicional de referencia. Pendiente de verificación e ingesta."
             }
-          ]
+          ],
+          "productNiche": "everyday_software"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": "Red social profesional incorporada como punto de comparación académico."
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "x",
@@ -1588,13 +1654,16 @@
               "finalUrl": "https://x.com/en/privacy",
               "notes": "Software tradicional de referencia. Pendiente de verificación e ingesta."
             }
-          ]
+          ],
+          "productNiche": "everyday_software"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": "Red social incorporada como punto de comparación académico."
-      }
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
     },
     {
       "providerId": "apple",
@@ -1638,12 +1707,383 @@
               "finalUrl": "https://www.apple.com/legal/internet-services/itunes/",
               "notes": "Términos de servicios de Apple. Los términos de iOS/dispositivo no surgen de un documento único claro: alcance dudoso, requiere revisión manual."
             }
-          ]
+          ],
+          "productNiche": "everyday_software"
         }
       ],
       "metadata": {
         "needsManualSourceReview": true,
         "notes": "Ecosistema móvil incorporado como punto de comparación académico."
+      },
+      "providerRegion": "north_america",
+      "providerType": "commercial_provider"
+    },
+    {
+      "providerId": "maritaca",
+      "providerName": "Maritaca AI",
+      "officialDomains": [
+        "maritaca.ai"
+      ],
+      "providerRegion": "latin_america",
+      "providerType": "commercial_provider",
+      "products": [
+        {
+          "productId": "sabia",
+          "productName": "Sabiá",
+          "tiers": [
+            "Free",
+            "API"
+          ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "Proveedor brasileño de LLM (familia Sabiá), enfocado en portugués.",
+          "productNiche": "general_llm",
+          "documents": [
+            {
+              "documentId": "terms-of-use",
+              "documentType": "Termos & Condições",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://www.maritaca.ai/termos",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "URL oficial localizada y cargada (maritaca.ai/termos, título 'Termos & Condições — Maritaca AI'); pendiente de ingesta/verificación por el pipeline."
+            },
+            {
+              "documentId": "privacy-policy",
+              "documentType": "Política de Privacidade",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://www.maritaca.ai/privacidade",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "URL oficial localizada y cargada (maritaca.ai/privacidade); pendiente de ingesta/verificación por el pipeline."
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "needsManualSourceReview": true,
+        "notes": "Fuentes oficiales (Termos y Privacidade) localizadas; pendiente de ingesta/verificación."
+      }
+    },
+    {
+      "providerId": "latam-gpt",
+      "providerName": "Latam-GPT (CENIA)",
+      "officialDomains": [
+        "latamgpt.org",
+        "cenia.cl"
+      ],
+      "providerRegion": "latin_america",
+      "providerType": "sovereign_ai_project",
+      "products": [
+        {
+          "productId": "latam-gpt",
+          "productName": "Latam-GPT",
+          "tiers": [],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "Iniciativa regional latinoamericana liderada por CENIA (Chile) y una red de instituciones; modelo abierto/soberano, no un servicio comercial.",
+          "productNiche": "general_llm",
+          "documents": [
+            {
+              "documentId": "terms-of-use",
+              "documentType": "Terms of Use",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": null,
+              "sourceStatus": "not_found_after_official_search",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "Revisado el sitio oficial latamgpt.org: no publica Terms of Use de servicio. Es un proyecto soberano/académico, no un proveedor comercial."
+            },
+            {
+              "documentId": "privacy-policy",
+              "documentType": "Privacy Policy",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": null,
+              "sourceStatus": "not_found_after_official_search",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "Revisado latamgpt.org: no publica Privacy Policy de servicio. Proyecto soberano/académico."
+            },
+            {
+              "documentId": "model-repository",
+              "documentType": "Modelos y código (oficiales)",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://huggingface.co/latam-gpt",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "Organización oficial en Hugging Face (huggingface.co/latam-gpt) y GitHub (github.com/latam-gpt), enlazadas desde el dominio oficial latamgpt.org. La licencia de cada modelo debe revisarse en su model card."
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "needsManualSourceReview": true,
+        "notes": "Proyecto soberano/académico (CENIA, Chile). Sin ToS/Privacy de servicio comercial; recursos oficiales: latamgpt.org, Hugging Face y GitHub."
+      }
+    },
+    {
+      "providerId": "lelapa",
+      "providerName": "Lelapa AI",
+      "officialDomains": [
+        "lelapa.ai"
+      ],
+      "providerRegion": "africa",
+      "providerType": "commercial_provider",
+      "products": [
+        {
+          "productId": "vulavula",
+          "productName": "Vulavula (InkubaLM)",
+          "tiers": [
+            "API"
+          ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "Empresa sudafricana; API Vulavula y modelo InkubaLM enfocados en lenguas africanas.",
+          "productNiche": "general_llm",
+          "documents": [
+            {
+              "documentId": "terms-of-service",
+              "documentType": "Terms of Service",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://lelapa.ai/terms",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "URL oficial localizada y cargada (lelapa.ai/terms, título 'Terms of Service | Lelapa AI'); pendiente de ingesta/verificación."
+            },
+            {
+              "documentId": "privacy-policy",
+              "documentType": "Privacy Policy",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://lelapa.ai/privacy",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "URL oficial localizada y cargada (lelapa.ai/privacy, título 'Privacy Policy | Lelapa AI'); pendiente de ingesta/verificación."
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "needsManualSourceReview": true,
+        "notes": "Fuentes oficiales (Terms y Privacy) localizadas; pendiente de ingesta/verificación."
+      }
+    },
+    {
+      "providerId": "aleph-alpha",
+      "providerName": "Aleph Alpha",
+      "officialDomains": [
+        "aleph-alpha.com"
+      ],
+      "providerRegion": "europe",
+      "providerType": "commercial_provider",
+      "products": [
+        {
+          "productId": "pharia",
+          "productName": "PhariaAI",
+          "tiers": [
+            "Enterprise"
+          ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "Empresa alemana de IA soberana europea; plataforma PhariaAI, orientada a sector público y empresas.",
+          "productNiche": "general_llm",
+          "documents": [
+            {
+              "documentId": "privacy-policy",
+              "documentType": "Datenschutzerklärung (Privacy Policy)",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://aleph-alpha.com/datenschutz",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "URL oficial localizada y cargada (aleph-alpha.com/datenschutz, 'Datenschutzerklärung | ALEPH ALPHA'); pendiente de ingesta/verificación."
+            },
+            {
+              "documentId": "terms-of-use",
+              "documentType": "Terms of Use",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": null,
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "No se halló un ToS público en rutas habituales (aleph-alpha.com/terms-of-use devuelve 404). Posibles condiciones contractuales enterprise no públicas; requiere revisión manual."
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "needsManualSourceReview": true,
+        "notes": "Privacy oficial localizada; ToS no público (plataforma enterprise). Pendiente de revisión."
+      }
+    },
+    {
+      "providerId": "lighton",
+      "providerName": "LightOn",
+      "officialDomains": [
+        "lighton.ai"
+      ],
+      "providerRegion": "europe",
+      "providerType": "commercial_provider",
+      "products": [
+        {
+          "productId": "paradigm",
+          "productName": "Paradigm",
+          "tiers": [
+            "Enterprise"
+          ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "Empresa francesa; plataforma enterprise Paradigm. No queda claro si el modelo es fundacional propio, fine-tune o plataforma de despliegue.",
+          "productNiche": "general_llm",
+          "documents": [
+            {
+              "documentId": "legal-notice",
+              "documentType": "Legal notice",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://lighton.ai/legal-notice",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "Aviso legal oficial localizado y cargado (lighton.ai/legal-notice, 'Paradigm | LightOn'). No es un ToS de servicio."
+            },
+            {
+              "documentId": "privacy-policy",
+              "documentType": "Privacy Policy",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://lighton.mintlify.app/en/support-legal/legal-and-compliance/privacy-policy",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "Privacy en la documentación oficial de LightOn alojada en Mintlify (lighton.mintlify.app), enlazada desde lighton.ai. Host de terceros (docs propias); requiere confirmación manual."
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "needsManualSourceReview": true,
+        "notes": "needs_manual_review: no queda claro si el modelo es fundacional propio, fine-tune o plataforma enterprise (Paradigm)."
+      }
+    },
+    {
+      "providerId": "bsc-aina",
+      "providerName": "Barcelona Supercomputing Center (Projecte AINA)",
+      "officialDomains": [
+        "projecteaina.cat",
+        "bsc.es"
+      ],
+      "providerRegion": "europe",
+      "providerType": "sovereign_ai_project",
+      "products": [
+        {
+          "productId": "salamandra",
+          "productName": "Salamandra",
+          "tiers": [],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "Modelo abierto Salamandra del Projecte AINA (Barcelona Supercomputing Center, sector público catalán); infraestructura académica/soberana, no un servicio comercial.",
+          "productNiche": "general_llm",
+          "documents": [
+            {
+              "documentId": "terms-of-use",
+              "documentType": "Terms of Use",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": null,
+              "sourceStatus": "not_found_after_official_search",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "Revisado projecteaina.cat: no publica Terms of Use de servicio (proyecto académico/soberano). Existe 'Nota legal' del sitio."
+            },
+            {
+              "documentId": "privacy-policy",
+              "documentType": "Privacy Policy",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": null,
+              "sourceStatus": "not_found_after_official_search",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "Sin Privacy Policy de servicio; ver la 'Nota legal' del sitio oficial."
+            },
+            {
+              "documentId": "legal-notice",
+              "documentType": "Nota legal",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://projecteaina.cat/nota-legal/",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "Nota legal oficial del Projecte AINA, localizada en projecteaina.cat/nota-legal/."
+            },
+            {
+              "documentId": "model-card",
+              "documentType": "Model card (Salamandra)",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://huggingface.co/BSC-LT/salamandra-7b",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": null,
+              "httpStatus": null,
+              "finalUrl": null,
+              "notes": "Model card oficial de Salamandra en Hugging Face (BSC-LT), enlazada desde projecteaina.cat/tech/. La licencia del modelo debe revisarse en la model card."
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "needsManualSourceReview": true,
+        "notes": "Proyecto académico/soberano (BSC / Generalitat de Catalunya). Sin ToS/Privacy de servicio; artefactos oficiales: model card en HF y Nota legal."
       }
     }
   ]

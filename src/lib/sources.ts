@@ -10,6 +10,9 @@
 import { promises as fs } from "node:fs";
 import { z } from "zod";
 import { SourceStatusSchema, ContractingModeSchema, SourceScopeSchema, SoftwareCategorySchema, ComparisonGroupSchema } from "./schema";
+import { ProviderRegionSchema } from "../domain/taxonomies/providerRegions";
+import { ProviderTypeSchema } from "../domain/taxonomies/providerTypes";
+import { ProductNicheSchema } from "../domain/taxonomies/productNiches";
 import { PROVIDERS_JSON, SOURCES_DIR } from "./paths";
 
 export const SourceDocumentSchema = z.object({
@@ -37,6 +40,8 @@ export const ProductSchema = z.object({
   comparisonGroup: ComparisonGroupSchema.default("ai"),
   comparativeBaseline: z.boolean().default(false),
   academicPurposeNotes: z.string().default(""),
+  // --- Nicho funcional del producto (taxonomía central) ---
+  productNiche: ProductNicheSchema.default("unknown"),
   documents: z.array(SourceDocumentSchema).default([]),
 });
 
@@ -45,6 +50,9 @@ export const ProviderSchema = z.object({
   providerName: z.string(),
   /** Dominios oficiales aceptados como fuente primaria. */
   officialDomains: z.array(z.string()).default([]),
+  // --- Taxonomía regional y de tipo de proveedor (autoridad del registro) ---
+  providerRegion: ProviderRegionSchema.default("unknown"),
+  providerType: ProviderTypeSchema.default("unknown"),
   products: z.array(ProductSchema).default([]),
   metadata: z
     .object({
