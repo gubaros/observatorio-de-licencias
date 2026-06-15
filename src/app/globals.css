@@ -42,6 +42,9 @@
 
 html {
   color-scheme: light;
+  /* Base 18px (vs 16px de Tailwind): escala todo el texto rem-based para mejorar
+     la legibilidad sin tocar cada componente. text-sm ≈ 15.75px, text-base = 18px. */
+  font-size: 18px;
 }
 
 body {
