@@ -218,11 +218,11 @@
               ],
               "sourceScope": "general",
               "sourceUrl": "https://policies.google.com/terms",
-              "sourceStatus": "needs_manual_review",
-              "lastCheckedAt": "2026-06-15T13:43:02.665Z",
+              "sourceStatus": "verified",
+              "lastCheckedAt": "2026-06-15T13:59:42.080Z",
               "httpStatus": 200,
               "finalUrl": "https://policies.google.com/terms",
-              "notes": "URL candidata; verificar con sources:verify"
+              "notes": "[headless] ingerido (29258 chars, 14 marcadores)"
             },
             {
               "documentId": "privacy-policy",
@@ -234,11 +234,11 @@
               ],
               "sourceScope": "general",
               "sourceUrl": "https://policies.google.com/privacy",
-              "sourceStatus": "needs_manual_review",
-              "lastCheckedAt": "2026-06-15T13:43:03.323Z",
+              "sourceStatus": "verified",
+              "lastCheckedAt": "2026-06-15T13:59:45.659Z",
               "httpStatus": 200,
               "finalUrl": "https://policies.google.com/privacy",
-              "notes": "URL candidata; verificar con sources:verify"
+              "notes": "[headless] ingerido (57475 chars, 8 marcadores)"
             },
             {
               "documentId": "genai-use-policy",
@@ -250,11 +250,11 @@
               ],
               "sourceScope": "general",
               "sourceUrl": "https://policies.google.com/terms/generative-ai/use-policy",
-              "sourceStatus": "needs_manual_review",
-              "lastCheckedAt": "2026-06-15T13:43:03.757Z",
+              "sourceStatus": "verified",
+              "lastCheckedAt": "2026-06-15T13:59:47.863Z",
               "httpStatus": 200,
               "finalUrl": "https://policies.google.com/terms/generative-ai/use-policy",
-              "notes": "URL candidata; verificar con sources:verify"
+              "notes": "[headless] ingerido (4050 chars, 7 marcadores)"
             }
           ]
         },
@@ -278,10 +278,10 @@
               "sourceScope": "general",
               "sourceUrl": "https://policies.google.com/terms",
               "sourceStatus": "needs_manual_review",
-              "lastCheckedAt": "2026-06-15T13:43:04.395Z",
+              "lastCheckedAt": "2026-06-15T13:59:49.288Z",
               "httpStatus": 200,
               "finalUrl": "https://policies.google.com/terms",
-              "notes": "Términos generales de Google (aplican a Gmail). Alcance general del ecosistema; revisar manualmente."
+              "notes": "[headless] contenido idéntico a google-gemini-terms-of-service-2026-06-15 (la URL probablemente apunta a una página índice, no al documento); requiere revisión manual"
             },
             {
               "documentId": "privacy-policy",
@@ -291,10 +291,10 @@
               "sourceScope": "general",
               "sourceUrl": "https://policies.google.com/privacy",
               "sourceStatus": "needs_manual_review",
-              "lastCheckedAt": "2026-06-15T13:43:04.843Z",
+              "lastCheckedAt": "2026-06-15T13:59:51.722Z",
               "httpStatus": 200,
               "finalUrl": "https://policies.google.com/privacy",
-              "notes": "Política de privacidad general de Google (aplica a Gmail). Revisar manualmente."
+              "notes": "[headless] contenido idéntico a google-gemini-privacy-policy-2026-06-15 (la URL probablemente apunta a una página índice, no al documento); requiere revisión manual"
             }
           ]
         },
@@ -315,10 +315,10 @@
               "sourceScope": "mixed",
               "sourceUrl": "https://policies.google.com/terms",
               "sourceStatus": "needs_manual_review",
-              "lastCheckedAt": "2026-06-15T13:43:05.291Z",
+              "lastCheckedAt": "2026-06-15T13:59:52.985Z",
               "httpStatus": 200,
               "finalUrl": "https://policies.google.com/terms",
-              "notes": "El ecosistema Android no surge de un documento específico; se usan términos generales de Google. Alcance dudoso: requiere revisión manual."
+              "notes": "[headless] contenido idéntico a google-gemini-terms-of-service-2026-06-15 (la URL probablemente apunta a una página índice, no al documento); requiere revisión manual"
             },
             {
               "documentId": "privacy-policy",
@@ -328,10 +328,10 @@
               "sourceScope": "mixed",
               "sourceUrl": "https://policies.google.com/privacy",
               "sourceStatus": "needs_manual_review",
-              "lastCheckedAt": "2026-06-15T13:43:05.747Z",
+              "lastCheckedAt": "2026-06-15T13:59:55.245Z",
               "httpStatus": 200,
               "finalUrl": "https://policies.google.com/privacy",
-              "notes": "Privacidad general de Google aplicable a Android. Alcance dudoso: requiere revisión manual."
+              "notes": "[headless] contenido idéntico a google-gemini-privacy-policy-2026-06-15 (la URL probablemente apunta a una página índice, no al documento); requiere revisión manual"
             }
           ]
         }
@@ -1620,10 +1620,10 @@
               "sourceScope": "general",
               "sourceUrl": "https://www.apple.com/legal/privacy/",
               "sourceStatus": "unsupported_format",
-              "lastCheckedAt": "2026-06-15T13:43:13.734Z",
+              "lastCheckedAt": "2026-06-15T13:59:59.217Z",
               "httpStatus": 200,
               "finalUrl": "https://www.apple.com/legal/privacy/",
-              "notes": "Política de privacidad de Apple. Aplicable al ecosistema; revisar manualmente."
+              "notes": "[headless] texto demasiado corto (645 < 800 chars): posible SPA, muro de consentimiento o soft-404"
             },
             {
               "documentId": "media-services-terms",

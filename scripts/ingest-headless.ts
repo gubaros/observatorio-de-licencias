@@ -43,14 +43,21 @@ async function main() {
   const registry = await loadRegistry();
   let docs = flattenDocuments(registry, values.provider);
 
-  // Solo fuentes bloqueadas por antibot, o caídas por red. 404 NO (URL equivocada).
+  // Fuentes que un navegador real puede resolver pero un GET simple no:
+  //  - bloqueadas por antibot (403/429/503) o caídas por red (unavailable);
+  //  - respondieron 200 pero el GET no rindió contenido válido (SPA, muro de
+  //    consentimiento, redirección a otro host): quedaron unsupported_format o
+  //    needs_manual_review con http 200. 404 NO (URL equivocada).
   let targets = docs.filter(
     (d) =>
       d.document.sourceUrl &&
       ((d.document.sourceStatus === "failed_fetch" &&
         d.document.httpStatus !== null &&
         BLOCK_STATUSES.has(d.document.httpStatus)) ||
-        d.document.sourceStatus === "unavailable"),
+        d.document.sourceStatus === "unavailable" ||
+        ((d.document.sourceStatus === "unsupported_format" ||
+          d.document.sourceStatus === "needs_manual_review") &&
+          d.document.httpStatus === 200)),
   );
 
   const limit = values.limit ? parseInt(values.limit, 10) : undefined;
