@@ -2,17 +2,17 @@
 export const metadata = { title: "Criterio de riesgo — UP-Law-AILO" };
 
 const RISK: { nivel: string; texto: string }[] = [
-  { nivel: "Riesgo bajo", texto: "El parser detectó cláusulas de baja criticidad o principalmente informativas. No se identificaron señales fuertes de transferencia de derechos, limitación severa de remedios o restricciones procesales relevantes." },
-  { nivel: "Riesgo medio", texto: "El parser detectó cláusulas jurídicamente relevantes que pueden afectar privacidad, uso, conservación de datos, jurisdicción, condiciones contractuales o cambios de términos. Requiere revisión legal humana." },
-  { nivel: "Riesgo alto", texto: "El parser detectó cláusulas que podrían afectar significativamente derechos del usuario, propiedad intelectual, responsabilidad, indemnidad, arbitraje, remedios disponibles o posición procesal. No constituye conclusión jurídica definitiva." },
-  { nivel: "Riesgo desconocido", texto: "El parser no encontró evidencia suficiente o la redacción detectada es ambigua. Requiere revisión manual del documento fuente." },
+  { nivel: "Riesgo bajo", texto: "Cláusulas de baja criticidad o informativas. Sin señales fuertes de transferencia de derechos, limitación de remedios o restricciones procesales." },
+  { nivel: "Riesgo medio", texto: "Cláusulas relevantes sobre privacidad, uso o conservación de datos, jurisdicción o cambios de términos. Requiere revisión legal." },
+  { nivel: "Riesgo alto", texto: "Cláusulas que podrían afectar derechos del usuario, propiedad intelectual, responsabilidad, indemnidad, arbitraje o posición procesal. No es conclusión definitiva." },
+  { nivel: "Riesgo desconocido", texto: "Evidencia insuficiente o redacción ambigua. Requiere revisión manual del documento fuente." },
 ];
 
 const PRIVACY: { nivel: string; texto: string }[] = [
-  { nivel: "Privacidad fuerte", texto: "La fuente parece contener compromisos relevantes de protección, como límites al entrenamiento con datos del usuario, confidencialidad, controles de retención, DPA o condiciones enterprise/business más protectorias." },
-  { nivel: "Privacidad moderada", texto: "La fuente regula el tratamiento de datos y contiene algunas salvaguardas, pero no permite concluir preliminarmente una protección fuerte." },
-  { nivel: "Privacidad débil", texto: "La fuente contiene señales de uso amplio de datos, retención poco clara, licencias amplias sobre contenido o ausencia de controles suficientes." },
-  { nivel: "Privacidad desconocida", texto: "No hay evidencia suficiente para asignar una postura preliminar de privacidad." },
+  { nivel: "Privacidad fuerte", texto: "Compromisos relevantes de protección: límites al entrenamiento, confidencialidad, controles de retención, DPA o condiciones enterprise." },
+  { nivel: "Privacidad moderada", texto: "Regula el tratamiento de datos con algunas salvaguardas, pero no alcanza para una protección fuerte." },
+  { nivel: "Privacidad débil", texto: "Señales de uso amplio de datos, retención poco clara, licencias amplias o falta de controles." },
+  { nivel: "Privacidad desconocida", texto: "Evidencia insuficiente para asignar una postura." },
 ];
 
 export default function CriteriaPage() {
