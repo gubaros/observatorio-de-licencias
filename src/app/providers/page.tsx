@@ -1,5 +1,4 @@
 import { loadAllLicenseAnalyses } from "@/lib/storage";
-import { loadRegistry, flattenDocuments } from "@/lib/sources";
 import { providerSummaries } from "@/lib/derive";
 import { ProviderOverview } from "@/components/ProviderOverview";
 
@@ -8,19 +7,6 @@ export const metadata = { title: "Proveedores — UP-Law-AILO" };
 export default async function ProvidersPage() {
   const analyses = await loadAllLicenseAnalyses();
   const summaries = providerSummaries(analyses);
-
-  // Documentos pendientes (en el registro, fuente no verificada) por proveedor.
-  const pendingByProvider: Record<string, number> = {};
-  try {
-    const reg = await loadRegistry();
-    for (const { provider, document } of flattenDocuments(reg)) {
-      if (document.sourceStatus !== "verified") {
-        pendingByProvider[provider.providerId] = (pendingByProvider[provider.providerId] ?? 0) + 1;
-      }
-    }
-  } catch {
-    // sin registro: sin conteo de pendientes
-  }
 
   return (
     <div className="space-y-4">
@@ -35,7 +21,7 @@ export default async function ProvidersPage() {
       {summaries.length === 0 ? (
         <p className="text-sm text-slate-500">No hay proveedores cargados.</p>
       ) : (
-        <ProviderOverview summaries={summaries} pendingByProvider={pendingByProvider} />
+        <ProviderOverview summaries={summaries} />
       )}
 
     </div>
