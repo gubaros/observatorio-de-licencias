@@ -17,7 +17,6 @@
   "retrievedAt": "2026-06-14T17:50:25.871Z",
   "rawTextPath": "data/extracted/runway-runway-terms-of-use-2026-06-14.txt",
   "overall": {
-    "plainLanguageSummary": "El parser detectó posibles cláusulas en 15 de 22 categorías analizadas. El nivel de riesgo general estimado es \"high\". Este es un análisis preliminar y automático: la redacción puede no surgir con claridad del texto y requiere revisión legal humana.",
     "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 15. La calificación de riesgo general (high) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
     "overallRiskLevel": "high"
   },
@@ -41,7 +40,6 @@
     "privacy": {
       "status": "found",
       "riskLevel": "medium",
-      "plainLanguageSummary": "El documento parece referirse a cómo se procesan los datos personales del usuario. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -69,7 +67,6 @@
     "training_use": {
       "status": "found",
       "riskLevel": "high",
-      "plainLanguageSummary": "El documento parece referirse a si el proveedor podría usar tus conversaciones o archivos para entrenar sus modelos. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -89,7 +86,6 @@
     "input_ip": {
       "status": "found",
       "riskLevel": "medium",
-      "plainLanguageSummary": "El documento parece referirse a quién es dueño del contenido que ingresás (tus prompts y archivos). La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a la titularidad de los inputs aportados por el usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -117,7 +113,6 @@
     "output_ip": {
       "status": "unclear",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "Hay señales ambiguas sobre quién es dueño de lo que genera la IA a partir de tus pedidos. No queda claro a partir del texto analizado; conviene una revisión legal humana.",
       "legalSummary": "La redacción relativa a la asignación de titularidad sobre los outputs generados por el servicio resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -145,7 +140,6 @@
     "license_grant": {
       "status": "found",
       "riskLevel": "high",
-      "plainLanguageSummary": "El documento parece referirse a qué permisos le das al proveedor sobre tu contenido. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a la licencia conferida al proveedor sobre los contenidos del usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -173,7 +167,6 @@
     "data_retention": {
       "status": "unclear",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "Hay señales ambiguas sobre cuánto tiempo se conserva tu información. No queda claro a partir del texto analizado; conviene una revisión legal humana.",
       "legalSummary": "La redacción relativa a los plazos y condiciones de retención de datos del usuario resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -201,7 +194,6 @@
     "data_deletion": {
       "status": "unclear",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "Hay señales ambiguas sobre si y cómo podés pedir que borren tu información. No queda claro a partir del texto analizado; conviene una revisión legal humana.",
       "legalSummary": "La redacción relativa a los mecanismos de supresión o eliminación de datos del usuario resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -229,7 +221,6 @@
     "confidentiality": {
       "status": "found",
       "riskLevel": "medium",
-      "plainLanguageSummary": "El documento parece referirse a si el proveedor se compromete a mantener tu información en reserva. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a las obligaciones de confidencialidad aplicables al proveedor. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -249,7 +240,6 @@
     "security": {
       "status": "unclear",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "Hay señales ambiguas sobre qué medidas de seguridad dice tomar el proveedor. No queda claro a partir del texto analizado; conviene una revisión legal humana.",
       "legalSummary": "La redacción relativa a las medidas técnicas y organizativas de seguridad declaradas resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -277,7 +267,6 @@
     "security_duty": {
       "status": "not_found",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "No se encontró una cláusula clara sobre si el proveedor asume un compromiso concreto de seguridad en el texto analizado. La ausencia de coincidencias no garantiza que el tema no esté tratado.",
       "legalSummary": "No surge del texto analizado una cláusula expresa sobre la existencia de un deber de seguridad exigible al proveedor. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
       "evidence": [],
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
@@ -292,7 +281,6 @@
     "warranties": {
       "status": "found",
       "riskLevel": "high",
-      "plainLanguageSummary": "El documento parece referirse a qué garantiza (o no garantiza) el proveedor sobre el servicio. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a las garantías otorgadas y los disclaimers de garantía. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -320,7 +308,6 @@
     "liability_limitation": {
       "status": "found",
       "riskLevel": "high",
-      "plainLanguageSummary": "El documento parece referirse a hasta dónde responde el proveedor si algo sale mal. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a el régimen de exclusión o limitación de responsabilidad. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -348,7 +335,6 @@
     "indemnity": {
       "status": "found",
       "riskLevel": "high",
-      "plainLanguageSummary": "El documento parece referirse a si tenés que defender o pagar al proveedor ante reclamos de terceros. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a las obligaciones de indemnidad a cargo del usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -372,7 +358,6 @@
     "governing_law": {
       "status": "found",
       "riskLevel": "medium",
-      "plainLanguageSummary": "El documento parece referirse a qué ley rige el contrato. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a la ley aplicable al contrato. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -400,7 +385,6 @@
     "jurisdiction": {
       "status": "found",
       "riskLevel": "medium",
-      "plainLanguageSummary": "El documento parece referirse a qué tribunales resolverían un conflicto. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a la jurisdicción y el foro competente. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -428,7 +412,6 @@
     "arbitration": {
       "status": "found",
       "riskLevel": "high",
-      "plainLanguageSummary": "El documento parece referirse a si tenés que resolver disputas por arbitraje y si renunciás a demandas colectivas. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a el sometimiento a arbitraje y la renuncia a acciones colectivas. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -456,7 +439,6 @@
     "unilateral_changes": {
       "status": "unclear",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "Hay señales ambiguas sobre si el proveedor puede cambiar las reglas cuando quiera. No queda claro a partir del texto analizado; conviene una revisión legal humana.",
       "legalSummary": "La redacción relativa a las facultades de modificación unilateral de los términos resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -484,7 +466,6 @@
     "plan_differences": {
       "status": "found",
       "riskLevel": "medium",
-      "plainLanguageSummary": "El documento parece referirse a si las reglas cambian según el plan que tengas (gratis, pago, empresa). La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a las diferencias de régimen entre planes gratuitos, pagos y enterprise/business/team. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -508,7 +489,6 @@
     "minors": {
       "status": "unclear",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "Hay señales ambiguas sobre qué dice el documento sobre el uso por menores de edad. No queda claro a partir del texto analizado; conviene una revisión legal humana.",
       "legalSummary": "La redacción relativa a el tratamiento del uso del servicio por menores de edad resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -536,7 +516,6 @@
     "prohibited_content": {
       "status": "found",
       "riskLevel": "medium",
-      "plainLanguageSummary": "El documento parece referirse a qué usos del servicio están prohibidos. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a las restricciones de uso y las categorías de contenido prohibido. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -564,7 +543,6 @@
     "commercial_use": {
       "status": "found",
       "riskLevel": "low",
-      "plainLanguageSummary": "El documento parece referirse a si podés usar el servicio con fines comerciales. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a la habilitación o restricción del uso comercial del servicio. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -588,7 +566,6 @@
     "api_references": {
       "status": "found",
       "riskLevel": "low",
-      "plainLanguageSummary": "El documento parece referirse a si el documento menciona el uso de APIs y sus condiciones. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a las condiciones aplicables al uso de APIs. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {

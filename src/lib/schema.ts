@@ -72,7 +72,6 @@ export const EvidenceSchema = z.object({
 export const CategoryFindingSchema = z.object({
   status: FindingStatusSchema,
   riskLevel: RiskLevelSchema,
-  plainLanguageSummary: z.string(),
   legalSummary: z.string(),
   evidence: z.array(EvidenceSchema),
   notes: z.string(),
@@ -106,7 +105,6 @@ export const LicenseAnalysisSchema = z.object({
   retrievedAt: z.string(),
   rawTextPath: z.string(),
   overall: z.object({
-    plainLanguageSummary: z.string(),
     legalSummary: z.string(),
     overallRiskLevel: RiskLevelSchema,
   }),

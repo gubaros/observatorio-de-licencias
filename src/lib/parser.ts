@@ -111,18 +111,6 @@ function collectEvidence(original: string, lower: string, keywords: string[]): {
   return { evidence, matched };
 }
 
-/** Genera el resumen en lenguaje claro (no abogados), prudente. */
-function plainSummary(cat: CategoryConfig, status: CategoryFinding["status"]): string {
-  switch (status) {
-    case "found":
-      return `El documento parece referirse a ${cat.concern}. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.`;
-    case "unclear":
-      return `Hay señales ambiguas sobre ${cat.concern}. No queda claro a partir del texto analizado; conviene una revisión legal humana.`;
-    case "not_found":
-      return `No se encontró una cláusula clara sobre ${cat.concern} en el texto analizado. La ausencia de coincidencias no garantiza que el tema no esté tratado.`;
-  }
-}
-
 /** Genera el resumen técnico-jurídico (abogados), prudente. */
 function legalSummary(cat: CategoryConfig, status: CategoryFinding["status"]): string {
   switch (status) {
@@ -153,7 +141,6 @@ function analyzeCategory(cat: CategoryConfig, original: string, lower: string): 
     return {
       status: "found",
       riskLevel: cat.riskWhenFound,
-      plainLanguageSummary: plainSummary(cat, "found"),
       legalSummary: legalSummary(cat, "found"),
       evidence: strong.evidence,
       notes: notesFor("found", strong.matched),
@@ -165,7 +152,6 @@ function analyzeCategory(cat: CategoryConfig, original: string, lower: string): 
     return {
       status: "unclear",
       riskLevel: "unknown",
-      plainLanguageSummary: plainSummary(cat, "unclear"),
       legalSummary: legalSummary(cat, "unclear"),
       evidence: ambiguous.evidence,
       notes: notesFor("unclear", ambiguous.matched),
@@ -175,7 +161,6 @@ function analyzeCategory(cat: CategoryConfig, original: string, lower: string): 
   return {
     status: "not_found",
     riskLevel: "unknown",
-    plainLanguageSummary: plainSummary(cat, "not_found"),
     legalSummary: legalSummary(cat, "not_found"),
     evidence: [],
     notes: notesFor("not_found", []),
@@ -194,14 +179,6 @@ function computeOverallRisk(findings: CategoryFinding[]): RiskLevel {
   if (highCount >= 1 || mediumCount >= 3) return "medium";
   if (mediumCount >= 1) return "medium";
   return "low";
-}
-
-function overallPlainSummary(foundCount: number, total: number, risk: RiskLevel): string {
-  return (
-    `El parser detectó posibles cláusulas en ${foundCount} de ${total} categorías analizadas. ` +
-    `El nivel de riesgo general estimado es "${risk}". ` +
-    `Este es un análisis preliminar y automático: la redacción puede no surgir con claridad del texto y requiere revisión legal humana.`
-  );
 }
 
 function overallLegalSummary(foundCount: number, total: number, risk: RiskLevel): string {
@@ -522,7 +499,6 @@ export function parseLicense(params: ParseLicenseParams): LicenseAnalysis {
     retrievedAt: params.retrievedAt,
     rawTextPath: params.rawTextPath,
     overall: {
-      plainLanguageSummary: overallPlainSummary(foundCount, findings.length, overallRiskLevel),
       legalSummary: overallLegalSummary(foundCount, findings.length, overallRiskLevel),
       overallRiskLevel,
     },

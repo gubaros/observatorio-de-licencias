@@ -19,7 +19,6 @@
   "retrievedAt": "2026-06-14T17:50:09.884Z",
   "rawTextPath": "data/extracted/anthropic-claude-aup-2026-06-14.txt",
   "overall": {
-    "plainLanguageSummary": "El parser detectó posibles cláusulas en 7 de 22 categorías analizadas. El nivel de riesgo general estimado es \"medium\". Este es un análisis preliminar y automático: la redacción puede no surgir con claridad del texto y requiere revisión legal humana.",
     "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 7. La calificación de riesgo general (medium) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
     "overallRiskLevel": "medium"
   },
@@ -41,7 +40,6 @@
     "privacy": {
       "status": "found",
       "riskLevel": "medium",
-      "plainLanguageSummary": "El documento parece referirse a cómo se procesan los datos personales del usuario. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -63,7 +61,6 @@
     "training_use": {
       "status": "found",
       "riskLevel": "high",
-      "plainLanguageSummary": "El documento parece referirse a si el proveedor podría usar tus conversaciones o archivos para entrenar sus modelos. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -85,7 +82,6 @@
     "input_ip": {
       "status": "unclear",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "Hay señales ambiguas sobre quién es dueño del contenido que ingresás (tus prompts y archivos). No queda claro a partir del texto analizado; conviene una revisión legal humana.",
       "legalSummary": "La redacción relativa a la titularidad de los inputs aportados por el usuario resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -115,7 +111,6 @@
     "output_ip": {
       "status": "unclear",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "Hay señales ambiguas sobre quién es dueño de lo que genera la IA a partir de tus pedidos. No queda claro a partir del texto analizado; conviene una revisión legal humana.",
       "legalSummary": "La redacción relativa a la asignación de titularidad sobre los outputs generados por el servicio resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -145,7 +140,6 @@
     "license_grant": {
       "status": "unclear",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "Hay señales ambiguas sobre qué permisos le das al proveedor sobre tu contenido. No queda claro a partir del texto analizado; conviene una revisión legal humana.",
       "legalSummary": "La redacción relativa a la licencia conferida al proveedor sobre los contenidos del usuario resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -167,7 +161,6 @@
     "data_retention": {
       "status": "not_found",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "No se encontró una cláusula clara sobre cuánto tiempo se conserva tu información en el texto analizado. La ausencia de coincidencias no garantiza que el tema no esté tratado.",
       "legalSummary": "No surge del texto analizado una cláusula expresa sobre los plazos y condiciones de retención de datos del usuario. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
       "evidence": [],
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
@@ -184,7 +177,6 @@
     "data_deletion": {
       "status": "not_found",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "No se encontró una cláusula clara sobre si y cómo podés pedir que borren tu información en el texto analizado. La ausencia de coincidencias no garantiza que el tema no esté tratado.",
       "legalSummary": "No surge del texto analizado una cláusula expresa sobre los mecanismos de supresión o eliminación de datos del usuario. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
       "evidence": [],
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
@@ -201,7 +193,6 @@
     "confidentiality": {
       "status": "unclear",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "Hay señales ambiguas sobre si el proveedor se compromete a mantener tu información en reserva. No queda claro a partir del texto analizado; conviene una revisión legal humana.",
       "legalSummary": "La redacción relativa a las obligaciones de confidencialidad aplicables al proveedor resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -227,7 +218,6 @@
     "security": {
       "status": "found",
       "riskLevel": "medium",
-      "plainLanguageSummary": "El documento parece referirse a qué medidas de seguridad dice tomar el proveedor. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a las medidas técnicas y organizativas de seguridad declaradas. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -257,7 +247,6 @@
     "security_duty": {
       "status": "not_found",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "No se encontró una cláusula clara sobre si el proveedor asume un compromiso concreto de seguridad en el texto analizado. La ausencia de coincidencias no garantiza que el tema no esté tratado.",
       "legalSummary": "No surge del texto analizado una cláusula expresa sobre la existencia de un deber de seguridad exigible al proveedor. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
       "evidence": [],
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
@@ -274,7 +263,6 @@
     "warranties": {
       "status": "not_found",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "No se encontró una cláusula clara sobre qué garantiza (o no garantiza) el proveedor sobre el servicio en el texto analizado. La ausencia de coincidencias no garantiza que el tema no esté tratado.",
       "legalSummary": "No surge del texto analizado una cláusula expresa sobre las garantías otorgadas y los disclaimers de garantía. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
       "evidence": [],
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
@@ -291,7 +279,6 @@
     "liability_limitation": {
       "status": "not_found",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "No se encontró una cláusula clara sobre hasta dónde responde el proveedor si algo sale mal en el texto analizado. La ausencia de coincidencias no garantiza que el tema no esté tratado.",
       "legalSummary": "No surge del texto analizado una cláusula expresa sobre el régimen de exclusión o limitación de responsabilidad. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
       "evidence": [],
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
@@ -308,7 +295,6 @@
     "indemnity": {
       "status": "not_found",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "No se encontró una cláusula clara sobre si tenés que defender o pagar al proveedor ante reclamos de terceros en el texto analizado. La ausencia de coincidencias no garantiza que el tema no esté tratado.",
       "legalSummary": "No surge del texto analizado una cláusula expresa sobre las obligaciones de indemnidad a cargo del usuario. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
       "evidence": [],
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
@@ -325,7 +311,6 @@
     "governing_law": {
       "status": "found",
       "riskLevel": "medium",
-      "plainLanguageSummary": "El documento parece referirse a qué ley rige el contrato. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a la ley aplicable al contrato. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -351,7 +336,6 @@
     "jurisdiction": {
       "status": "unclear",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "Hay señales ambiguas sobre qué tribunales resolverían un conflicto. No queda claro a partir del texto analizado; conviene una revisión legal humana.",
       "legalSummary": "La redacción relativa a la jurisdicción y el foro competente resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -377,7 +361,6 @@
     "arbitration": {
       "status": "not_found",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "No se encontró una cláusula clara sobre si tenés que resolver disputas por arbitraje y si renunciás a demandas colectivas en el texto analizado. La ausencia de coincidencias no garantiza que el tema no esté tratado.",
       "legalSummary": "No surge del texto analizado una cláusula expresa sobre el sometimiento a arbitraje y la renuncia a acciones colectivas. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
       "evidence": [],
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
@@ -394,7 +377,6 @@
     "unilateral_changes": {
       "status": "unclear",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "Hay señales ambiguas sobre si el proveedor puede cambiar las reglas cuando quiera. No queda claro a partir del texto analizado; conviene una revisión legal humana.",
       "legalSummary": "La redacción relativa a las facultades de modificación unilateral de los términos resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -424,7 +406,6 @@
     "plan_differences": {
       "status": "unclear",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "Hay señales ambiguas sobre si las reglas cambian según el plan que tengas (gratis, pago, empresa). No queda claro a partir del texto analizado; conviene una revisión legal humana.",
       "legalSummary": "La redacción relativa a las diferencias de régimen entre planes gratuitos, pagos y enterprise/business/team resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -446,7 +427,6 @@
     "minors": {
       "status": "found",
       "riskLevel": "medium",
-      "plainLanguageSummary": "El documento parece referirse a qué dice el documento sobre el uso por menores de edad. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a el tratamiento del uso del servicio por menores de edad. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -468,7 +448,6 @@
     "prohibited_content": {
       "status": "found",
       "riskLevel": "medium",
-      "plainLanguageSummary": "El documento parece referirse a qué usos del servicio están prohibidos. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a las restricciones de uso y las categorías de contenido prohibido. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {
@@ -494,7 +473,6 @@
     "commercial_use": {
       "status": "not_found",
       "riskLevel": "unknown",
-      "plainLanguageSummary": "No se encontró una cláusula clara sobre si podés usar el servicio con fines comerciales en el texto analizado. La ausencia de coincidencias no garantiza que el tema no esté tratado.",
       "legalSummary": "No surge del texto analizado una cláusula expresa sobre la habilitación o restricción del uso comercial del servicio. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
       "evidence": [],
       "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
@@ -511,7 +489,6 @@
     "api_references": {
       "status": "found",
       "riskLevel": "low",
-      "plainLanguageSummary": "El documento parece referirse a si el documento menciona el uso de APIs y sus condiciones. La redacción sugiere que existe una cláusula relacionada, pero hay que revisar esta parte con más detalle.",
       "legalSummary": "Se identifican pasajes vinculados a las condiciones aplicables al uso de APIs. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
       "evidence": [
         {

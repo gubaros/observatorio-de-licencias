@@ -10,12 +10,11 @@ const valid = {
   sourceUrl: null,
   retrievedAt: "2026-06-14",
   rawTextPath: "data/raw/x.txt",
-  overall: { plainLanguageSummary: "p", legalSummary: "l", overallRiskLevel: "medium" },
+  overall: { legalSummary: "l", overallRiskLevel: "medium" },
   categories: {
     privacy: {
       status: "found",
       riskLevel: "medium",
-      plainLanguageSummary: "p",
       legalSummary: "l",
       evidence: [{ quote: "[MOCK CLAUSE] ...", locationHint: "x" }],
       notes: "n",
