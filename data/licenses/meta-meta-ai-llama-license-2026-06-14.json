@@ -4,6 +4,10 @@
   "productName": "Meta AI / Llama",
   "productTier": "All",
   "documentType": "Copyright / IP Policy",
+  "softwareCategory": "ai_provider",
+  "comparisonGroup": "ai",
+  "comparativeBaseline": false,
+  "academicPurposeNotes": "",
   "contractingMode": "all",
   "appliesToModes": [
     "open_source"

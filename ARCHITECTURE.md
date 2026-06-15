@@ -279,6 +279,43 @@ nombra el campo real que lo disparó) y `sourceAnalysisIds`, que enlaza de vuelt
 - No modela jurisdicciones ni tipos de organización específicos.
 - Las recomendaciones son **preliminares**: priorizan revisión legal humana, no la reemplazan.
 
+## Taxonomía de software: IA y software tradicional
+
+Para encuadrar la IA dentro de una visión académica, el modelo distingue proveedores de IA de
+**software tradicional de referencia**. Tres campos nuevos (en `LicenseAnalysisSchema` y en el
+`ProductSchema` del registro):
+
+- **`softwareCategory`** — `ai_provider` · `email` · `productivity_suite` · `social_network` ·
+  `mobile_operating_system` · `mobile_device_ecosystem` · `developer_platform` · `cloud_platform` · `other`.
+- **`comparisonGroup`** — `ai` · `traditional_software` · `social_platform` · `mobile_ecosystem`.
+- **`comparativeBaseline`** (booleano) — marca un producto incorporado como punto de comparación.
+- **`academicPurposeNotes`** (string, opcional).
+
+**Autoridad y propagación.** El registro de fuentes (`data/sources/providers.json`) es la autoridad: la
+taxonomía se declara a **nivel producto**. La ingesta (`src/lib/ingest.ts`) y `parse:all` inyectan esos
+campos en cada análisis desde el producto del registro. Los campos son opcionales-con-default
+(`ai_provider`/`ai`/`false`), por lo que los análisis previos validan sin tocarse; un test verifica que los
+datos cargados realmente lleven `comparisonGroup`.
+
+**Por qué se agrega software tradicional.** Comparar IA con herramientas ya normalizadas (Gmail, Microsoft
+365, LinkedIn, X, Android, Apple) permite observar qué riesgos son específicos o más intensos en IA y cuáles
+ya estaban presentes en el software cotidiano. Es un recurso **pedagógico/comparativo**, no un ranking.
+
+**Cómo se evita mezclar categorías sin etiquetar.** La UI nunca presenta IA y software tradicional en una
+grilla indiferenciada: la home separa *escenarios de uso jurídico* (capa principal) de *comparaciones
+académicas* (capa secundaria); la tabla y la matriz exponen el grupo comparativo como filtro y etiqueta; la
+matriz tiene un modo "IA vs software tradicional".
+
+**Cómo se comparan riesgos.** Misma grilla de categorías jurídicas para ambos grupos, pero **sin forzar
+equivalencias**: p. ej. el "uso de datos para entrenamiento o mejora de modelos" puede ser central en IA y
+aparecer como "mejora de servicios/analytics" en software tradicional. La comparación siempre remite al texto
+fuente. Las fuentes no obtenidas con certeza quedan `needs_manual_review` (no se infiere contenido).
+
+**Relación con los escenarios.** Los *escenarios de uso jurídico* son evaluables (motor `evaluateScenario`,
+per-documento). Los *escenarios académicos* (`kind: "academic"`) **no** pasan por el motor: linkean a las
+vistas de comparación. Así la capa de decisión práctica (jurídica) y la capa de estudio (académica) conviven
+sin contaminarse.
+
 ## Límites del MVP
 
 - Heurística léxica (no semántica): falsos positivos/negativos posibles.

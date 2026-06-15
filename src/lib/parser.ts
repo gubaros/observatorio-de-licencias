@@ -19,6 +19,8 @@ import type {
   PrivacyProfile,
   PrivacyPosture,
   SourceScope,
+  SoftwareCategory,
+  ComparisonGroup,
 } from "./schema";
 import { STRONG_MODE_PHRASES, DIFFERENTIATION_CUE, type ContractingMode } from "./contractingModes";
 import type { RiskLevel } from "./types";
@@ -40,6 +42,11 @@ export interface ParseLicenseParams {
   contractingMode?: ContractingMode;
   appliesToModes?: ContractingMode[];
   sourceScope?: SourceScope;
+  // --- Taxonomía de software (autoridad: el registro). Default IA. ---
+  softwareCategory?: SoftwareCategory;
+  comparisonGroup?: ComparisonGroup;
+  comparativeBaseline?: boolean;
+  academicPurposeNotes?: string;
 }
 
 const MAX_EVIDENCE_PER_CATEGORY = 3;
@@ -490,6 +497,10 @@ export function parseLicense(params: ParseLicenseParams): LicenseAnalysis {
     productName: params.productName,
     productTier: params.productTier,
     documentType: params.documentType,
+    softwareCategory: params.softwareCategory ?? "ai_provider",
+    comparisonGroup: params.comparisonGroup ?? "ai",
+    comparativeBaseline: params.comparativeBaseline ?? false,
+    academicPurposeNotes: params.academicPurposeNotes ?? "",
     contractingMode,
     appliesToModes: docAppliesTo,
     sourceScope: modeMeta.scope,

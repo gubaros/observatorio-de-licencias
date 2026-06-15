@@ -18,6 +18,10 @@
             "Team",
             "Enterprise"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-use",
@@ -98,6 +102,10 @@
             "Enterprise",
             "API"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "consumer-terms",
@@ -195,6 +203,10 @@
             "Advanced",
             "Workspace"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-service",
@@ -206,8 +218,8 @@
               ],
               "sourceScope": "general",
               "sourceUrl": "https://policies.google.com/terms",
-              "sourceStatus": "verified",
-              "lastCheckedAt": "2026-06-14T17:50:15.967Z",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": "2026-06-15T13:43:02.665Z",
               "httpStatus": 200,
               "finalUrl": "https://policies.google.com/terms",
               "notes": "URL candidata; verificar con sources:verify"
@@ -222,8 +234,8 @@
               ],
               "sourceScope": "general",
               "sourceUrl": "https://policies.google.com/privacy",
-              "sourceStatus": "verified",
-              "lastCheckedAt": "2026-06-14T17:50:16.650Z",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": "2026-06-15T13:43:03.323Z",
               "httpStatus": 200,
               "finalUrl": "https://policies.google.com/privacy",
               "notes": "URL candidata; verificar con sources:verify"
@@ -238,11 +250,88 @@
               ],
               "sourceScope": "general",
               "sourceUrl": "https://policies.google.com/terms/generative-ai/use-policy",
-              "sourceStatus": "verified",
-              "lastCheckedAt": "2026-06-14T17:50:17.075Z",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": "2026-06-15T13:43:03.757Z",
               "httpStatus": 200,
               "finalUrl": "https://policies.google.com/terms/generative-ai/use-policy",
               "notes": "URL candidata; verificar con sources:verify"
+            }
+          ]
+        },
+        {
+          "productId": "gmail",
+          "productName": "Gmail",
+          "tiers": [
+            "Free",
+            "Workspace"
+          ],
+          "softwareCategory": "email",
+          "comparisonGroup": "traditional_software",
+          "comparativeBaseline": true,
+          "academicPurposeNotes": "Producto incorporado como punto de comparación frente a proveedores de IA.",
+          "documents": [
+            {
+              "documentId": "terms-of-service",
+              "documentType": "Terms of Service",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://policies.google.com/terms",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": "2026-06-15T13:43:04.395Z",
+              "httpStatus": 200,
+              "finalUrl": "https://policies.google.com/terms",
+              "notes": "Términos generales de Google (aplican a Gmail). Alcance general del ecosistema; revisar manualmente."
+            },
+            {
+              "documentId": "privacy-policy",
+              "documentType": "Privacy Policy",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://policies.google.com/privacy",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": "2026-06-15T13:43:04.843Z",
+              "httpStatus": 200,
+              "finalUrl": "https://policies.google.com/privacy",
+              "notes": "Política de privacidad general de Google (aplica a Gmail). Revisar manualmente."
+            }
+          ]
+        },
+        {
+          "productId": "android",
+          "productName": "Android",
+          "tiers": [],
+          "softwareCategory": "mobile_operating_system",
+          "comparisonGroup": "mobile_ecosystem",
+          "comparativeBaseline": true,
+          "academicPurposeNotes": "Producto incorporado como punto de comparación frente a proveedores de IA.",
+          "documents": [
+            {
+              "documentId": "terms-of-service",
+              "documentType": "Google Terms of Service",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "mixed",
+              "sourceUrl": "https://policies.google.com/terms",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": "2026-06-15T13:43:05.291Z",
+              "httpStatus": 200,
+              "finalUrl": "https://policies.google.com/terms",
+              "notes": "El ecosistema Android no surge de un documento específico; se usan términos generales de Google. Alcance dudoso: requiere revisión manual."
+            },
+            {
+              "documentId": "privacy-policy",
+              "documentType": "Privacy Policy",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "mixed",
+              "sourceUrl": "https://policies.google.com/privacy",
+              "sourceStatus": "needs_manual_review",
+              "lastCheckedAt": "2026-06-15T13:43:05.747Z",
+              "httpStatus": 200,
+              "finalUrl": "https://policies.google.com/privacy",
+              "notes": "Privacidad general de Google aplicable a Android. Alcance dudoso: requiere revisión manual."
             }
           ]
         }
@@ -268,6 +357,10 @@
             "Microsoft 365",
             "Enterprise"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "services-agreement",
@@ -281,7 +374,7 @@
               "sourceScope": "general",
               "sourceUrl": "https://www.microsoft.com/en-us/servicesagreement",
               "sourceStatus": "verified",
-              "lastCheckedAt": "2026-06-14T17:50:18.017Z",
+              "lastCheckedAt": "2026-06-15T13:43:07.359Z",
               "httpStatus": 200,
               "finalUrl": "https://www.microsoft.com/en-us/servicesagreement",
               "notes": "URL candidata; verificar con sources:verify"
@@ -298,10 +391,51 @@
               "sourceScope": "general",
               "sourceUrl": "https://privacy.microsoft.com/en-us/privacystatement",
               "sourceStatus": "verified",
-              "lastCheckedAt": "2026-06-14T17:50:19.870Z",
+              "lastCheckedAt": "2026-06-15T13:43:08.668Z",
               "httpStatus": 200,
               "finalUrl": "https://www.microsoft.com/en-us/privacy/privacystatement",
               "notes": "URL candidata; verificar con sources:verify"
+            }
+          ]
+        },
+        {
+          "productId": "microsoft-365",
+          "productName": "Microsoft 365",
+          "tiers": [
+            "Personal",
+            "Business",
+            "Enterprise"
+          ],
+          "softwareCategory": "productivity_suite",
+          "comparisonGroup": "traditional_software",
+          "comparativeBaseline": true,
+          "academicPurposeNotes": "Producto incorporado como punto de comparación frente a proveedores de IA.",
+          "documents": [
+            {
+              "documentId": "services-agreement",
+              "documentType": "Microsoft Services Agreement",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://www.microsoft.com/en-us/servicesagreement/",
+              "sourceStatus": "verified",
+              "lastCheckedAt": "2026-06-15T13:43:09.489Z",
+              "httpStatus": 200,
+              "finalUrl": "https://www.microsoft.com/en-us/servicesagreement/",
+              "notes": "Acuerdo de servicios de Microsoft (cubre Microsoft 365 de consumo). Revisar alcance por modalidad."
+            },
+            {
+              "documentId": "privacy-statement",
+              "documentType": "Privacy Statement",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://privacy.microsoft.com/en-us/privacystatement",
+              "sourceStatus": "verified",
+              "lastCheckedAt": "2026-06-15T13:43:10.059Z",
+              "httpStatus": 200,
+              "finalUrl": "https://www.microsoft.com/en-us/privacy/privacystatement",
+              "notes": "Declaración de privacidad de Microsoft. Revisar manualmente."
             }
           ]
         }
@@ -327,6 +461,10 @@
             "Consumer",
             "Llama (open weights)"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "llama-license",
@@ -381,6 +519,10 @@
             "Pro",
             "API"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-use",
@@ -439,6 +581,10 @@
             "Premium",
             "API"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-service",
@@ -497,6 +643,10 @@
             "Pro",
             "Enterprise"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-service",
@@ -555,6 +705,10 @@
             "Production",
             "Enterprise"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-use",
@@ -613,6 +767,10 @@
             "Membership",
             "API"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-use",
@@ -670,6 +828,10 @@
             "Pro",
             "Mega"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-service",
@@ -728,6 +890,10 @@
             "Unlimited",
             "Enterprise"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-use",
@@ -788,6 +954,10 @@
             "Pro",
             "Enterprise"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-service",
@@ -846,6 +1016,10 @@
             "Pro",
             "Enterprise"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-service",
@@ -905,6 +1079,10 @@
             "Provisioned",
             "Enterprise"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "service-terms",
@@ -980,6 +1158,10 @@
             "Standard",
             "Enterprise"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "privacy-statement",
@@ -1039,6 +1221,10 @@
             "Creative Cloud",
             "Enterprise"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-use",
@@ -1098,6 +1284,10 @@
             "Business",
             "Enterprise"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-service",
@@ -1176,6 +1366,10 @@
             "Core",
             "Teams"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-service",
@@ -1234,6 +1428,10 @@
             "Premium",
             "Enterprise"
           ],
+          "softwareCategory": "ai_provider",
+          "comparisonGroup": "ai",
+          "comparativeBaseline": false,
+          "academicPurposeNotes": "",
           "documents": [
             {
               "documentId": "terms-of-service",
@@ -1289,6 +1487,163 @@
       "metadata": {
         "needsManualSourceReview": true,
         "notes": ""
+      }
+    },
+    {
+      "providerId": "linkedin",
+      "providerName": "LinkedIn",
+      "officialDomains": [
+        "linkedin.com"
+      ],
+      "products": [
+        {
+          "productId": "linkedin",
+          "productName": "LinkedIn",
+          "tiers": [
+            "Free",
+            "Premium"
+          ],
+          "softwareCategory": "social_network",
+          "comparisonGroup": "social_platform",
+          "comparativeBaseline": true,
+          "academicPurposeNotes": "Producto incorporado como punto de comparación frente a proveedores de IA.",
+          "documents": [
+            {
+              "documentId": "user-agreement",
+              "documentType": "User Agreement",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://www.linkedin.com/legal/user-agreement",
+              "sourceStatus": "verified",
+              "lastCheckedAt": "2026-06-15T13:43:11.285Z",
+              "httpStatus": 200,
+              "finalUrl": "https://www.linkedin.com/legal/user-agreement",
+              "notes": "Software tradicional de referencia. Pendiente de verificación e ingesta."
+            },
+            {
+              "documentId": "privacy-policy",
+              "documentType": "Privacy Policy",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://www.linkedin.com/legal/privacy-policy",
+              "sourceStatus": "verified",
+              "lastCheckedAt": "2026-06-15T13:43:11.904Z",
+              "httpStatus": 200,
+              "finalUrl": "https://www.linkedin.com/legal/privacy-policy",
+              "notes": "Software tradicional de referencia. Pendiente de verificación e ingesta."
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "needsManualSourceReview": true,
+        "notes": "Red social profesional incorporada como punto de comparación académico."
+      }
+    },
+    {
+      "providerId": "x",
+      "providerName": "X",
+      "officialDomains": [
+        "x.com",
+        "twitter.com"
+      ],
+      "products": [
+        {
+          "productId": "x",
+          "productName": "X",
+          "tiers": [
+            "Free",
+            "Premium"
+          ],
+          "softwareCategory": "social_network",
+          "comparisonGroup": "social_platform",
+          "comparativeBaseline": true,
+          "academicPurposeNotes": "Producto incorporado como punto de comparación frente a proveedores de IA.",
+          "documents": [
+            {
+              "documentId": "terms-of-service",
+              "documentType": "Terms of Service",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://x.com/en/tos",
+              "sourceStatus": "verified",
+              "lastCheckedAt": "2026-06-15T13:43:12.727Z",
+              "httpStatus": 200,
+              "finalUrl": "https://x.com/en/tos",
+              "notes": "Software tradicional de referencia. Pendiente de verificación e ingesta."
+            },
+            {
+              "documentId": "privacy-policy",
+              "documentType": "Privacy Policy",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://x.com/en/privacy",
+              "sourceStatus": "verified",
+              "lastCheckedAt": "2026-06-15T13:43:12.985Z",
+              "httpStatus": 200,
+              "finalUrl": "https://x.com/en/privacy",
+              "notes": "Software tradicional de referencia. Pendiente de verificación e ingesta."
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "needsManualSourceReview": true,
+        "notes": "Red social incorporada como punto de comparación académico."
+      }
+    },
+    {
+      "providerId": "apple",
+      "providerName": "Apple",
+      "officialDomains": [
+        "apple.com"
+      ],
+      "products": [
+        {
+          "productId": "apple-ios",
+          "productName": "Apple devices / iOS",
+          "tiers": [],
+          "softwareCategory": "mobile_device_ecosystem",
+          "comparisonGroup": "mobile_ecosystem",
+          "comparativeBaseline": true,
+          "academicPurposeNotes": "Producto incorporado como punto de comparación frente a proveedores de IA.",
+          "documents": [
+            {
+              "documentId": "privacy-policy",
+              "documentType": "Apple Privacy Policy",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "general",
+              "sourceUrl": "https://www.apple.com/legal/privacy/",
+              "sourceStatus": "unsupported_format",
+              "lastCheckedAt": "2026-06-15T13:43:13.734Z",
+              "httpStatus": 200,
+              "finalUrl": "https://www.apple.com/legal/privacy/",
+              "notes": "Política de privacidad de Apple. Aplicable al ecosistema; revisar manualmente."
+            },
+            {
+              "documentId": "media-services-terms",
+              "documentType": "Apple Media Services Terms",
+              "contractingMode": "all",
+              "appliesToModes": [],
+              "sourceScope": "mixed",
+              "sourceUrl": "https://www.apple.com/legal/internet-services/itunes/",
+              "sourceStatus": "verified",
+              "lastCheckedAt": "2026-06-15T13:43:13.899Z",
+              "httpStatus": 200,
+              "finalUrl": "https://www.apple.com/legal/internet-services/itunes/",
+              "notes": "Términos de servicios de Apple. Los términos de iOS/dispositivo no surgen de un documento único claro: alcance dudoso, requiere revisión manual."
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "needsManualSourceReview": true,
+        "notes": "Ecosistema móvil incorporado como punto de comparación académico."
       }
     }
   ]

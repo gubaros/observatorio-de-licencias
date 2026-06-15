@@ -6,10 +6,12 @@ import type { LicenseAnalysis, CategoryFinding } from "@/lib/schema";
 import type { RiskLevel } from "@/lib/types";
 import { MATRIX_CATEGORIES } from "@/lib/categories";
 import { CONTRACTING_MODES } from "@/lib/contractingModes";
-import { sourceKind, MODE_LABELS, ALL_MODE_EXPLANATION } from "@/lib/analysisMeta";
+import { sourceKind, MODE_LABELS, ALL_MODE_EXPLANATION, COMPARISON_GROUP_LABEL } from "@/lib/analysisMeta";
 
 type SourceFilter = "all" | "verified" | "unverified";
-type View = "mode" | "provider";
+type View = "mode" | "provider" | "group";
+
+const GROUP_ORDER: Record<string, number> = { ai: 0, traditional_software: 1, social_platform: 2, mobile_ecosystem: 3 };
 
 const DATA_ROWS = new Set(["privacy", "training_use", "data_retention", "data_deletion"]);
 const MODE_ORDER = new Map(CONTRACTING_MODES.map((m, i) => [m, i]));
@@ -34,6 +36,7 @@ export function ComparisonMatrix({ analyses }: { analyses: LicenseAnalysis[] }) 
   const [risk, setRisk] = useState("");
   const [posture, setPosture] = useState("");
   const [review, setReview] = useState("");
+  const [group, setGroup] = useState("");
 
   const options = useMemo(() => {
     const uniq = (xs: string[]) => Array.from(new Set(xs)).sort();
@@ -55,9 +58,15 @@ export function ComparisonMatrix({ analyses }: { analyses: LicenseAnalysis[] }) 
       if (risk && a.overall.overallRiskLevel !== risk) return false;
       if (posture && a.privacy.posture !== posture) return false;
       if (review && a.metadata.reviewStatus !== review) return false;
+      if (group && a.comparisonGroup !== group) return false;
       return true;
     });
     out.sort((a, b) => {
+      if (view === "group") {
+        const d = (GROUP_ORDER[a.comparisonGroup] ?? 99) - (GROUP_ORDER[b.comparisonGroup] ?? 99);
+        if (d !== 0) return d;
+        return a.providerName.localeCompare(b.providerName) || a.documentType.localeCompare(b.documentType);
+      }
       if (view === "mode") {
         const d = (MODE_ORDER.get(a.contractingMode) ?? 99) - (MODE_ORDER.get(b.contractingMode) ?? 99);
         if (d !== 0) return d;
@@ -66,12 +75,13 @@ export function ComparisonMatrix({ analyses }: { analyses: LicenseAnalysis[] }) 
       return a.providerName.localeCompare(b.providerName) || a.productName.localeCompare(b.productName) || a.documentType.localeCompare(b.documentType);
     });
     return out;
-  }, [analyses, view, source, provider, product, modality, docType, risk, posture, review]);
+  }, [analyses, view, source, provider, product, modality, docType, risk, posture, review, group]);
 
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-end gap-3 rounded border border-slate-200 bg-white p-3 text-sm">
-        <Segmented label="Comparar por" value={view} onChange={(v) => setView(v as View)} options={[{ value: "mode", label: "Modalidad" }, { value: "provider", label: "Proveedor" }]} />
+        <Segmented label="Comparar por" value={view} onChange={(v) => setView(v as View)} options={[{ value: "mode", label: "Modalidad" }, { value: "provider", label: "Proveedor" }, { value: "group", label: "IA vs tradicional" }]} />
+        <Sel label="Grupo" value={group} onChange={setGroup} options={["ai", "traditional_software", "social_platform", "mobile_ecosystem"]} render={(g) => COMPARISON_GROUP_LABEL[g] ?? g} />
         <Sel label="Modalidad" value={modality} onChange={setModality} options={options.modalities} render={(m) => MODE_LABELS[m as keyof typeof MODE_LABELS] ?? m} />
         <Sel label="Proveedor" value={provider} onChange={setProvider} options={options.providers} />
         <Sel label="Producto" value={product} onChange={setProduct} options={options.products} />
@@ -83,8 +93,20 @@ export function ComparisonMatrix({ analyses }: { analyses: LicenseAnalysis[] }) 
         <span className="ml-auto text-xs text-slate-500">{filtered.length} de {analyses.length}</span>
       </div>
 
+      {(view === "group" || group) && (
+        <p className="rounded border border-l-4 border-slate-200 border-l-gold-500 bg-white p-3 text-xs leading-relaxed text-slate-600">
+          En proveedores de IA, la categoría &quot;uso de datos para entrenamiento o mejora de modelos&quot; puede tener
+          mayor centralidad. En software tradicional, puede aparecer bajo fórmulas más generales de mejora de
+          servicios, analytics o personalización. La comparación requiere revisión del texto fuente.
+        </p>
+      )}
+
       {filtered.length === 0 ? (
-        <p className="text-sm text-slate-500">Ningún análisis coincide con los filtros.</p>
+        <p className="rounded border border-dashed border-slate-300 bg-white p-6 text-center text-sm text-slate-500">
+          {group && group !== "ai"
+            ? "Todavía no hay documentos de software tradicional ingeridos para este grupo. Las fuentes están registradas y pendientes de verificación e ingesta."
+            : "Ningún análisis coincide con los filtros."}
+        </p>
       ) : (
         <div className="overflow-x-auto rounded border border-slate-200 bg-white">
           <table className="min-w-full border-collapse text-xs">
@@ -97,6 +119,7 @@ export function ComparisonMatrix({ analyses }: { analyses: LicenseAnalysis[] }) 
                     <div className="text-slate-500">{a.productName}</div>
                     <div className="mt-0.5 text-slate-700">{MODE_LABELS[a.contractingMode]}</div>
                     <div className="text-[11px] text-slate-400">{a.documentType}</div>
+                    <div className="text-[11px] text-slate-400">{COMPARISON_GROUP_LABEL[a.comparisonGroup] ?? a.comparisonGroup}</div>
                   </th>
                 ))}
               </tr>

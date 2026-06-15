@@ -272,6 +272,11 @@ export async function ingestDocument(flat: FlatDocument, opts: IngestOptions = {
     contractingMode: document.contractingMode,
     appliesToModes: document.appliesToModes,
     sourceScope: document.sourceScope,
+    // Taxonomía de software: autoridad del registro (nivel producto).
+    softwareCategory: product.softwareCategory,
+    comparisonGroup: product.comparisonGroup,
+    comparativeBaseline: product.comparativeBaseline,
+    academicPurposeNotes: product.academicPurposeNotes,
   });
 
   const realAnalysis: LicenseAnalysis = {

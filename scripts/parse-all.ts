@@ -76,6 +76,21 @@ async function main() {
         };
     if (match) fromRegistry++;
 
+    // Taxonomía de software: del registro si hay match; si no, preservar la existente.
+    const taxonomy = match
+      ? {
+          softwareCategory: match.product.softwareCategory,
+          comparisonGroup: match.product.comparisonGroup,
+          comparativeBaseline: match.product.comparativeBaseline,
+          academicPurposeNotes: match.product.academicPurposeNotes,
+        }
+      : {
+          softwareCategory: existing.softwareCategory,
+          comparisonGroup: existing.comparisonGroup,
+          comparativeBaseline: existing.comparativeBaseline,
+          academicPurposeNotes: existing.academicPurposeNotes,
+        };
+
     const fresh = parseLicense({
       id: existing.id,
       providerName: existing.providerName,
@@ -88,6 +103,7 @@ async function main() {
       rawText,
       isMock: existing.metadata.isMock,
       ...mode,
+      ...taxonomy,
     });
 
     // Preserva metadatos de ingesta/revisión; actualiza lo que produce el parser.

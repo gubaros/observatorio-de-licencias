@@ -4,6 +4,10 @@
   "productName": "AWS Bedrock",
   "productTier": "All",
   "documentType": "Service Terms",
+  "softwareCategory": "ai_provider",
+  "comparisonGroup": "ai",
+  "comparativeBaseline": false,
+  "academicPurposeNotes": "",
   "contractingMode": "all",
   "appliesToModes": [
     "api",

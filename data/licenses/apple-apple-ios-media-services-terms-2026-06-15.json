@@ -1,0 +1,459 @@
+{
+  "id": "apple-apple-ios-media-services-terms-2026-06-15",
+  "providerName": "Apple",
+  "productName": "Apple devices / iOS",
+  "productTier": "All",
+  "documentType": "Apple Media Services Terms",
+  "softwareCategory": "mobile_device_ecosystem",
+  "comparisonGroup": "mobile_ecosystem",
+  "comparativeBaseline": true,
+  "academicPurposeNotes": "Producto incorporado como punto de comparación frente a proveedores de IA.",
+  "contractingMode": "all",
+  "appliesToModes": [],
+  "sourceScope": "general",
+  "modeConfidence": "high",
+  "modeRationale": "El documento aplica de forma general: no surge del texto una diferenciación clara por modalidad de contratación.",
+  "sourceUrl": "https://www.apple.com/legal/internet-services/itunes/",
+  "retrievedAt": "2026-06-15T13:43:13.734Z",
+  "rawTextPath": "data/extracted/apple-apple-ios-media-services-terms-2026-06-15.txt",
+  "overall": {
+    "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 13. La calificación de riesgo general (high) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
+    "overallRiskLevel": "high"
+  },
+  "privacy": {
+    "posture": "weak",
+    "rationale": "Perfil preliminar (no es conclusión jurídica). La redacción sugiere usos amplios de datos y/o controles poco claros de retención o eliminación. Requiere revisión legal humana. Señales: unclear_deletion, confidentiality_commitment, broad_license.",
+    "signals": [
+      "unclear_deletion",
+      "confidentiality_commitment",
+      "broad_license"
+    ],
+    "evidence": []
+  },
+  "categories": {
+    "privacy": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… as described in http://support.apple.com/HT212361 . D. PRIVACY Your use of our Services is subject to Apple’s Privacy Policy, which is available at https://www.apple.com/legal/privacy . E. ACCESSIBILITY To learn about accessibility features …",
+          "locationHint": "coincidencia: \"privacy policy\" (~offset 6562)"
+        },
+        {
+          "quote": "… inaccurate, or harmful content; - post personal, private or confidential information belonging to others; - request personal information from a minor; - impersonate or misrepresent your affiliation with another person, or entity; - post or transmit spam, …",
+          "locationHint": "coincidencia: \"personal information\" (~offset 18174)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy, personal information.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "training_use": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "input_ip": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a la titularidad de los inputs aportados por el usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… behavior that entitles Apple to a corresponding counterclaim. C. ACCOUNT Using our Services and accessing your Content may require an Apple Account. An Apple Account (previously called an Apple ID) is the account you use across Apple’s …",
+          "locationHint": "coincidencia: \"your content\" (~offset 5190)"
+        },
+        {
+          "quote": "… - It is your responsibility not to lose, destroy, or damage Content once downloaded. We encourage you to back up your Content regularly. - You may not tamper with or circumvent any security technology included with the Services or Content. - You …",
+          "locationHint": "coincidencia: \"your content\" (~offset 8686)"
+        },
+        {
+          "quote": "… after which it cannot be downloaded, redownloaded, or otherwise accessed from Apple. We encourage you to back up your Content regularly. I. SUBSCRIPTIONS The Services and certain Apps may allow you to access Content or Services on a subscription …",
+          "locationHint": "coincidencia: \"your content\" (~offset 13171)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: your content.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "output_ip": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre la asignación de titularidad sobre los outputs generados por el servicio. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "license_grant": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a la licencia conferida al proveedor sobre los contenidos del usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… Except to the extent prohibited by law, you hereby grant Apple a worldwide, royalty-free, perpetual, nonexclusive license to use the materials you submit within the Services and related marketing as well as to use the materials you submit for Apple …",
+          "locationHint": "coincidencia: \"license to use\" (~offset 17526)"
+        },
+        {
+          "quote": "… Guidelines: You may not use the Services to: - post any materials that (i) you do not have permission, right or license to use, or (ii) infringe on the rights of any third party; - post objectionable, offensive, unlawful, deceptive, inaccurate, …",
+          "locationHint": "coincidencia: \"license to use\" (~offset 17937)"
+        },
+        {
+          "quote": "… not expressly granted to you under this Standard EULA. a. Scope of License: Licensor grants to you a nontransferable license to use the Licensed Application on any Apple-branded products that you own or control and as permitted by the Usage Rules. The …",
+          "locationHint": "coincidencia: \"license to use\" (~offset 27038)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: license to use.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "data_retention": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a los plazos y condiciones de retención de datos del usuario resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… AND EQUIPMENT L. YOUR SUBMISSIONS TO OUR SERVICES M. FAMILY SHARING N. SEASON PASS AND MULTI-PASS O. ADDITIONAL APP STORE TERMS P. ADDITIONAL TERMS FOR APP STORE, APPLE BOOKS, APPLE PODCASTS, AND SELECT CONTENT Q. ADDITIONAL APPLE MUSIC …",
+          "locationHint": "coincidencia: \"store\" (~offset 608)"
+        },
+        {
+          "quote": "… may be offered through the Services by Apple or a third party. Examples of Services include, where available, App Store, Subscriptions (as defined below), Apple Arcade, Apple Books, Apple Fitness+, Apple Games, Game Center, Apple Music, …",
+          "locationHint": "coincidencia: \"store\" (~offset 1193)"
+        },
+        {
+          "quote": "… Ltd., then that entity is the merchant of record for some Content you acquire from Apple Books, Apple Podcasts, or App Store as displayed on the product page and/or during the acquisition process for the relevant Service. In such case, you …",
+          "locationHint": "coincidencia: \"store\" (~offset 2331)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: store.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "data_deletion": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre los mecanismos de supresión o eliminación de datos del usuario. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "confidentiality": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las obligaciones de confidencialidad aplicables al proveedor. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… post objectionable, offensive, unlawful, deceptive, inaccurate, or harmful content; - post personal, private or confidential information belonging to others; - request personal information from a minor; - impersonate or misrepresent your affiliation with …",
+          "locationHint": "coincidencia: \"confidential information\" (~offset 18118)"
+        },
+        {
+          "quote": "… and also requires a Game Center account. Your account is valuable, and you are responsible for maintaining its confidentiality and security. Apple is not responsible for any losses arising from the unauthorized use of your account. Please contact …",
+          "locationHint": "coincidencia: \"confidentiality\" (~offset 5490)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: confidential information, confidentiality.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "security": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a las medidas técnicas y organizativas de seguridad declaradas resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… a Game Center account. Your account is valuable, and you are responsible for maintaining its confidentiality and security. Apple is not responsible for any losses arising from the unauthorized use of your account. Please contact Apple if you …",
+          "locationHint": "coincidencia: \"security\" (~offset 5510)"
+        },
+        {
+          "quote": "… once downloaded. We encourage you to back up your Content regularly. - You may not tamper with or circumvent any security technology included with the Services or Content. - You may access our Services only using Apple’s software, and may …",
+          "locationHint": "coincidencia: \"security\" (~offset 8754)"
+        },
+        {
+          "quote": "… OR GUARANTEE THAT THE SERVICES WILL BE FREE FROM LOSS, CORRUPTION, ATTACK, VIRUSES, INTERFERENCE, HACKING, OR OTHER SECURITY INTRUSION, AND YOU HEREBY RELEASE APPLE FROM ANY LIABILITY RELATING THERETO. YOU SHALL BE RESPONSIBLE FOR BACKING UP …",
+          "locationHint": "coincidencia: \"security\" (~offset 47261)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: security.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "security_duty": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre la existencia de un deber de seguridad exigible al proveedor. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "warranties": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a las garantías otorgadas y los disclaimers de garantía. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… LAW, THE LICENSED APPLICATION AND ANY SERVICES PERFORMED OR PROVIDED BY THE LICENSED APPLICATION ARE PROVIDED \"AS IS\" AND “AS AVAILABLE,” WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND, AND LICENSOR HEREBY DISCLAIMS ALL WARRANTIES AND …",
+          "locationHint": "coincidencia: \"as is\" (~offset 30884)"
+        },
+        {
+          "quote": "… You agree to use iCloud Music Library only for lawfully acquired content. iCloud Music Library is provided on an “AS IS” basis and could contain errors or inaccuracies. You should back up your data and information prior to using iCloud …",
+          "locationHint": "coincidencia: \"as is\" (~offset 38563)"
+        },
+        {
+          "quote": "… THE SERVICES AND ALL CONTENT DELIVERED TO YOU THROUGH THE SERVICES ARE (EXCEPT AS EXPRESSLY STATED BY APPLE) PROVIDED \"AS IS\" AND \"AS AVAILABLE\" FOR YOUR USE, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ALL IMPLIED …",
+          "locationHint": "coincidencia: \"as is\" (~offset 45298)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: as is.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "liability_limitation": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a el régimen de exclusión o limitación de responsabilidad. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… ON APPLICABLE STATUTORY RIGHTS OF A CONSUMER, SO THE ABOVE EXCLUSION AND LIMITATIONS MAY NOT APPLY TO YOU. f. Limitation of Liability. TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL LICENSOR BE LIABLE FOR PERSONAL INJURY OR ANY INCIDENTAL, …",
+          "locationHint": "coincidencia: \"limitation of liability\" (~offset 31801)"
+        },
+        {
+          "quote": "… EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR PERSONAL INJURY, OR OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU. In no event …",
+          "locationHint": "coincidencia: \"limitation of liability\" (~offset 32563)"
+        },
+        {
+          "quote": "… IF ADVISED OF THEIR POSSIBILITY. BECAUSE SOME COUNTRIES, STATES OR JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR THE LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, IN SUCH COUNTRIES, STATES OR JURISDICTIONS, APPLE'S LIABILITY SHALL BE LIMITED …",
+          "locationHint": "coincidencia: \"limitation of liability\" (~offset 46610)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: limitation of liability.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "indemnity": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a las obligaciones de indemnidad a cargo del usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… educational or government institution and any part of this Agreement, such as, by way of example, all or part of the indemnification section, is invalid or unenforceable against you because of applicable local, national, state or federal law, then that …",
+          "locationHint": "coincidencia: \"indemnification\" (~offset 48824)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: indemnification.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "governing_law": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a la ley aplicable al contrato. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… governs: If you are a citizen of any European Union country or the United Kingdom, Switzerland, Norway or Iceland, the governing law and forum shall be the laws and courts of your usual place of residence. Specifically excluded from application to this …",
+          "locationHint": "coincidencia: \"governing law\" (~offset 35710)"
+        },
+        {
+          "quote": "… deemed invalid or unenforceable, as the case may be, and instead construed in a manner most consistent with applicable governing law. GOVERNING LAW Except to the extent expressly provided in the following paragraph or to the extent required by …",
+          "locationHint": "coincidencia: \"governing law\" (~offset 49096)"
+        },
+        {
+          "quote": "… governs: If you are a citizen of any European Union country or the United Kingdom, Switzerland, Norway or Iceland, the governing law and forum shall be the laws and courts of your usual place of residence. Specifically excluded from application to this …",
+          "locationHint": "coincidencia: \"governing law\" (~offset 50275)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: governing law.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "jurisdiction": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a la jurisdicción y el foro competente. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… the State of California, excluding its conflicts of law provisions. You and Apple agree to submit to the personal and exclusive jurisdiction of the courts located within the county of Santa Clara, California, to resolve any dispute or claim arising from this …",
+          "locationHint": "coincidencia: \"exclusive jurisdiction\" (~offset 34919)"
+        },
+        {
+          "quote": "… law set forth below, without regard to any conflict of law provisions, and you hereby irrevocably submit to the non-exclusive jurisdiction of the courts located in the state, province or country identified below whose law governs: If you are a citizen of any …",
+          "locationHint": "coincidencia: \"exclusive jurisdiction\" (~offset 35485)"
+        },
+        {
+          "quote": "… the State of California, excluding its conflicts of law provisions. You and Apple agree to submit to the personal and exclusive jurisdiction of the courts located within the county of Santa Clara, California, to resolve any dispute or claim arising from this …",
+          "locationHint": "coincidencia: \"exclusive jurisdiction\" (~offset 49484)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: exclusive jurisdiction.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "arbitration": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre el sometimiento a arbitraje y la renuncia a acciones colectivas. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "unilateral_changes": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a las facultades de modificación unilateral de los términos resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… hours before the free trial ends. We reserve the right to cancel your Subscription if you do not agree to material changes to the Subscription for which we require your consent, or if we are unable to successfully charge your payment method …",
+          "locationHint": "coincidencia: \"changes\" (~offset 14578)"
+        },
+        {
+          "quote": "… Country), it cannot be turned on anymore. Ask to Buy does not require Purchase Sharing to be enabled. Family Member changes: When a Family member leaves or is removed from the Family, the remaining Family members may no longer be able to …",
+          "locationHint": "coincidencia: \"changes\" (~offset 21426)"
+        },
+        {
+          "quote": "… Ltd., located at Hollyhill Industrial Estate, Hollyhill, Cork, Republic of Ireland, for all other users. CONTRACT CHANGES Apple reserves the right at any time to modify this Agreement and to add new or additional terms or conditions on your …",
+          "locationHint": "coincidencia: \"changes\" (~offset 41362)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: changes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "plan_differences": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las diferencias de régimen entre planes gratuitos, pagos y enterprise/business/team. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… stickers, and Subscriptions made available in such apps or App Clips. - Individuals acting on behalf of a commercial enterprise, governmental organization or educational institution (an “Enterprise”) may download and sync non-Arcade Apps for use …",
+          "locationHint": "coincidencia: \"enterprise\" (~offset 10528)"
+        },
+        {
+          "quote": "… sync non-Arcade Apps for use by either (i) a single individual on one (1) or more devices owned or controlled by an Enterprise; or (ii) multiple individuals on a single shared device owned or controlled by an Enterprise. For the sake of clarity, …",
+          "locationHint": "coincidencia: \"enterprise\" (~offset 10744)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: enterprise.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "minors": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a el tratamiento del uso del servicio por menores de edad. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… guardian of any Family member for whom Ask to Buy is activated. Ask to Buy is enabled by default for any Family member under the age of thirteen (13) (or the equivalent minimum age in their Home Country) and stays on until deactivated by the parent or …",
+          "locationHint": "coincidencia: \"under the age of\" (~offset 21033)"
+        },
+        {
+          "quote": "… contact Apple if you suspect that your account has been compromised. You must be age thirteen (13) (or equivalent minimum age in your Home Country, as set forth in the Apple Account creation process) to create an account and use our Services. …",
+          "locationHint": "coincidencia: \"minimum age\" (~offset 5732)"
+        },
+        {
+          "quote": "… Country) or older and the parent or legal guardian of any Family member under age thirteen (13) (or the equivalent minimum age in their Home Country as set forth in the registration process). Apple devices are required for access to all of the …",
+          "locationHint": "coincidencia: \"minimum age\" (~offset 19013)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: under the age of, minimum age.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "prohibited_content": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las restricciones de uso y las categorías de contenido prohibido. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… illegal content, please let us know at reportaproblem.apple.com or by contacting Apple Support. Except to the extent prohibited by law, you hereby grant Apple a worldwide, royalty-free, perpetual, nonexclusive license to use the materials you …",
+          "locationHint": "coincidencia: \"prohibited\" (~offset 17433)"
+        },
+        {
+          "quote": "… Application, any updates, or any part thereof (except as and only to the extent that any foregoing restriction is prohibited by applicable law or to the extent as may be permitted by the licensing terms governing use of any open-sourced …",
+          "locationHint": "coincidencia: \"prohibited\" (~offset 28212)"
+        },
+        {
+          "quote": "… A CONSUMER, SO THE ABOVE EXCLUSION AND LIMITATIONS MAY NOT APPLY TO YOU. f. Limitation of Liability. TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL LICENSOR BE LIABLE FOR PERSONAL INJURY OR ANY INCIDENTAL, SPECIAL, INDIRECT, OR CONSEQUENTIAL …",
+          "locationHint": "coincidencia: \"prohibited\" (~offset 31844)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: prohibited.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "commercial_use": {
+      "status": "found",
+      "riskLevel": "low",
+      "legalSummary": "Se identifican pasajes vinculados a la habilitación o restricción del uso comercial del servicio. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… use such proprietary information or materials in any way whatsoever except for use of the Services for personal, noncommercial uses in compliance with this Agreement. No portion of the Content or Services may be transferred or reproduced in any form …",
+          "locationHint": "coincidencia: \"commercial use\" (~offset 42645)"
+        },
+        {
+          "quote": "… that you are following these Usage Rules. All Services: - You may use the Services and Content only for personal, noncommercial purposes (except as set forth in the App Store Content section below or as otherwise specified by Apple). - Apple’s delivery of …",
+          "locationHint": "coincidencia: \"commercial purposes\" (~offset 7216)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: commercial use, commercial purposes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "api_references": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre las condiciones aplicables al uso de APIs. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    }
+  },
+  "metadata": {
+    "createdAt": "2026-06-15T13:43:13.898Z",
+    "parserVersion": "0.2.0",
+    "isMock": false,
+    "reviewStatus": "unreviewed",
+    "retrievedAt": "2026-06-15T13:43:13.734Z",
+    "fetcherVersion": "0.1.0",
+    "contentHash": "sha256:8b51a650130d29d7cc90e73890b055aa3ef48ec4e48657cd7316a1313176aee8",
+    "sourceVerified": true,
+    "sourceStatus": "verified",
+    "extractionMethod": "html-to-text",
+    "canonicalUrl": "https://www.apple.com/legal/internet-services/itunes/",
+    "finalUrl": "https://www.apple.com/legal/internet-services/itunes/",
+    "fetchedPath": "data/fetched/apple-apple-ios-media-services-terms-2026-06-15.html",
+    "extractedTextPath": "data/extracted/apple-apple-ios-media-services-terms-2026-06-15.txt",
+    "extractedChars": 52987,
+    "providerId": "apple",
+    "productId": "apple-ios",
+    "documentId": "media-services-terms"
+  }
+}

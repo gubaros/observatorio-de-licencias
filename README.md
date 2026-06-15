@@ -3,9 +3,22 @@
 [![CI](https://github.com/upderecho/observatorio-de-licencias/actions/workflows/ci.yml/badge.svg)](https://github.com/upderecho/observatorio-de-licencias/actions/workflows/ci.yml)
 [![Deploy to GitHub Pages](https://github.com/upderecho/observatorio-de-licencias/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/upderecho/observatorio-de-licencias/actions/workflows/deploy-pages.yml)
 
-**Observatorio simple de licencias de proveedores de IA.**
+**Observatorio académico de condiciones legales de software.**
 
 🌐 **Sitio publicado (solo lectura):** https://upderecho.github.io/observatorio-de-licencias/
+
+## Propósito académico
+
+UP-Law-AILO es un observatorio académico de condiciones legales de software. Su propósito es ayudar a
+**abogados y estudiantes de derecho en América Latina** a comprender, comparar y auditar los términos bajo
+los cuales utilizan herramientas digitales, incluyendo IA, correo, productividad, redes sociales y sistemas
+móviles.
+
+- Busca **mejorar el vínculo entre derecho y software**.
+- Compara **IA con software tradicional** ya normalizado en la práctica profesional (Gmail, Microsoft 365,
+  LinkedIn, X, Android, Apple) como punto de comparación.
+- Trabaja sobre **documentos públicos** (términos de uso, políticas de privacidad, condiciones contractuales).
+- Ofrece **lectura preliminar, trazabilidad y comparación**; **no reemplaza el asesoramiento legal**.
 
 UP-Law-AILO permite cargar manualmente el texto de una licencia, EULA, términos de
 uso o política de privacidad de un proveedor de IA, parsearlo **una sola vez** con
@@ -285,7 +298,26 @@ restrictivo por defecto. Toda orientación queda **sujeta a revisión legal huma
 (`/analysis/[id]`), a su **texto fuente** (`/analysis/[id]/source`) y a la **matriz
 comparativa** (`/compare`), de modo que la orientación sea trazable hasta la cláusula.
 
-La vista de cada escenario vive en `/escenarios/[scenarioId]`.
+La vista de cada escenario vive en `/escenarios/[scenarioId]`. Los **escenarios de uso jurídico son el eje
+principal** de decisión práctica de la experiencia.
+
+## Comparaciones académicas
+
+Además de proveedores de IA, el observatorio incorpora **software tradicional usado por abogados** como
+punto de comparación académico. Permite distinguir qué riesgos son propios de la IA y cuáles ya existían en
+el software cotidiano.
+
+- **Software de referencia:** Gmail (correo), Microsoft 365 (productividad), LinkedIn y X (redes sociales),
+  Android y Apple/iOS (ecosistemas móviles).
+- Cada análisis lleva una **taxonomía** (`softwareCategory`, `comparisonGroup`, `comparativeBaseline`) que
+  evita mezclar IA y software tradicional sin etiquetarlos. Ver `ARCHITECTURE.md`.
+- La **matriz comparativa** (`/compare`) tiene un modo **"IA vs software tradicional"** y un filtro por grupo;
+  la **tabla de evidencia** (`/analyses`) filtra por grupo comparativo.
+- **Sin equivalencias forzadas:** la comparación de categorías entre IA y software tradicional siempre
+  requiere revisión del texto fuente. Las fuentes que no se obtienen con certeza quedan registradas como
+  `needs_manual_review`, no se infiere su contenido.
+- Escenarios académicos (no pasan por el motor de recomendación): *Comparar IA con software tradicional*,
+  *Software cotidiano del abogado*, *Lectura jurídica de software en América Latina*.
 
 ## Diseño de interfaz
 

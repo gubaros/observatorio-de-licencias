@@ -1,0 +1,506 @@
+{
+  "id": "microsoft-microsoft-365-services-agreement-2026-06-15",
+  "providerName": "Microsoft",
+  "productName": "Microsoft 365",
+  "productTier": "All",
+  "documentType": "Microsoft Services Agreement",
+  "softwareCategory": "productivity_suite",
+  "comparisonGroup": "traditional_software",
+  "comparativeBaseline": true,
+  "academicPurposeNotes": "Producto incorporado como punto de comparación frente a proveedores de IA.",
+  "contractingMode": "all",
+  "appliesToModes": [],
+  "sourceScope": "general",
+  "modeConfidence": "high",
+  "modeRationale": "El documento aplica de forma general: no surge del texto una diferenciación clara por modalidad de contratación.",
+  "sourceUrl": "https://www.microsoft.com/en-us/servicesagreement/",
+  "retrievedAt": "2026-06-15T13:43:08.668Z",
+  "rawTextPath": "data/extracted/microsoft-microsoft-365-services-agreement-2026-06-15.txt",
+  "overall": {
+    "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 13. La calificación de riesgo general (high) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
+    "overallRiskLevel": "high"
+  },
+  "privacy": {
+    "posture": "moderate",
+    "rationale": "Perfil preliminar (no es conclusión jurídica). Hay tratamiento de datos con algunas salvaguardas, pero no todas; perfil intermedio. Requiere revisión legal humana. Señales: deletion_control, broad_license.",
+    "signals": [
+      "deletion_control",
+      "broad_license"
+    ],
+    "evidence": []
+  },
+  "categories": {
+    "privacy": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… provider or operator of the Third-Party Apps and Services. The Third-Party Apps and Services may present you with a privacy policy or require you to accept their terms before you can install or use the Third-Party App or Service. See section 13.b for …",
+          "locationHint": "coincidencia: \"privacy policy\" (~offset 21707)"
+        },
+        {
+          "quote": "… providing support services for the application. • 7. ENTIRE AGREEMENT. This agreement, any applicable privacy policy, any additional terms that accompany the application, and the terms for supplements and updates are the entire …",
+          "locationHint": "coincidencia: \"privacy policy\" (~offset 111199)"
+        },
+        {
+          "quote": "… Content or material associated with the unlinked account will no longer be accessible by you. You agree to process any personal information of your Linked Account users in accordance with all applicable data protection laws. Your Skype Manager may be …",
+          "locationHint": "coincidencia: \"personal information\" (~offset 59214)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy, personal information.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "training_use": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… advice. • ii. Reverse Engineering. You may not use the AI services to discover any underlying components of the models, algorithms, and systems. For example, you may not try to determine and remove the weights of models or extract any …",
+          "locationHint": "coincidencia: \"model\" (~offset 83721)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: model.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "input_ip": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a la titularidad de los inputs aportados por el usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… or by continuing to use the Services after being notified of a change to these Terms. Your Privacy Your Content Code of Conduct Using the Services & Support Using Third-Party Apps and …",
+          "locationHint": "coincidencia: \"your content\" (~offset 2088)"
+        },
+        {
+          "quote": "… your Data, and the legal bases we have to process your Data. The Privacy Statement also describes how Microsoft uses your content, which is your communications with others; postings submitted by you to Microsoft via the Services; and the files, …",
+          "locationHint": "coincidencia: \"your content\" (~offset 3593)"
+        },
+        {
+          "quote": "… broadcast, create, generate, or share through the Services or inputs that you submit in order to generate content (\" Your Content \"). Where processing is based on consent and to the extent permitted by law, by agreeing to these Terms, you consent …",
+          "locationHint": "coincidencia: \"your content\" (~offset 3929)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: your content.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "output_ip": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a la asignación de titularidad sobre los outputs generados por el servicio resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… Content. As part of providing the AI services, Microsoft will process and store your inputs to the service as well as output from the service, for purposes of monitoring for and preventing abusive or harmful uses or outputs of the service. • …",
+          "locationHint": "coincidencia: \"output\" (~offset 84379)"
+        },
+        {
+          "quote": "… and suggestions). You'll need to make your own determination regarding the intellectual property rights you have in output content and its usability, taking into account, among other things, your usage scenario(s) and the laws of the relevant …",
+          "locationHint": "coincidencia: \"output\" (~offset 84788)"
+        },
+        {
+          "quote": "… with applicable laws (including, but not limited to, copyright infringement or other claims relating to content output during Your use of the AI services). • ix. Usage Restrictions. In addition to complying with the \"Code of Conduct\" …",
+          "locationHint": "coincidencia: \"output\" (~offset 85963)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: output.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "license_grant": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a la licencia conferida al proveedor sobre los contenidos del usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… to improve Microsoft products and services, you grant to Microsoft a worldwide and royalty-free intellectual property license to use Your Content, for example, to make copies of, retain, transmit, reformat, display, and distribute via communication …",
+          "locationHint": "coincidencia: \"license to use\" (~offset 5564)"
+        },
+        {
+          "quote": "… from Microsoft or any other party. Other than a limited, personal, revocable, non-transferable, non-sublicensable license to use the game currency and virtual goods in the Xbox Services only, you have no right or title in or to any such game …",
+          "locationHint": "coincidencia: \"license to use\" (~offset 46641)"
+        },
+        {
+          "quote": "… Bing Places. When you provide your Data or Your Content to Bing Places, you grant Microsoft a worldwide, royalty-free license to use, reproduce, save, modify, aggregate, promote, transmit, display, and distribute your Data and Your Content (including …",
+          "locationHint": "coincidencia: \"license to use\" (~offset 63327)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: license to use.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "data_retention": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a los plazos y condiciones de retención de datos del usuario resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… a worldwide and royalty-free intellectual property license to use Your Content, for example, to make copies of, retain, transmit, reformat, display, and distribute via communication tools Your Content on the Services. If you publish Your …",
+          "locationHint": "coincidencia: \"retain\" (~offset 5625)"
+        },
+        {
+          "quote": "… provides you with a Skype Number or Skype To Go number, you agree that you do not own the number or have a right to retain that number forever. For more details on Skype Number see https://secure.skype.com/en/skype-number/ . • vii. Skype …",
+          "locationHint": "coincidencia: \"retain\" (~offset 58263)"
+        },
+        {
+          "quote": "… for Your Content that is uploaded, stored, or shared on or through the Services and that the collection, use, and retention of Your Content will not violate any law or rights of others. Microsoft cannot be held responsible for Your Content or …",
+          "locationHint": "coincidencia: \"retention\" (~offset 5144)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: retain, retention.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "data_deletion": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a los mecanismos de supresión o eliminación de datos del usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… to remove excess content or obtain sufficient additional storage after receiving notice from Microsoft, we reserve the right to delete or disable access to Your Content. Read more about Microsoft storage quotas here . Microsoft Cashback • l. Microsoft …",
+          "locationHint": "coincidencia: \"right to delete\" (~offset 71072)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: right to delete.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "confidentiality": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a las obligaciones de confidencialidad aplicables al proveedor resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… account credentials to another user or entity. To protect your account, keep your account details and password confidential. You are responsible for all activity that occurs under your Microsoft account. • ii. Account Use. You must use your …",
+          "locationHint": "coincidencia: \"confidential\" (~offset 11441)"
+        },
+        {
+          "quote": "… in a loss of access to and use of your account and its content. Connecting to the Internet via a corporate or other private network that masks your location may cause charges to be different from those displayed for your actual location. • b. …",
+          "locationHint": "coincidencia: \"private\" (~offset 28997)"
+        },
+        {
+          "quote": "… to six Rewards Accounts. The Rewards Program is solely for your personal and noncommercial use. Use of a virtual private network (VPN) or other technology or service that can be used to mask or obfuscate your geographic location may result …",
+          "locationHint": "coincidencia: \"private\" (~offset 73510)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: confidential, private.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "security": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a las medidas técnicas y organizativas de seguridad declaradas resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… to third-party provider services. Microsoft reserves the right to restrict the export of data that may compromise the security of the services or Microsoft's intellectual property. If you are unable to export your data through these mechanisms, …",
+          "locationHint": "coincidencia: \"security\" (~offset 6738)"
+        },
+        {
+          "quote": "… or unlawfully induce recipients to reveal personal or sensitive information, such as passwords, dates of birth, Social Security numbers, passport numbers, credit card information, financial information, or other sensitive information, or to gain …",
+          "locationHint": "coincidencia: \"security\" (~offset 8046)"
+        },
+        {
+          "quote": "… to redeem your accrued Points, unless we determine that such cancellation must take effect immediately for legal or security reasons. • xii. Other Terms. Microsoft reserves the right to immediately cancel your Rewards Account, disqualify you …",
+          "locationHint": "coincidencia: \"security\" (~offset 80233)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: security.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "security_duty": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre la existencia de un deber de seguridad exigible al proveedor. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "warranties": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a las garantías otorgadas y los disclaimers de garantía. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… OF THE SERVICES. YOU UNDERSTAND THAT USE OF THE SERVICES IS AT YOUR OWN RISK AND THAT WE PROVIDE THE SERVICES ON AN \"AS IS\" BASIS \"WITH ALL FAULTS\" AND \"AS AVAILABLE.\" YOU BEAR THE ENTIRE RISK OF USING THE SERVICES. MICROSOFT DOESN'T …",
+          "locationHint": "coincidencia: \"as is\" (~offset 40518)"
+        },
+        {
+          "quote": "… laws of your state or country don’t permit it to do so. • 10. DISCLAIMER OF WARRANTY. The application is licensed \"as is,\" \"with all faults,\" and \"as available.\" You bear the entire risk as to its quality, safety, comfort, and performance. …",
+          "locationHint": "coincidencia: \"as is\" (~offset 112323)"
+        },
+        {
+          "quote": "… OF THE SERVICES. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAW, WE EXCLUDE ANY IMPLIED WARRANTIES, INCLUDING FOR MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, WORKMANLIKE EFFORT, AND NON-INFRINGEMENT. YOU MAY HAVE …",
+          "locationHint": "coincidencia: \"merchantability\" (~offset 40787)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: as is, merchantability.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "liability_limitation": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a el régimen de exclusión o limitación de responsabilidad. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… License Payment Terms Contracting Entity, Choice of Law, Jurisdiction Warranties Limitation of Liability Service-Specific Terms Xbox Store Microsoft Family Features Group …",
+          "locationHint": "coincidencia: \"limitation of liability\" (~offset 2447)"
+        },
+        {
+          "quote": "… OR THAT CONTENT LOSS WON'T OCCUR, NOR DO WE GUARANTEE ANY CONNECTION TO OR TRANSMISSION FROM THE COMPUTER NETWORKS. Limitation of Liability 13. Limitation of Liability. If you have any basis for recovering damages (including breach of these Terms), you …",
+          "locationHint": "coincidencia: \"limitation of liability\" (~offset 41365)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: limitation of liability.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "indemnity": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre las obligaciones de indemnidad a cargo del usuario. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "governing_law": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a la ley aplicable al contrato. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… to Resolve Disputes. If you live in (or, if a business, your principal place of business is in) the United States, the laws of the state where you live (or, if a business, where your principal place of business is located) govern all claims, regardless of …",
+          "locationHint": "coincidencia: \"laws of the state\" (~offset 39693)"
+        },
+        {
+          "quote": "… 8. APPLICABLE LAW. • a. United States and Canada. If you acquired the application in the United States or Canada, the laws of the state or province where you live (or, if a business, where your principal place of business is located) govern the …",
+          "locationHint": "coincidencia: \"laws of the state\" (~offset 111526)"
+        },
+        {
+          "quote": "… or stop providing a Service or access to Third-Party Apps and Services altogether. Except to the extent required by applicable law, we have no obligation to provide a re-download or replacement of any material, Digital Goods (defined in section …",
+          "locationHint": "coincidencia: \"applicable law\" (~offset 24960)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: laws of the state, applicable law.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "jurisdiction": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a la jurisdicción y el foro competente. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… that the Federal Arbitration Act governs all provisions relating to arbitration. You and we irrevocably consent to the exclusive jurisdiction and venue of the state or federal courts in King County, Washington, for all disputes arising out of or relating to …",
+          "locationHint": "coincidencia: \"exclusive jurisdiction\" (~offset 39985)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: exclusive jurisdiction, venue.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "arbitration": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a el sometimiento a arbitraje y la renuncia a acciones colectivas. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… page. Summary of Arbitration Provisions The Microsoft Services Agreement contains binding arbitration and class action waiver terms that apply to U.S. residents. You and we agree to submit disputes to a neutral arbitrator …",
+          "locationHint": "coincidencia: \"binding arbitration\" (~offset 1100)"
+        },
+        {
+          "quote": "… Services Agreement IF YOU LIVE IN (OR YOUR PRINCIPAL PLACE OF BUSINESS IS IN) THE UNITED STATES, PLEASE READ THE BINDING ARBITRATION CLAUSE AND CLASS ACTION WAIVER IN SECTION 15. IT AFFECTS HOW DISPUTES ARE RESOLVED. These terms (“ Terms ”) cover the …",
+          "locationHint": "coincidencia: \"binding arbitration\" (~offset 1542)"
+        },
+        {
+          "quote": "… 365 Copilot AI Experiences AI Services Communications Services Binding Arbitration and Class Action Waiver Miscellaneous NOTICES STANDARD APPLICATION LICENSE …",
+          "locationHint": "coincidencia: \"binding arbitration\" (~offset 3029)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: binding arbitration.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "unilateral_changes": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las facultades de modificación unilateral de los términos. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… Third-Party Apps and Services Service Availability Updates to the Services or Software, and Changes to These Terms Software License Payment Terms Contracting Entity, Choice of Law, …",
+          "locationHint": "coincidencia: \"changes to these terms\" (~offset 2289)"
+        },
+        {
+          "quote": "… that you store on the Services or store using Third-Party Apps and Services. Updates to the Services or Software, and Changes to These Terms 7. Updates to the Services or Software, and Changes to These Terms. • a. We may change these Terms at any time, and …",
+          "locationHint": "coincidencia: \"changes to these terms\" (~offset 23666)"
+        },
+        {
+          "quote": "… requesting, or linking your Microsoft Account to any Third-Party Apps and Services. Any third-party terms do not modify these Terms. Microsoft does not license any intellectual property to you as part of any Third-Party Apps and Services. You agree to …",
+          "locationHint": "coincidencia: \"modify these terms\" (~offset 22270)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: changes to these terms, modify these terms.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "plan_differences": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a las diferencias de régimen entre planes gratuitos, pagos y enterprise/business/team resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… After that 30- or 60-day period, your Microsoft account will be closed. Please see section 4.a.iv.2 below for an explanation as to what happens when your Microsoft account is closed. Logging back in during the suspension period will …",
+          "locationHint": "coincidencia: \"plan\" (~offset 14012)"
+        },
+        {
+          "quote": "… law to keep it, return it, or transfer it to you or a third party identified by you). You should have a regular backup plan as Microsoft won’t be able to retrieve Your Content or Data once your account is closed. Third, you may lose access to …",
+          "locationHint": "coincidencia: \"plan\" (~offset 14638)"
+        },
+        {
+          "quote": "… associated with your Microsoft account in order to continue accessing such Services. • d. Additional Equipment/Data Plans. To use many of the Services, you’ll need an internet connection and/or data/cellular plan. You might also need …",
+          "locationHint": "coincidencia: \"plan\" (~offset 18259)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: plan.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "minors": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a el tratamiento del uso del servicio por menores de edad resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… this section, please ask your parent or legal guardian for help. If you are the parent or legal guardian of a minor, you and the minor accept and agree to be bound by these Terms and are responsible for all use of the Microsoft account …",
+          "locationHint": "coincidencia: \"minor\" (~offset 13302)"
+        },
+        {
+          "quote": "… by these Terms and are responsible for all use of the Microsoft account or Services, including purchases, whether the minor’s account is now open or created later. • iv. Closing Your Account. • 1. You can cancel specific Services or close …",
+          "locationHint": "coincidencia: \"minor\" (~offset 13474)"
+        },
+        {
+          "quote": "… terms, you must stop using the Services, close your Microsoft account and, if you are a parent or guardian, help your minor child close his or her Microsoft account. • b. Sometimes you’ll need software updates to keep using the Services. We …",
+          "locationHint": "coincidencia: \"minor\" (~offset 24072)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: minor.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "prohibited_content": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las restricciones de uso y las categorías de contenido prohibido. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… leverage safety systems to protect our Services and other users. • i. Policies. Our Code of Conduct identifies what’s prohibited when using our Services. Our content and conduct policies can be found here …",
+          "locationHint": "coincidencia: \"prohibited\" (~offset 15043)"
+        },
+        {
+          "quote": "… from when you download the application. • 11. LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES. To the extent not prohibited by law, if you have any basis for recovering damages, you can recover from the application publisher only direct …",
+          "locationHint": "coincidencia: \"prohibited\" (~offset 113413)"
+        },
+        {
+          "quote": "… outages, and Microsoft is not liable for any disruption or loss you may suffer as a result. In the event of an outage, you may not be able to retrieve Your Content or Data that you’ve stored. We recommend that you regularly backup Your Content and …",
+          "locationHint": "coincidencia: \"you may not\" (~offset 23413)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: prohibited, you may not.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "commercial_use": {
+      "status": "found",
+      "riskLevel": "low",
+      "legalSummary": "Se identifican pasajes vinculados a la habilitación o restricción del uso comercial del servicio. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… as part of your use of the Services. For certain devices, such software may be pre-installed for your personal, non-commercial use of the Services. The software or website that is part of the Services may include third-party code. Any third-party …",
+          "locationHint": "coincidencia: \"commercial use\" (~offset 26433)"
+        },
+        {
+          "quote": "… terms govern if there are any conflicts with the general terms. Xbox • a. Xbox. • i. Personal Noncommercial Use. The Xbox online service, (\"Xbox Network\"), Xbox Game Studios games (https://www.xbox.com/xbox-game-studios), …",
+          "locationHint": "coincidencia: \"commercial use\" (~offset 42703)"
+        },
+        {
+          "quote": "… Gaming), and content provided by Microsoft (collectively, the \" Xbox Services \") are only for your personal and noncommercial use. • ii. Xbox Services. When you sign up to receive Xbox Services, information about your game play, activities and …",
+          "locationHint": "coincidencia: \"commercial use\" (~offset 43067)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: commercial use.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "api_references": {
+      "status": "found",
+      "riskLevel": "low",
+      "legalSummary": "Se identifican pasajes vinculados a las condiciones aplicables al uso de APIs. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… on access to, usage, or availability of the Services (e.g., attempting to “jailbreak” an AI system or impermissible scraping). • vii. Don’t engage in activity that is harmful to you, the Services, or others (e.g., transmitting viruses, …",
+          "locationHint": "coincidencia: \"api\" (~offset 9234)"
+        },
+        {
+          "quote": "… will need to provide the details of your physical location to enable the emergency services to respond to you. • iii. APIs or Broadcasting. If you want to use Skype in connection with any broadcast, you must comply with the \"Broadcast TOS\" …",
+          "locationHint": "coincidencia: \"api\" (~offset 57166)"
+        },
+        {
+          "quote": "… \"Broadcast TOS\" at https://www.skype.com/go/legal.broadcast . If you want to use any application program interface ( \"API\" ) exposed or made available by Skype you must comply with the applicable licensing terms, which are available at …",
+          "locationHint": "coincidencia: \"api\" (~offset 57390)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: api.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    }
+  },
+  "metadata": {
+    "createdAt": "2026-06-15T13:43:09.488Z",
+    "parserVersion": "0.2.0",
+    "isMock": false,
+    "reviewStatus": "unreviewed",
+    "retrievedAt": "2026-06-15T13:43:08.668Z",
+    "fetcherVersion": "0.1.0",
+    "contentHash": "sha256:28b6f157f558f4912fba7e46d325ef46f74ee5a3eba14a2fb9d8e5894a872bf4",
+    "sourceVerified": true,
+    "sourceStatus": "verified",
+    "extractionMethod": "html-to-text",
+    "canonicalUrl": "https://www.microsoft.com/en-us/servicesagreement",
+    "finalUrl": "https://www.microsoft.com/en-us/servicesagreement/",
+    "fetchedPath": "data/fetched/microsoft-microsoft-365-services-agreement-2026-06-15.html",
+    "extractedTextPath": "data/extracted/microsoft-microsoft-365-services-agreement-2026-06-15.txt",
+    "extractedChars": 118016,
+    "providerId": "microsoft",
+    "productId": "microsoft-365",
+    "documentId": "services-agreement"
+  }
+}

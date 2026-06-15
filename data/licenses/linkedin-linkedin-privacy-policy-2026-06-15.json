@@ -1,0 +1,409 @@
+{
+  "id": "linkedin-linkedin-privacy-policy-2026-06-15",
+  "providerName": "LinkedIn",
+  "productName": "LinkedIn",
+  "productTier": "All",
+  "documentType": "Privacy Policy",
+  "softwareCategory": "social_network",
+  "comparisonGroup": "social_platform",
+  "comparativeBaseline": true,
+  "academicPurposeNotes": "Producto incorporado como punto de comparación frente a proveedores de IA.",
+  "contractingMode": "all",
+  "appliesToModes": [],
+  "sourceScope": "general",
+  "modeConfidence": "high",
+  "modeRationale": "El documento aplica de forma general: no surge del texto una diferenciación clara por modalidad de contratación.",
+  "sourceUrl": "https://www.linkedin.com/legal/privacy-policy",
+  "retrievedAt": "2026-06-15T13:43:11.285Z",
+  "rawTextPath": "data/extracted/linkedin-linkedin-privacy-policy-2026-06-15.txt",
+  "overall": {
+    "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 7. La calificación de riesgo general (medium) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
+    "overallRiskLevel": "medium"
+  },
+  "privacy": {
+    "posture": "moderate",
+    "rationale": "Perfil preliminar (no es conclusión jurídica). Hay tratamiento de datos con algunas salvaguardas, pero no todas; perfil intermedio. Requiere revisión legal humana. Señales: retention_controls, unclear_deletion.",
+    "signals": [
+      "retention_controls",
+      "unclear_deletion"
+    ],
+    "evidence": []
+  },
+  "categories": {
+    "privacy": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "Skip to main content Privacy Policy Effective November 3, 2025 Your Privacy Matters LinkedIn’s mission is to connect the world’s professionals to allow …",
+          "locationHint": "coincidencia: \"privacy policy\" (~offset 22)"
+        },
+        {
+          "quote": "… our commitment to be transparent about the data we collect about you, how it is used and with whom it is shared. This Privacy Policy applies when you use our Services (described below). We offer our users choices about the data we collect, use and …",
+          "locationHint": "coincidencia: \"privacy policy\" (~offset 343)"
+        },
+        {
+          "quote": "… Services (described below). We offer our users choices about the data we collect, use and share as described in this Privacy Policy, Cookie Policy , Settings and our Help Center. Key Terms • Choices Settings are available to Members of LinkedIn …",
+          "locationHint": "coincidencia: \"privacy policy\" (~offset 500)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "training_use": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… Services help you connect with others, find and be found for work and business opportunities, stay informed, get training and be more productive. We use your data to authorize access to our Services and honor your settings. Stay …",
+          "locationHint": "coincidencia: \"training\" (~offset 12914)"
+        },
+        {
+          "quote": "… personal data to improve, develop, and provide products and Services, develop and train artificial intelligence (AI) models, develop, provide, and personalize our Services, and gain insights with the help of AI, automated systems, and …",
+          "locationHint": "coincidencia: \"model\" (~offset 12360)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: training, model.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "input_ip": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a la titularidad de los inputs aportados por el usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… you follow certain Members on our site, or suggest related learning content to help you towards that new skill. We use your content, activity and other data, including your name and photo, to provide notices to your network and others. For example, …",
+          "locationHint": "coincidencia: \"your content\" (~offset 15562)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: your content.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "output_ip": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre la asignación de titularidad sobre los outputs generados por el servicio. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "license_grant": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a la licencia conferida al proveedor sobre los contenidos del usuario resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… archive communications with her clients through our Services in order to maintain her professional financial advisor license. 3.3 Others’ Services • You may link your account with others’ services so that they can look up your contacts’ …",
+          "locationHint": "coincidencia: \"license\" (~offset 30301)"
+        },
+        {
+          "quote": "… contacts into its own service. Third-party services have their own privacy policies, and you may be giving them permission to use your data in ways we would not. You may revoke the link with such accounts. The information you make available to …",
+          "locationHint": "coincidencia: \"permission to use\" (~offset 31258)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: license, permission to use.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "data_retention": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a los plazos y condiciones de retención de datos del usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… only in the manner set out in this Privacy Policy unless you agree otherwise. • 4. Your Choices & Obligations 4.1 Data Retention • We keep most of your personal data for as long as your account is open. We generally retain your personal data as …",
+          "locationHint": "coincidencia: \"data retention\" (~offset 35266)"
+        },
+        {
+          "quote": "… 24 hours. We generally delete closed account information within 30 days of account closure, except as noted below. We retain your personal data even after you have closed your account if reasonably necessary to comply with our legal obligations …",
+          "locationHint": "coincidencia: \"we retain\" (~offset 37840)"
+        },
+        {
+          "quote": "… destroyed by breach of any of our physical, technical, or managerial safeguards. 5.2. Cross-Border Data Transfers • We store and use your data outside your country. We process data both inside and outside of the United States and rely on …",
+          "locationHint": "coincidencia: \"we store\" (~offset 39486)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: data retention, we retain, we store.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "data_deletion": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a los mecanismos de supresión o eliminación de datos del usuario resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… in a depersonalized or aggregated form. 4.2 Rights to Access and Control Your Personal Data • You can access or delete your personal data. You have many choices about how your data is collected, used and shared. We provide many choices …",
+          "locationHint": "coincidencia: \"delete\" (~offset 35957)"
+        },
+        {
+          "quote": "… to control and manage the personal data we have about you. For personal data that we have about you, you can: • Delete Data : You can ask us to erase or delete all or some of your personal data (e.g., if it is no longer necessary to …",
+          "locationHint": "coincidencia: \"delete\" (~offset 36427)"
+        },
+        {
+          "quote": "… account, your personal data will generally stop being visible to others on our Services within 24 hours. We generally delete closed account information within 30 days of account closure, except as noted below. We retain your personal data even …",
+          "locationHint": "coincidencia: \"delete\" (~offset 37748)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: delete.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "confidentiality": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a las obligaciones de confidencialidad aplicables al proveedor resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… if you have provided one). • In a group , posts are visible to others according to group type. For example, posts in private groups are visible to others in the group and posts in public groups are visible publicly. Your membership in groups is …",
+          "locationHint": "coincidencia: \"private\" (~offset 27348)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: private.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "security": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las medidas técnicas y organizativas de seguridad declaradas. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… to prevent security breaches. Please use the security features available through our Services. We implement security safeguards designed to protect your data, such as HTTPS. We regularly monitor our systems for possible vulnerabilities and …",
+          "locationHint": "coincidencia: \"safeguards\" (~offset 39082)"
+        },
+        {
+          "quote": "… data may not be accessed, disclosed, altered, or destroyed by breach of any of our physical, technical, or managerial safeguards. 5.2. Cross-Border Data Transfers • We store and use your data outside your country. We process data both inside …",
+          "locationHint": "coincidencia: \"safeguards\" (~offset 39436)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: safeguards, protect your data.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "security_duty": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre la existencia de un deber de seguridad exigible al proveedor. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "warranties": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a las garantías otorgadas y los disclaimers de garantía resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… vulnerabilities and attacks. However, we cannot warrant the security of any information that you send us. There is no guarantee that data may not be accessed, disclosed, altered, or destroyed by breach of any of our physical, technical, or …",
+          "locationHint": "coincidencia: \"guarantee\" (~offset 39303)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: guarantee.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "liability_limitation": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre el régimen de exclusión o limitación de responsabilidad. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "indemnity": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre las obligaciones de indemnidad a cargo del usuario. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "governing_law": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a la ley aplicable al contrato. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… . You may also contact us using the contact information below, and we will consider your request in accordance with applicable laws. Residents in the Designated Countries and the UK , and other regions , may have additional rights under their …",
+          "locationHint": "coincidencia: \"applicable law\" (~offset 37373)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: applicable law.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "jurisdiction": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre la jurisdicción y el foro competente. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "arbitration": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre el sometimiento a arbitraje y la renuncia a acciones colectivas. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "unilateral_changes": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a las facultades de modificación unilateral de los términos resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… subject to this Privacy Policy and other documents referenced in this Privacy Policy, as well as updates. Change • Changes to the Privacy Policy apply to your use of our Services after the “effective date.” LinkedIn (“we” or “us”) can modify …",
+          "locationHint": "coincidencia: \"changes\" (~offset 3039)"
+        },
+        {
+          "quote": "… Services after the “effective date.” LinkedIn (“we” or “us”) can modify this Privacy Policy, and if we make material changes to it, we will provide notice through our Services, or by other means, to provide you the opportunity to review the …",
+          "locationHint": "coincidencia: \"changes\" (~offset 3212)"
+        },
+        {
+          "quote": "… to it, we will provide notice through our Services, or by other means, to provide you the opportunity to review the changes before they become effective. If you object to any changes, you may close your account. You acknowledge that your …",
+          "locationHint": "coincidencia: \"changes\" (~offset 3336)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: changes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "plan_differences": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las diferencias de régimen entre planes gratuitos, pagos y enterprise/business/team. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… or sales history. The data stored about you by these customers is subject to the policies of those customers. Other enterprise Services and features that use your data include TeamLink and LinkedIn Pages (e.g., content analytics and …",
+          "locationHint": "coincidencia: \"enterprise\" (~offset 18253)"
+        },
+        {
+          "quote": "… as a recruiter or sales agent) and related information. We will not show them your job searches or personal messages. Enterprise Accounts Your employer may offer you access to our enterprise Services such as Recruiter, Sales Navigator, LinkedIn …",
+          "locationHint": "coincidencia: \"enterprise\" (~offset 28520)"
+        },
+        {
+          "quote": "… Navigator, LinkedIn Learning or our advertising Campaign Manager. Your employer can review and manage your use of such enterprise Services. Depending on the enterprise Service, before you use such Service, we will ask for permission to share with …",
+          "locationHint": "coincidencia: \"enterprise\" (~offset 28746)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: enterprise.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "minors": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a el tratamiento del uso del servicio por menores de edad resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… to any Member or Visitor to our Services. Our registered users (“Members”) share their professional identities, engage with their network, exchange knowledge and professional insights, post and view relevant content, learn and develop …",
+          "locationHint": "coincidencia: \"age\" (~offset 1189)"
+        },
+        {
+          "quote": "… don’t have to post or upload personal data; though if you don’t, it may limit your ability to grow and engage with your network over our Services. 1.2 Data From Others • Others may post or write about you. Content and …",
+          "locationHint": "coincidencia: \"age\" (~offset 5580)"
+        },
+        {
+          "quote": "… calendar with our Services, associate their contacts with Member profiles, scan and upload business cards, or send messages using our Services (including invites or connection requests). If you or others opt-in to sync email accounts with our …",
+          "locationHint": "coincidencia: \"age\" (~offset 6386)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: age.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "prohibited_content": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las restricciones de uso y las categorías de contenido prohibido. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… We attempt to notify Members about legal demands for their personal data when appropriate in our judgment, unless prohibited by law or court order or when the request is an emergency. We may dispute such demands when we believe, in our …",
+          "locationHint": "coincidencia: \"prohibited\" (~offset 34424)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: prohibited.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "commercial_use": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre la habilitación o restricción del uso comercial del servicio. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "api_references": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a las condiciones aplicables al uso de APIs resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… about you (such as your profile, profiles you have viewed or data provided through address book uploads or partner integrations) to help others find your profile, suggest connections for you and others (e.g. Members who share your contacts or job …",
+          "locationHint": "coincidencia: \"integration\" (~offset 13576)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: integration.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    }
+  },
+  "metadata": {
+    "createdAt": "2026-06-15T13:43:11.903Z",
+    "parserVersion": "0.2.0",
+    "isMock": false,
+    "reviewStatus": "unreviewed",
+    "retrievedAt": "2026-06-15T13:43:11.285Z",
+    "fetcherVersion": "0.1.0",
+    "contentHash": "sha256:3a0c959ee956a7d0ee92218f856973bd7052db94f6e98ac938c300f88de3325f",
+    "sourceVerified": true,
+    "sourceStatus": "verified",
+    "extractionMethod": "html-to-text",
+    "canonicalUrl": "https://www.linkedin.com/legal/privacy-policy",
+    "finalUrl": "https://www.linkedin.com/legal/privacy-policy",
+    "fetchedPath": "data/fetched/linkedin-linkedin-privacy-policy-2026-06-15.html",
+    "extractedTextPath": "data/extracted/linkedin-linkedin-privacy-policy-2026-06-15.txt",
+    "extractedChars": 42385,
+    "providerId": "linkedin",
+    "productId": "linkedin",
+    "documentId": "privacy-policy"
+  }
+}

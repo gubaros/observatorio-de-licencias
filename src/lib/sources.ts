@@ -9,7 +9,7 @@
 
 import { promises as fs } from "node:fs";
 import { z } from "zod";
-import { SourceStatusSchema, ContractingModeSchema, SourceScopeSchema } from "./schema";
+import { SourceStatusSchema, ContractingModeSchema, SourceScopeSchema, SoftwareCategorySchema, ComparisonGroupSchema } from "./schema";
 import { PROVIDERS_JSON, SOURCES_DIR } from "./paths";
 
 export const SourceDocumentSchema = z.object({
@@ -32,6 +32,11 @@ export const ProductSchema = z.object({
   productId: z.string(),
   productName: z.string(),
   tiers: z.array(z.string()).default([]),
+  // --- Taxonomía de software (autoridad del registro) ---
+  softwareCategory: SoftwareCategorySchema.default("ai_provider"),
+  comparisonGroup: ComparisonGroupSchema.default("ai"),
+  comparativeBaseline: z.boolean().default(false),
+  academicPurposeNotes: z.string().default(""),
   documents: z.array(SourceDocumentSchema).default([]),
 });
 

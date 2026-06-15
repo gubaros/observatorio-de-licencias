@@ -76,6 +76,17 @@ de aceptación actuales.
 - [ ] Historial de decisiones (qué escenario se consultó, con qué resultado y cuándo).
 - [ ] Wizard más avanzado (preguntas encadenadas que afinen el escenario).
 
+## Comparaciones académicas y software tradicional
+- [ ] Ampliar el grupo de comparación (WhatsApp, Slack, Zoom, Dropbox, Google Drive).
+- [ ] Ingerir Gmail y Android (hoy verificados pero pendientes: el GET a policies.google.com no rinde texto).
+- [ ] Reintentar Apple Privacy Policy con navegador (hoy `unsupported_format`: SPA / muro de consentimiento).
+- [ ] Profundizar jurisdicción y transferencia internacional de datos como categoría.
+- [ ] Enfoque latinoamericano más explícito (contratación por adhesión, asimetrías proveedor global / usuario local).
+- [ ] Fichas pedagógicas por categoría jurídica.
+- [ ] Exportación de material académico (PDF/CSV de una comparación).
+- [ ] Citas doctrinarias y glosario jurídico-tecnológico.
+- [ ] Mejorar los escenarios académicos (vistas comparativas dedicadas).
+
 ## Calidad
 - [ ] Tests más completos (UI, server actions, casos límite del parser).
 - [ ] Tests de regresión con corpus de documentos mock más amplio.

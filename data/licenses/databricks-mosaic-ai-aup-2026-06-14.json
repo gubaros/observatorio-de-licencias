@@ -4,6 +4,10 @@
   "productName": "Mosaic AI",
   "productTier": "All",
   "documentType": "Acceptable Use Policy",
+  "softwareCategory": "ai_provider",
+  "comparisonGroup": "ai",
+  "comparativeBaseline": false,
+  "academicPurposeNotes": "",
   "contractingMode": "all",
   "appliesToModes": [
     "paid_individual",

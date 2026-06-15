@@ -67,6 +67,26 @@ export const MODE_CONFIDENCE_LABEL: Record<ModeConfidence, string> = {
   unknown: "Desconocida",
 };
 
+// --- Taxonomía de software (IA vs software tradicional) ---
+export const COMPARISON_GROUP_LABEL: Record<string, string> = {
+  ai: "IA",
+  traditional_software: "Software tradicional",
+  social_platform: "Redes sociales",
+  mobile_ecosystem: "Ecosistemas móviles",
+};
+
+export const SOFTWARE_CATEGORY_LABEL: Record<string, string> = {
+  ai_provider: "Proveedor de IA",
+  email: "Correo",
+  productivity_suite: "Productividad",
+  social_network: "Red social",
+  mobile_operating_system: "Sistema operativo móvil",
+  mobile_device_ecosystem: "Ecosistema de dispositivos",
+  developer_platform: "Plataforma de desarrollo",
+  cloud_platform: "Plataforma cloud",
+  other: "Otro",
+};
+
 export const SIGNAL_LABEL: Record<string, string> = {
   no_training_commitment: "Compromiso de no entrenamiento",
   broad_training_use: "Uso amplio para entrenamiento/mejora",
