@@ -237,6 +237,48 @@ Decisiones:
 - **Presentación, no lógica.** Este rediseño no tocó el parser, la ingesta ni el schema: solo
   expone mejor lo que ya existía.
 
+## Capa de escenarios de uso jurídico
+
+Capa de **decisión** sobre el análisis documental, en `src/domain/`. No toca parser, ingesta
+ni schema: lee los análisis existentes y los reordena según el "para qué".
+
+- **`legalUseScenarios.ts`** — catálogo de escenarios (`personal_data`, `client_confidential_information`,
+  `attorney_client_privilege`, `enterprise_api_use`, etc.). Cada escenario declara, en términos de
+  los campos reales del análisis: `priorityCategories` (claves de `categories.ts`),
+  `positiveSignals`/`negativeSignals` (claves reales de `privacy.signals`), `preferredModes`,
+  `sensitivity` y una advertencia. Hay escenarios `kind: "navigation"` (atajos a `/compare` o
+  `/analyses`) que no pasan por el motor.
+- **`evaluateScenario.ts`** — `evaluateScenario(scenarioId, analyses): ScenarioResult[]`.
+  Función **pura, determinística, sin LLM y sin red**.
+
+### Cómo evalúa (y por qué así)
+
+- **Por documento, no por proveedor.** Cada análisis se evalúa solo con su propia evidencia.
+  **No se agregan señales entre documentos** de un mismo proveedor. Esto evita la *fuga de
+  evidencia enterprise*: un DPA o una cláusula de confidencialidad que vive en el documento
+  comercial NO mejora el perfil del documento general/gratuito. La presencia de
+  `enterprise_dpa` en un documento general se trata como **cautela**, no como mejora.
+- **Reglas explícitas por sensibilidad.** Crítico (secreto profesional) exige documento
+  `mode_specific`/business/enterprise/API con compromisos claros; si no, `no recomendado sin
+  enterprise`. Alto exige evidencia enterprise del propio documento. Bajo/medio usan un puntaje
+  transparente (señales a favor − señales en contra + cobertura de categorías ± postura ± riesgo).
+- **No hay recomendación fuerte sin evidencia.** `preferred_with_conditions` exige al menos una
+  señal a favor o cobertura sustantiva de categorías; sin evidencia → `insufficient_information`.
+
+### Relación escenario → análisis → recomendación → evidencia
+
+`LegalUseScenario` (qué priorizar) + `LicenseAnalysis[]` (evidencia documental) → `evaluateScenario`
+→ `ScenarioResult[]`. Cada resultado lleva `reasons`, `cautions`, `missingEvidence` (cada string
+nombra el campo real que lo disparó) y `sourceAnalysisIds`, que enlaza de vuelta al dossier
+(`/analysis/[id]`), al texto fuente (`/analysis/[id]/source`) y a la matriz (`/compare`).
+
+### Limitaciones de la capa de escenarios
+
+- Los pesos y umbrales son heurísticos y fijos (no editables todavía).
+- Hereda los límites del parser léxico: si una cláusula no fue detectada, el escenario no la cuenta.
+- No modela jurisdicciones ni tipos de organización específicos.
+- Las recomendaciones son **preliminares**: priorizan revisión legal humana, no la reemplazan.
+
 ## Límites del MVP
 
 - Heurística léxica (no semántica): falsos positivos/negativos posibles.

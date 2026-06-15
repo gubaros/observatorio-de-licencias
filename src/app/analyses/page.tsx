@@ -20,9 +20,9 @@ export default async function AnalysesPage() {
     <div className="space-y-5">
       <header className="flex flex-col gap-4 border-b border-slate-200 pb-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-2xl">
-          <h1 className="text-2xl font-bold text-slate-900">Tabla de análisis</h1>
+          <h1 className="text-2xl font-bold text-slate-900">Evidencia documental</h1>
           <p className="mt-1 text-sm leading-relaxed text-slate-600">
-            Registro de due diligence documental. Cada fila es el análisis preliminar de un documento,
+            Registro probatorio de due diligence. Cada fila es el análisis preliminar de un documento,
             con su modalidad de contratación, perfil de privacidad, riesgo contractual y trazabilidad de fuente.
           </p>
         </div>

@@ -66,6 +66,16 @@ de aceptación actuales.
 - [ ] Exportación a PDF.
 - [ ] Exportación a CSV de la matriz comparativa.
 
+## Escenarios de uso jurídico
+- [ ] Mejorar las ponderaciones por escenario (pesos por categoría/señal afinados con casos reales).
+- [ ] Revisión humana de las recomendaciones (validar/ajustar la orientación por escenario).
+- [ ] Permitir editar los pesos/umbrales del motor (config, no hardcode).
+- [ ] Perfiles por jurisdicción (p. ej. exigencias distintas según ley aplicable).
+- [ ] Perfiles por tipo de organización (estudio, in-house, sector público, academia).
+- [ ] Exportación de una recomendación por escenario (PDF/CSV con motivos, cautelas y fuentes).
+- [ ] Historial de decisiones (qué escenario se consultó, con qué resultado y cuándo).
+- [ ] Wizard más avanzado (preguntas encadenadas que afinen el escenario).
+
 ## Calidad
 - [ ] Tests más completos (UI, server actions, casos límite del parser).
 - [ ] Tests de regresión con corpus de documentos mock más amplio.

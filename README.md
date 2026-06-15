@@ -256,13 +256,48 @@ preliminar de privacidad** por modalidad: `strong` · `moderate` · `weak` · `u
 
 Se muestra como **"perfil preliminar"**, con señales y evidencia, y siempre sujeto a revisión legal.
 
+## Decisión por escenario de uso
+
+La puerta de entrada (la home, `/`) no es un dashboard de métricas: es una **pantalla de
+decisión jurídica**. El usuario elige *para qué* quiere usar una herramienta de IA y el
+sistema ordena los documentos analizados según ese escenario.
+
+**Qué son los escenarios.** Definidos en `src/domain/legalUseScenarios.ts` (p. ej. *datos
+personales*, *información de clientes*, *secreto profesional*, *enterprise/API*). Cada
+escenario declara, en términos de los campos reales del análisis: categorías jurídicas
+prioritarias, señales de privacidad a favor/en contra, modalidades preferidas, nivel de
+sensibilidad y una advertencia específica.
+
+**Cómo se evalúan.** `evaluateScenario(scenarioId, analyses)` (`src/domain/evaluateScenario.ts`)
+es **determinístico, sin LLM y sin red**. Evalúa **cada documento por separado** y **no agrega
+señales entre documentos** de un mismo proveedor: un DPA o un compromiso de confidencialidad
+que solo aparece en un documento comercial **no** mejora el perfil de un documento
+general/gratuito. Cada resultado cita los campos reales que lo motivaron y referencia el
+`id` del análisis fuente (`sourceAnalysisIds`).
+
+**Recomendaciones prudentes.** Nunca dice "seguro/aprobado/cumple". Usa cinco niveles:
+`Uso preferente con condiciones`, `Usable con cautela`, `Requiere revisión contractual`,
+`No recomendado sin modalidad enterprise/DPA`, `Información insuficiente`. No emite una
+recomendación fuerte sin evidencia, y para escenarios críticos (secreto profesional) es
+restrictivo por defecto. Toda orientación queda **sujeta a revisión legal humana**.
+
+**De la recomendación a la evidencia.** Cada resultado enlaza al **dossier** del documento
+(`/analysis/[id]`), a su **texto fuente** (`/analysis/[id]/source`) y a la **matriz
+comparativa** (`/compare`), de modo que la orientación sea trazable hasta la cláusula.
+
+La vista de cada escenario vive en `/escenarios/[scenarioId]`.
+
 ## Diseño de interfaz
 
-La UI está pensada como una **herramienta de observación jurídica comparada / consola de
-auditoría**, no como un catálogo de tarjetas. Cuatro niveles:
+La UI se organiza en cuatro capas: **decisión** (home por escenario) → **orientación**
+(vista de escenario) → **análisis** (matriz comparativa) → **evidencia** (dossier
+documental). Estética sobria de consola de auditoría, no catálogo de tarjetas.
 
-- **Panel (`/`)** — dashboard ejecutivo: franja de métricas sobria, accesos, advertencia
-  metodológica y criterio resumido. Sin grilla de cards.
+- **Inicio / decisión (`/`)** — pantalla de decisión jurídica: "¿Qué necesitás decidir?",
+  tarjetas de escenarios de uso, orientación rápida y, como bloque **secundario**, la
+  cobertura (métricas) y los accesos a las vistas de análisis. No arranca con métricas.
+- **Orientación por escenario (`/escenarios/[id]`)** — recomendación preliminar por
+  documento para un escenario, con motivos, cautelas, evidencia faltante y enlaces al dossier.
 - **Tabla de análisis (`/analyses`)** — la vista principal, pensada como **registro de due
   diligence documental** a ancho completo. Encabezado con métricas resumidas; toolbar compacta
   con búsqueda prominente, filtros rápidos (modalidad, proveedor, riesgo, privacidad) y

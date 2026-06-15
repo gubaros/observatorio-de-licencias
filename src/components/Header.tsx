@@ -19,8 +19,8 @@ export function Header() {
         </div>
         <nav className="flex flex-wrap items-center gap-1 text-sm">
           {[
-            { href: "/", label: "Panel" },
-            { href: "/analyses", label: "Análisis" },
+            { href: "/", label: "Inicio" },
+            { href: "/analyses", label: "Evidencia" },
             { href: "/providers", label: "Proveedores" },
             { href: "/compare", label: "Comparar" },
             { href: "/differences", label: "Diferencias" },
