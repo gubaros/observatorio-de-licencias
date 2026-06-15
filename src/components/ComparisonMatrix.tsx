@@ -7,7 +7,6 @@ import type { RiskLevel } from "@/lib/types";
 import { MATRIX_CATEGORIES } from "@/lib/categories";
 import { CONTRACTING_MODES } from "@/lib/contractingModes";
 import { sourceKind, MODE_LABELS, ALL_MODE_EXPLANATION } from "@/lib/analysisMeta";
-import { useMode } from "./ModeProvider";
 
 type SourceFilter = "all" | "verified" | "unverified";
 type View = "mode" | "provider";
@@ -26,7 +25,6 @@ const POSTURE_WORD: Record<string, string> = { strong: "fuerte", moderate: "mode
  * proveedor). Sin cápsulas grandes: puntos + texto compacto en cada celda.
  */
 export function ComparisonMatrix({ analyses }: { analyses: LicenseAnalysis[] }) {
-  const { mode } = useMode();
   const [view, setView] = useState<View>("mode");
   const [source, setSource] = useState<SourceFilter>("all");
   const [provider, setProvider] = useState("");
@@ -110,7 +108,7 @@ export function ComparisonMatrix({ analyses }: { analyses: LicenseAnalysis[] }) 
                   {filtered.map((a) => {
                     const f = a.categories[cat.key];
                     if (!f) return <td key={a.id} className="border-l border-slate-100 px-3 py-2 text-slate-300">—</td>;
-                    const summary = mode === "claro" ? f.plainLanguageSummary : f.legalSummary;
+                    const summary = f.legalSummary;
                     return (
                       <td key={a.id} className="border-l border-slate-100 px-3 py-2">
                         <div className="text-slate-700">

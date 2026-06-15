@@ -10,7 +10,7 @@
 UP-Law-AILO permite cargar manualmente el texto de una licencia, EULA, términos de
 uso o política de privacidad de un proveedor de IA, parsearlo **una sola vez** con
 un parser determinístico local, guardar el resultado como JSON en disco y mostrarlo
-en una vista web con dos modos de lenguaje (claro / jurídico) y una matriz comparativa.
+en una vista web con lenguaje jurídico y una matriz comparativa.
 
 > ⚠️ **No es asesoramiento legal.** Es una herramienta de análisis preliminar,
 > trazabilidad y lectura comparada. Todo resultado queda sujeto a revisión legal humana.
@@ -24,7 +24,7 @@ en una vista web con dos modos de lenguaje (claro / jurídico) y una matriz comp
 - Persistencia en **archivos JSON en disco** (sin base de datos).
 - Cada conclusión está respaldada por **evidencia textual** citada del documento.
 - Lenguaje **deliberadamente prudente** (nunca "cumple / no cumple").
-- Toggle global **lenguaje claro** (no abogados) / **lenguaje jurídico** (abogados).
+- Resúmenes y hallazgos en **lenguaje jurídico**.
 - **Matriz comparativa** entre proveedores, productos y planes, con filtros.
 - Solo se muestran datos **reales**: si hay análisis se presentan, si no, no.
 - Ingesta opcional con **navegador headless** para fuentes que bloquean un GET simple.
@@ -271,8 +271,8 @@ auditoría**, no como un catálogo de tarjetas. Cuatro niveles:
   documentos existen y cuáles faltan por modalidad.
 - **Dossier jurídico (`/analysis/[id]`)** — la vista individual como expediente: encabezado,
   advertencia, y bloques separados de **Modalidad**, **Perfil de privacidad**, **Riesgo
-  contractual**, **Revisión** y **Fuente documental**, más el resumen (toggle claro/jurídico)
-  y las categorías como fichas expandibles.
+  contractual**, **Revisión** y **Fuente documental**, más el resumen y las categorías
+  como fichas expandibles.
 - **Criterio de riesgo (`/criteria`)** — explica qué significan y cómo se calculan riesgo,
   privacidad, fuente verificada y revisión, con las definiciones de cada nivel y los límites
   del parser.

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Lora, Inter } from "next/font/google";
 import "./globals.css";
-import { ModeProvider } from "@/components/ModeProvider";
 import { Header } from "@/components/Header";
 import { LegalDisclaimer } from "@/components/Disclaimer";
 
@@ -19,13 +18,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`${lora.variable} ${inter.variable}`}>
       <body className="min-h-screen">
-        <ModeProvider>
-          <Header />
-          <main className="mx-auto max-w-7xl px-4 py-6">{children}</main>
-          <footer className="mx-auto max-w-7xl px-4 py-8">
-            <LegalDisclaimer />
-          </footer>
-        </ModeProvider>
+        <Header />
+        <main className="mx-auto max-w-7xl px-4 py-6">{children}</main>
+        <footer className="mx-auto max-w-7xl px-4 py-8">
+          <LegalDisclaimer />
+        </footer>
       </body>
     </html>
   );

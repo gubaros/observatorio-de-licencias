@@ -3,7 +3,6 @@
 import { useState } from "react";
 import type { CategoryFinding } from "@/lib/schema";
 import type { RiskLevel } from "@/lib/types";
-import { ModeText } from "./ModeToggle";
 import { EvidencePanel } from "./EvidencePanel";
 import { MODE_LABELS } from "@/lib/analysisMeta";
 
@@ -22,7 +21,7 @@ const RISK_DOT: Record<RiskLevel, string> = { low: "text-emerald-600", medium: "
 
 /**
  * Ficha de análisis jurídico de una categoría. Sobria y expandible, no una
- * tarjeta decorativa. Mantiene toggle de lenguaje, evidencia y modalidad.
+ * tarjeta decorativa. Muestra el resumen jurídico, evidencia y modalidad.
  */
 export function LegalCategorySection({ label, finding }: { label: string; finding: CategoryFinding }) {
   const [open, setOpen] = useState(false);
@@ -62,9 +61,7 @@ export function LegalCategorySection({ label, finding }: { label: string; findin
           )}
           <div>
             <span className="text-xs uppercase tracking-wide text-slate-400">Resumen</span>
-            <p className="text-slate-700">
-              <ModeText plain={finding.plainLanguageSummary} legal={finding.legalSummary} />
-            </p>
+            <p className="text-slate-700">{finding.legalSummary}</p>
           </div>
           <div>
             <span className="text-xs uppercase tracking-wide text-slate-400">Evidencia textual disponible</span>

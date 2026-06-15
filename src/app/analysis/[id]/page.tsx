@@ -4,7 +4,6 @@ import { loadLicenseAnalysis, loadAllLicenseAnalyses } from "@/lib/storage";
 import { CATEGORIES } from "@/lib/categories";
 import { LegalDossierHeader } from "@/components/LegalDossierHeader";
 import { ModeIndicator, PrivacyIndicator, RiskIndicator, SourceIndicator, ReviewIndicator } from "@/components/indicators";
-import { ModeText } from "@/components/ModeToggle";
 import { LegalCategorySection } from "@/components/LegalCategorySection";
 
 // Pre-genera una página por cada análisis en data/licenses (export estático).
@@ -46,9 +45,7 @@ export default async function AnalysisPage({ params }: { params: Promise<{ id: s
 
       <section className="border-t-2 border-slate-200 pt-3">
         <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">Resumen general</h2>
-        <p className="text-sm text-slate-700">
-          <ModeText plain={analysis.overall.plainLanguageSummary} legal={analysis.overall.legalSummary} />
-        </p>
+        <p className="text-sm text-slate-700">{analysis.overall.legalSummary}</p>
       </section>
 
       <section>
