@@ -12,8 +12,7 @@ export default async function ComparePage() {
       <div>
         <h1 className="text-2xl font-bold text-slate-900">Matriz comparativa</h1>
         <p className="text-slate-600">
-          Categorías jurídicas (filas) frente a proveedor / producto / plan (columnas). Usá el toggle
-          de lenguaje del encabezado para alternar entre lenguaje claro y jurídico.
+          Categorías jurídicas (filas) frente a proveedor / producto / plan (columnas).
         </p>
       </div>
 

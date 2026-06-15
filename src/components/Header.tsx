@@ -1,11 +1,10 @@
 import Link from "next/link";
-import { ModeToggle } from "./ModeToggle";
 
 // En el sitio estático de GitHub Pages no hay servidor: la carga web (/upload)
 // no se incluye en ese build. La ingesta ahí es 100% local por CLI.
 const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === "true";
 
-/** Cabecera con navegación principal y el toggle global de lenguaje. */
+/** Cabecera con navegación principal. */
 export function Header() {
   return (
     <header className="border-b-2 border-gold-500 bg-slate-900 text-white">
@@ -39,7 +38,6 @@ export function Header() {
               + Cargar licencia
             </Link>
           )}
-          <ModeToggle />
         </nav>
       </div>
     </header>
