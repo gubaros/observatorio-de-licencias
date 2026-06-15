@@ -31,7 +31,12 @@ export default async function HomePage() {
 
       {/* Estado del arte: ensayo de cierre, firmado contra el corpus vigente (primer bloque) */}
       <section id="estado-del-arte" className="scroll-mt-24">
-        <h2 className="font-serif text-2xl font-semibold text-slate-900">
+        <p className="text-xs leading-relaxed text-slate-400">
+          Firma del corpus: <code className="text-slate-500">sha256:{sig.shortHash}</code> · {sig.documentCount} documentos ·{" "}
+          {sig.providerCount} proveedores · actualizado {sig.lastUpdated}. Esta opinión es válida en tanto no exista una
+          firma más reciente del corpus; se recalcula con cada actualización de licencias.
+        </p>
+        <h2 className="mt-3 font-serif text-2xl font-semibold text-slate-900">
           Estado del arte: leer software con criterio jurídico
         </h2>
         <div className="mt-3 max-w-3xl space-y-4 text-base leading-relaxed text-slate-700">
@@ -70,11 +75,6 @@ export default async function HomePage() {
             leer y por qué; la decisión —y la revisión legal humana— siguen siendo indispensables.
           </p>
         </div>
-        <p className="mt-4 text-xs leading-relaxed text-slate-400">
-          Firma del corpus: <code className="text-slate-500">sha256:{sig.shortHash}</code> · {sig.documentCount} documentos ·{" "}
-          {sig.providerCount} proveedores · actualizado {sig.lastUpdated}. Esta firma se recalcula con cada
-          actualización de licencias del corpus.
-        </p>
       </section>
 
       {/* Corpus documental */}
