@@ -11,6 +11,14 @@ const SECONDARY_LINKS: { href: string; label: string }[] = [
   { href: "/criteria", label: "Criterio" },
 ];
 
+// Capa 2: comparaciones académicas (software tradicional como punto de comparación).
+const ACADEMIC_CARDS: { href: string; title: string }[] = [
+  { href: "/compare", title: "IA vs software tradicional" },
+  { href: "/providers", title: "Software cotidiano del abogado" },
+  { href: "/providers", title: "Correo, productividad y redes sociales" },
+  { href: "/providers", title: "Ecosistemas móviles: Android y Apple" },
+];
+
 export default async function HomePage() {
   const analyses = await loadAllLicenseAnalyses();
   const m = computeMetrics(analyses);
@@ -21,13 +29,13 @@ export default async function HomePage() {
       <header className="space-y-3">
         <h1 className="font-serif text-3xl font-bold text-slate-900">UP-Law-AILO</h1>
         <p className="text-base leading-relaxed text-slate-600">
-          Observatorio jurídico para comparar condiciones de uso, privacidad y riesgos contractuales de
-          herramientas de IA.
+          Observatorio jurídico-académico para comparar condiciones de uso, privacidad y riesgos
+          contractuales de herramientas de IA y software cotidiano.
         </p>
         <h2 className="pt-2 font-serif text-xl font-semibold text-slate-900">¿Qué uso querés evaluar?</h2>
       </header>
 
-      {/* B. Escenarios principales */}
+      {/* B. Escenarios de uso jurídico (capa principal) */}
       <section>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {HOME_SCENARIO_CARDS.map((s) => (
@@ -45,26 +53,42 @@ export default async function HomePage() {
           ))}
         </div>
         <div className="mt-3">
-          <Link href="/escenarios" className="text-sm text-sky-700 hover:underline">
-            Ver otros escenarios →
-          </Link>
+          <Link href="/escenarios" className="text-sm text-sky-700 hover:underline">Ver otros escenarios →</Link>
         </div>
       </section>
 
-      {/* C. Accesos secundarios */}
-      <nav className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500">
-        {SECONDARY_LINKS.map((l, i) => (
-          <span key={l.href} className="flex items-center gap-4">
-            {i > 0 && <span className="text-slate-300">·</span>}
-            <Link href={l.href} className="hover:text-slate-800 hover:underline">{l.label}</Link>
-          </span>
-        ))}
-      </nav>
+      {/* C. Comparaciones académicas (capa secundaria, visualmente subordinada) */}
+      <section>
+        <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Comparaciones académicas</h2>
+        <p className="mt-1 max-w-3xl text-sm leading-relaxed text-slate-600">
+          Además de proveedores de IA, el observatorio incorpora software tradicional usado por abogados
+          —correo, productividad, redes sociales y ecosistemas móviles— como punto de comparación. Permite
+          distinguir qué riesgos son propios de la IA y cuáles ya existen en el software cotidiano.
+        </p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {ACADEMIC_CARDS.map((c) => (
+            <Link
+              key={c.title}
+              href={c.href}
+              className="rounded-md border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 hover:bg-slate-50"
+            >
+              {c.title}
+            </Link>
+          ))}
+        </div>
+      </section>
 
-      {/* D. Cobertura actual (una línea). El disclaimer general único vive en el footer del layout. */}
+      {/* D. Propósito académico (breve) */}
+      <p className="text-sm leading-relaxed text-slate-600">
+        Proyecto académico para fortalecer el vínculo entre derecho y software, orientado a abogados y
+        estudiantes de derecho en América Latina. <Link href="/acerca" className="text-sky-700 hover:underline">Acerca del proyecto →</Link>
+      </p>
+
+      {/* E. Advertencia breve (el disclaimer único vive en el footer del layout) */}
+
+      {/* F. Cobertura actual (una línea) */}
       <p className="border-t border-slate-200 pt-4 text-xs text-slate-400">
-        Cobertura actual: {m.providers} proveedores · {m.total} documentos · {m.modesDetected} modalidades ·{" "}
-        {m.verifiedSources} fuentes verificadas
+        Cobertura actual: {m.providers} proveedores · {m.total} documentos · IA y software tradicional · fuentes públicas
       </p>
     </div>
   );

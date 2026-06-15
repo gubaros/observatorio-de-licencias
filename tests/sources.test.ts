@@ -32,9 +32,10 @@ describe("hostMatchesDomains", () => {
 });
 
 describe("registro de proveedores (data/sources/providers.json)", () => {
-  it("valida contra el schema y tiene 20 proveedores", async () => {
+  it("valida contra el schema e incluye proveedores de IA y software tradicional de referencia", async () => {
     const reg = await loadRealRegistry();
-    expect(reg.providers.length).toBe(20);
+    // 20 proveedores de IA + LinkedIn, X y Apple como software/redes de referencia.
+    expect(reg.providers.length).toBe(23);
   });
 
   it("ninguna fuente está 'verified' sin haberse chequeado (verificación ganada, no auto-asignada)", async () => {

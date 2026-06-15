@@ -4,6 +4,10 @@
   "productName": "Grok",
   "productTier": "All",
   "documentType": "Terms of Service",
+  "softwareCategory": "ai_provider",
+  "comparisonGroup": "ai",
+  "comparativeBaseline": false,
+  "academicPurposeNotes": "",
   "contractingMode": "all",
   "appliesToModes": [
     "free",

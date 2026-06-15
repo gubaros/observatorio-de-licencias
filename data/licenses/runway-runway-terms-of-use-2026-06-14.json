@@ -4,6 +4,10 @@
   "productName": "Runway",
   "productTier": "All",
   "documentType": "Terms of Use",
+  "softwareCategory": "ai_provider",
+  "comparisonGroup": "ai",
+  "comparativeBaseline": false,
+  "academicPurposeNotes": "",
   "contractingMode": "all",
   "appliesToModes": [
     "free",

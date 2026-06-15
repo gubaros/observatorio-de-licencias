@@ -19,8 +19,11 @@ export type Sensitivity = "low" | "medium" | "high" | "critical";
 
 export interface LegalUseScenario {
   id: string;
-  /** "evaluable": pasa por el motor. "navigation": es un atajo a una vista existente. */
-  kind: "evaluable" | "navigation";
+  /**
+   * "evaluable": pasa por el motor. "navigation": atajo a una vista existente.
+   * "academic": comparación académica (no per-documento); linkea a una vista.
+   */
+  kind: "evaluable" | "navigation" | "academic";
   /** Frase nominal para el encabezado de la vista de escenario. */
   title: string;
   /** Etiqueta para la tarjeta de la home ("Usar IA con…"). */
@@ -251,6 +254,64 @@ export const LEGAL_USE_SCENARIOS: LegalUseScenario[] = [
     featuredOnHome: false,
     targetHref: "/analyses",
   },
+  // --- Escenarios académicos / comparativos (no pasan por el motor) ---
+  {
+    id: "compare_ai_with_traditional_software",
+    kind: "academic",
+    title: "Comparar IA con software tradicional",
+    cardLabel: "Comparar IA con software tradicional",
+    short: "Diferencias y continuidades jurídicas entre IA, correo, productividad, redes y móvil.",
+    description:
+      "Muestra diferencias y continuidades jurídicas entre proveedores de IA y software tradicional (correo, productividad, redes sociales y sistemas móviles).",
+    sensitivity: "low",
+    priorityCategories: [],
+    preferredModes: [],
+    positiveSignals: [],
+    negativeSignals: [],
+    warning: "",
+    plainLanguageExplanation: "",
+    legalExplanation: "",
+    featuredOnHome: false,
+    targetHref: "/compare",
+  },
+  {
+    id: "lawyer_daily_software_stack",
+    kind: "academic",
+    title: "Software cotidiano del abogado",
+    cardLabel: "Software cotidiano del abogado",
+    short: "Compara las herramientas de uso diario: correo, documentos, redes, móvil e IA.",
+    description:
+      "Compara herramientas que un abogado puede usar a diario: correo, documentos, redes sociales, ecosistemas móviles e IA.",
+    sensitivity: "low",
+    priorityCategories: [],
+    preferredModes: [],
+    positiveSignals: [],
+    negativeSignals: [],
+    warning: "",
+    plainLanguageExplanation: "",
+    legalExplanation: "",
+    featuredOnHome: false,
+    targetHref: "/providers",
+  },
+  {
+    id: "latin_america_legal_education",
+    kind: "academic",
+    title: "Lectura jurídica de software en América Latina",
+    cardLabel: "Lectura jurídica de software en América Latina",
+    short: "Privacidad, jurisdicción, transferencia internacional y contratación por adhesión.",
+    description:
+      "Orienta el análisis hacia la formación jurídica: privacidad, jurisdicción, transferencia internacional de datos, contratación por adhesión y asimetrías entre proveedor global y usuario local.",
+    sensitivity: "low",
+    priorityCategories: [],
+    preferredModes: [],
+    positiveSignals: [],
+    negativeSignals: [],
+    warning: "",
+    plainLanguageExplanation: "",
+    legalExplanation: "",
+    featuredOnHome: false,
+    targetHref: "/acerca",
+  },
 ];
 
 export const SCENARIO_BY_ID: Record<string, LegalUseScenario> = Object.fromEntries(
@@ -259,6 +320,14 @@ export const SCENARIO_BY_ID: Record<string, LegalUseScenario> = Object.fromEntri
 
 /** Escenarios que pasan por el motor (tienen vista /escenarios/[id]). */
 export const EVALUABLE_SCENARIOS = LEGAL_USE_SCENARIOS.filter((s) => s.kind === "evaluable");
+
+/** Escenarios académicos / comparativos (linkean a una vista, no al motor). */
+export const ACADEMIC_SCENARIOS = LEGAL_USE_SCENARIOS.filter((s) => s.kind === "academic");
+
+/** Destino de un escenario: vista propia (evaluable) o atajo (navigation/academic). */
+export function scenarioHref(s: LegalUseScenario): string {
+  return s.kind === "evaluable" ? `/escenarios/${s.id}` : (s.targetHref ?? "/escenarios");
+}
 
 /** Tarjetas principales de la home (las 4 curadas). */
 export const HOME_SCENARIO_CARDS = LEGAL_USE_SCENARIOS.filter((s) => s.featuredOnHome);

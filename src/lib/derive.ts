@@ -85,6 +85,7 @@ export interface AnalysisFilterState {
   source: string; // "" | "verified" | "unverified"
   review: string;
   kind: string; // "" | "real" | "mock"
+  comparisonGroup: string; // "" | "ai" | "traditional_software" | "social_platform" | "mobile_ecosystem"
 }
 
 export const EMPTY_FILTERS: AnalysisFilterState = {
@@ -97,6 +98,7 @@ export const EMPTY_FILTERS: AnalysisFilterState = {
   source: "",
   review: "",
   kind: "",
+  comparisonGroup: "",
 };
 
 export function filterAnalyses(analyses: LicenseAnalysis[], f: AnalysisFilterState): LicenseAnalysis[] {
@@ -116,6 +118,7 @@ export function filterAnalyses(analyses: LicenseAnalysis[], f: AnalysisFilterSta
     if (f.review && a.metadata.reviewStatus !== f.review) return false;
     if (f.kind === "real" && a.metadata.isMock) return false;
     if (f.kind === "mock" && !a.metadata.isMock) return false;
+    if (f.comparisonGroup && a.comparisonGroup !== f.comparisonGroup) return false;
     return true;
   });
 }

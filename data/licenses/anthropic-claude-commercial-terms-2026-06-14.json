@@ -4,6 +4,10 @@
   "productName": "Claude",
   "productTier": "All",
   "documentType": "Commercial Terms",
+  "softwareCategory": "ai_provider",
+  "comparisonGroup": "ai",
+  "comparativeBaseline": false,
+  "academicPurposeNotes": "",
   "contractingMode": "business",
   "appliesToModes": [
     "business",

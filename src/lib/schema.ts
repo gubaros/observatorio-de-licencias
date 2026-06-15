@@ -89,12 +89,37 @@ export const PrivacyProfileSchema = z.object({
   evidence: z.array(EvidenceSchema).default([]),
 });
 
+// --- Taxonomía de software (IA vs software tradicional de comparación) ---
+export const SoftwareCategorySchema = z.enum([
+  "ai_provider",
+  "email",
+  "productivity_suite",
+  "social_network",
+  "mobile_operating_system",
+  "mobile_device_ecosystem",
+  "developer_platform",
+  "cloud_platform",
+  "other",
+]);
+
+export const ComparisonGroupSchema = z.enum([
+  "ai",
+  "traditional_software",
+  "social_platform",
+  "mobile_ecosystem",
+]);
+
 export const LicenseAnalysisSchema = z.object({
   id: z.string().min(1),
   providerName: z.string().min(1),
   productName: z.string().min(1),
   productTier: z.string().min(1),
   documentType: z.string().min(1),
+  // --- Taxonomía de software (defaults para compat; el registro las puebla vía parse:all) ---
+  softwareCategory: SoftwareCategorySchema.default("ai_provider"),
+  comparisonGroup: ComparisonGroupSchema.default("ai"),
+  comparativeBaseline: z.boolean().default(false),
+  academicPurposeNotes: z.string().default(""),
   // --- Modalidad de contratación (defaults para compat; el migrador las puebla) ---
   contractingMode: ContractingModeSchema.default("unknown"),
   appliesToModes: z.array(ContractingModeSchema).default([]),
@@ -139,6 +164,8 @@ export const LicenseAnalysisSchema = z.object({
 export type Evidence = z.infer<typeof EvidenceSchema>;
 export type CategoryFinding = z.infer<typeof CategoryFindingSchema>;
 export type LicenseAnalysis = z.infer<typeof LicenseAnalysisSchema>;
+export type SoftwareCategory = z.infer<typeof SoftwareCategorySchema>;
+export type ComparisonGroup = z.infer<typeof ComparisonGroupSchema>;
 export type SourceStatus = z.infer<typeof SourceStatusSchema>;
 export type ExtractionMethod = z.infer<typeof ExtractionMethodSchema>;
 export type ReviewStatus = z.infer<typeof ReviewStatusSchema>;

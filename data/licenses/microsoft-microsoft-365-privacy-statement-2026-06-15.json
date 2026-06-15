@@ -1,0 +1,510 @@
+{
+  "id": "microsoft-microsoft-365-privacy-statement-2026-06-15",
+  "providerName": "Microsoft",
+  "productName": "Microsoft 365",
+  "productTier": "All",
+  "documentType": "Privacy Statement",
+  "softwareCategory": "productivity_suite",
+  "comparisonGroup": "traditional_software",
+  "comparativeBaseline": true,
+  "academicPurposeNotes": "Producto incorporado como punto de comparación frente a proveedores de IA.",
+  "contractingMode": "all",
+  "appliesToModes": [],
+  "sourceScope": "mixed",
+  "modeConfidence": "medium",
+  "modeRationale": "El documento parece general pero contiene secciones que diferencian modalidades (business, enterprise). Las diferencias deben revisarse cláusula por cláusula.",
+  "sourceUrl": "https://privacy.microsoft.com/en-us/privacystatement",
+  "retrievedAt": "2026-06-15T13:43:09.489Z",
+  "rawTextPath": "data/extracted/microsoft-microsoft-365-privacy-statement-2026-06-15.txt",
+  "overall": {
+    "legalSummary": "Sobre 22 categorías jurídicas relevadas, se identificaron pasajes vinculados en 15. La calificación de riesgo general (high) es preliminar y se apoya en coincidencias léxicas, no en interpretación jurídica. El alcance de cada cláusula no surge con claridad del texto analizado y requeriría revisión legal humana.",
+    "overallRiskLevel": "high"
+  },
+  "privacy": {
+    "posture": "weak",
+    "rationale": "Perfil preliminar (no es conclusión jurídica). La redacción sugiere usos amplios de datos y/o controles poco claros de retención o eliminación. Requiere revisión legal humana. Señales: broad_training_use, enterprise_dpa, retention_controls, deletion_control, confidentiality_commitment, broad_license.",
+    "signals": [
+      "broad_training_use",
+      "enterprise_dpa",
+      "retention_controls",
+      "deletion_control",
+      "confidentiality_commitment",
+      "broad_license"
+    ],
+    "evidence": [
+      {
+        "quote": "… example, we use data, often de-identified, to better understand our customers’ computing and productivity needs, and to train and fine-tune AI models, which can shape the development of new products. • Customer support . We use data to …",
+        "locationHint": "coincidencia: \"to train\" (~offset 22964)"
+      }
+    ]
+  },
+  "categories": {
+    "privacy": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a el tratamiento de datos personales del usuario y sus finalidades. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… to main content Privacy Privacy dashboard Privacy report Privacy settings Privacy Statement Consumer Health Data Privacy Policy Microsoft Privacy Statement Last Updated: March 2026 What's new? Print Expand All Collapse All Cookies Most …",
+          "locationHint": "coincidencia: \"privacy policy\" (~offset 180)"
+        },
+        {
+          "quote": "… individuals in the United States, please refer to our U.S. State Data Privacy Notice and the Consumer Health Data Privacy Policy for additional information about the processing of your personal data, and your rights under applicable U.S. state data …",
+          "locationHint": "coincidencia: \"privacy policy\" (~offset 2537)"
+        },
+        {
+          "quote": "… product with your Microsoft account, you will share data with the third party in accordance with the third party’s privacy policy. The third party will also receive the version number assigned to your account (a new version number is assigned each …",
+          "locationHint": "coincidencia: \"privacy policy\" (~offset 72503)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: privacy policy.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "training_use": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a el uso de inputs, outputs o archivos del usuario para entrenamiento o mejora de modelos. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… example, we use data, often de-identified, to better understand our customers’ computing and productivity needs, and to train and fine-tune AI models, which can shape the development of new products. • Customer support . We use data to …",
+          "locationHint": "coincidencia: \"to train\" (~offset 22964)"
+        },
+        {
+          "quote": "… bugs, prevent abuse, and to provide and improve Microsoft Copilot. In certain markets, we use conversation data to train the generative AI models in Copilot, unless you choose to opt-out of such training. More information about how your …",
+          "locationHint": "coincidencia: \"to train\" (~offset 133064)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: to train.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "input_ip": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a la titularidad de los inputs aportados por el usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… necessary to complete any transaction or provide any product you have requested or authorized. For example, we share your content with third parties when you tell us to do so, such as when you send an email to a friend, share photos and documents on …",
+          "locationHint": "coincidencia: \"your content\" (~offset 30552)"
+        },
+        {
+          "quote": "… merger or sale of assets. Finally, we will retain, access, transfer, disclose, and preserve personal data, including your content (such as the content of your emails in Outlook.com, or files in private folders on OneDrive), when we have a good faith …",
+          "locationHint": "coincidencia: \"your content\" (~offset 33517)"
+        },
+        {
+          "quote": "… are examples of connected experiences. There are two types of connected experiences. • Experiences that analyze your content . Experiences that use your file content to provide you with design recommendations, editing suggestions, data …",
+          "locationHint": "coincidencia: \"your content\" (~offset 153843)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: your content.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "output_ip": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a la asignación de titularidad sobre los outputs generados por el servicio resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… of our automated methods of processing (including artificial intelligence or AI), we manually review some of the output produced by the automated methods against the underlying data. As part of our efforts to improve and develop our …",
+          "locationHint": "coincidencia: \"output\" (~offset 17352)"
+        },
+        {
+          "quote": "… of our automated methods of processing (including artificial intelligence or AI), we manually review some of the output produced by the automated methods against the underlying data. As part of our efforts to improve and develop our …",
+          "locationHint": "coincidencia: \"output\" (~offset 19296)"
+        },
+        {
+          "quote": "… . “Copilot” is a family of services, products, and solutions that leverage generative AI technologies to generate outputs. Microsoft’s collection and use of data may differ depending on the service and the intended functionality in a given …",
+          "locationHint": "coincidencia: \"output\" (~offset 131117)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: output.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "license_grant": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a la licencia conferida al proveedor sobre los contenidos del usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… in Launcher’s News Feed, synchronized across all your devices. You can also receive local curated news when you grant Microsoft Launcher permission to access your location information. You can manage your ad preferences through the …",
+          "locationHint": "coincidencia: \"you grant\" (~offset 164690)"
+        },
+        {
+          "quote": "… map searches in the Maps app. Your favorite places and search history will be included as search suggestions. If you grant the Maps app access to your camera, you’ll be able to capture the location of where your photos took place – for …",
+          "locationHint": "coincidencia: \"you grant\" (~offset 281089)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: you grant.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "data_retention": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a los plazos y condiciones de retención de datos del usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… for precise geolocation information. • Legal, contractual and other similar obligations we are subject to, including data retention laws, government orders to preserve data relevant to an investigation, or data retained for the purposes of litigation. …",
+          "locationHint": "coincidencia: \"data retention\" (~offset 100732)"
+        },
+        {
+          "quote": "… affiliates and subsidiaries. Please see the Our retention of personal data section for information on personal data retention criteria. Categories of Personal Data • Name and contact data • Sources of personal data: Interactions with users …",
+          "locationHint": "coincidencia: \"data retention\" (~offset 107884)"
+        },
+        {
+          "quote": "… needs can vary for different data types, the context of our interactions with you or your use of products, actual retention periods can vary significantly. See relevant product documentation for more information. Criteria used to determine the …",
+          "locationHint": "coincidencia: \"retention period\" (~offset 100196)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: data retention, retention period.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "data_deletion": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a los mecanismos de supresión o eliminación de datos del usuario. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… for account verification before fulfilling the request. To delete all of your child’s personal information, you must request deletion of the child’s account through the close your account form . This link will prompt you to sign in with your child’s …",
+          "locationHint": "coincidencia: \"request deletion\" (~offset 81713)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: request deletion.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "confidentiality": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las obligaciones de confidencialidad aplicables al proveedor. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… limited, aggregated information about your organization’s account with the partner. Microsoft will not share your confidential information or contact information with the authorized partner unless we have sufficient rights to do so. You can manage your …",
+          "locationHint": "coincidencia: \"confidential information\" (~offset 144901)"
+        },
+        {
+          "quote": "… files, photos, conversations, tasks, and calendars in one convenient and secure place. Teams allows you to store confidential information like passwords, rewards numbers, or login information and share it with others within Teams. With your consent, you can …",
+          "locationHint": "coincidencia: \"confidential information\" (~offset 166330)"
+        },
+        {
+          "quote": "… employee or vendor review of voice data, we protect users’ privacy by taking steps to de-identify the data, requiring non-disclosure agreements with relevant vendors and their employees, and requiring that employees and vendors meet high privacy …",
+          "locationHint": "coincidencia: \"non-disclosure\" (~offset 125630)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: confidential information, non-disclosure.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "security": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las medidas técnicas y organizativas de seguridad declaradas. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… previews can automatically collect additional data, provide fewer controls, and otherwise employ different privacy and security measures than those typically present in our products. If you participate in previews, we may contact you about your feedback or …",
+          "locationHint": "coincidencia: \"security measures\" (~offset 126248)"
+        },
+        {
+          "quote": "… and services you use to make personalized app recommendations. However, we have built in technological and procedural safeguards designed to prevent certain data combinations where required by law. For example, where required by law, we store data …",
+          "locationHint": "coincidencia: \"safeguards\" (~offset 18613)"
+        },
+        {
+          "quote": "… your complaints. When we transfer personal data to other countries, we use a variety of legal mechanisms and safeguards, including contracts such as the standard contractual clauses published by the European Commission under Commission …",
+          "locationHint": "coincidencia: \"safeguards\" (~offset 95557)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: security measures, safeguards.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "security_duty": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre la existencia de un deber de seguridad exigible al proveedor. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "warranties": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a las garantías otorgadas y los disclaimers de garantía resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… well as device location at the time of the first power-up of the device, are also sent to Microsoft for the purpose of warranty registration, stock replenishment, and fraud prevention. Back to top Activity history Activity history helps …",
+          "locationHint": "coincidencia: \"warranty\" (~offset 217445)"
+        },
+        {
+          "quote": "… data protection authority in your area to have an adequate level of data protection. For example, their laws may not guarantee you the same rights, or there may not be a privacy supervisory authority there that is capable of addressing your …",
+          "locationHint": "coincidencia: \"guarantee\" (~offset 95329)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: warranty, guarantee.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "liability_limitation": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a el régimen de exclusión o limitación de responsabilidad resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… space, or connectivity through a paid network. • Whether updates complete successfully or fail. • Data about the reliability of the diagnostics collection system itself. • Basic error reporting, which is health data about the operating system …",
+          "locationHint": "coincidencia: \"liability\" (~offset 223246)"
+        },
+        {
+          "quote": "… the DPF and subsequently transfers to a third party acting as an agent on our behalf. Microsoft Corporation remains liable under the DPF if our agent processes such personal information in a manner inconsistent with the DPF, unless Microsoft …",
+          "locationHint": "coincidencia: \"liable\" (~offset 97314)"
+        },
+        {
+          "quote": "… to use connected experiences, required service data will be collected to help keep these connected experiences reliable, up to date, secure, and performing as expected. See below for additional information about required service …",
+          "locationHint": "coincidencia: \"liable\" (~offset 153478)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: liability, liable.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "indemnity": {
+      "status": "not_found",
+      "riskLevel": "unknown",
+      "legalSummary": "No surge del texto analizado una cláusula expresa sobre las obligaciones de indemnidad a cargo del usuario. La ausencia de coincidencias léxicas no permite concluir su inexistencia.",
+      "evidence": [],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. No se hallaron coincidencias léxicas relevantes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "governing_law": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a la ley aplicable al contrato. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… and the choices you make (including your privacy settings), the products and features you use, your location, and applicable law . The data we collect can include the following: Name and contact data . Your first and last name, email address, …",
+          "locationHint": "coincidencia: \"applicable law\" (~offset 8154)"
+        },
+        {
+          "quote": "… that violate our rights and the rights of others, such as fraud. • Legal compliance . We process data to comply with applicable laws. For example, we use the age of our customers to assist us in meeting our obligations to protect children’s privacy. …",
+          "locationHint": "coincidencia: \"applicable law\" (~offset 29012)"
+        },
+        {
+          "quote": "… on OneDrive), when we have a good faith belief that doing so is necessary to do any of the following: • Comply with applicable law or respond to valid legal process, including from law enforcement or other government agencies. • Protect the safety …",
+          "locationHint": "coincidencia: \"applicable law\" (~offset 33729)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: applicable law.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "jurisdiction": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a la jurisdicción y el foro competente resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… more Back to top Collection of data from children For users under the age of 13 or as specified by law in their jurisdiction, certain Microsoft products and services will either block users under that age or will ask them to obtain consent or …",
+          "locationHint": "coincidencia: \"jurisdiction\" (~offset 76469)"
+        },
+        {
+          "quote": "… and information about children and Xbox profiles. For users under the age of 13 or as specified by law in their jurisdiction, certain Microsoft products and services will either block users under that age or will ask them to obtain consent or …",
+          "locationHint": "coincidencia: \"jurisdiction\" (~offset 78298)"
+        },
+        {
+          "quote": "… to consent to the collection of personal data from a child under 13 years old or as otherwise specified by your jurisdiction. With your permission, your child can have an Xbox profile and use the online Xbox network. During the child Xbox …",
+          "locationHint": "coincidencia: \"jurisdiction\" (~offset 83712)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: jurisdiction.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "arbitration": {
+      "status": "found",
+      "riskLevel": "high",
+      "legalSummary": "Se identifican pasajes vinculados a el sometimiento a arbitraje y la renuncia a acciones colectivas. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… if you’d like us to direct you to your data protection authority contacts. As further explained in the DPF Principles, binding arbitration is available to address residual complaints not resolved by other means. Microsoft is subject to the investigatory and …",
+          "locationHint": "coincidencia: \"binding arbitration\" (~offset 98886)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: binding arbitration.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "unilateral_changes": {
+      "status": "unclear",
+      "riskLevel": "unknown",
+      "legalSummary": "La redacción relativa a las facultades de modificación unilateral de los términos resulta ambigua. No surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… you about your feedback or your interest in continuing to use the product after general release. Back to top Changes to this privacy statement We update this privacy statement when necessary to provide greater transparency or in …",
+          "locationHint": "coincidencia: \"changes\" (~offset 126473)"
+        },
+        {
+          "quote": "… greater transparency or in response to: • Feedback from customer, regulators, industry, or other stakeholders. • Changes in our products. • Changes in our data processing activities or policies. When we post changes to this statement, …",
+          "locationHint": "coincidencia: \"changes\" (~offset 126685)"
+        },
+        {
+          "quote": "… we post changes to this statement, we will revise the \"last updated\" date at the top of the statement and describe the changes on the Change history page. If there are material changes to the statement, such as a change to the purposes of …",
+          "locationHint": "coincidencia: \"changes\" (~offset 126895)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Solo se hallaron señales débiles o ambiguas: changes.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "plan_differences": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las diferencias de régimen entre planes gratuitos, pagos y enterprise/business/team. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… it, and for what purposes. Microsoft offers a wide range of products, including server products used to help operate enterprises worldwide, devices you use in your home, software that students use at school, and services developers use to create …",
+          "locationHint": "coincidencia: \"enterprise\" (~offset 1706)"
+        },
+        {
+          "quote": "… subsidiaries, and third parties. If you represent an organization, such as a business or school, that utilizes Enterprise and Developer Products from Microsoft, please see the Enterprise and developer products section of this privacy …",
+          "locationHint": "coincidencia: \"enterprise\" (~offset 3302)"
+        },
+        {
+          "quote": "… data sets and other data sources. If you represent an organization, such as a business or school, that utilizes Enterprise and Developer Products from Microsoft, please see the Enterprise and developer products section of this privacy …",
+          "locationHint": "coincidencia: \"enterprise\" (~offset 6716)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: enterprise.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "minors": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a el tratamiento del uso del servicio por menores de edad. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… it can do with your account . View Summary Learn more Back to top Collection of data from children For users under the age of 13 or as specified by law in their jurisdiction, certain Microsoft products and services will either block users under …",
+          "locationHint": "coincidencia: \"under the age of\" (~offset 76417)"
+        },
+        {
+          "quote": "… information about how to access and delete child data and information about children and Xbox profiles. For users under the age of 13 or as specified by law in their jurisdiction, certain Microsoft products and services will either block users under …",
+          "locationHint": "coincidencia: \"under the age of\" (~offset 78246)"
+        },
+        {
+          "quote": "… before they can use it, including when creating an account to access Microsoft services. We will not knowingly ask children under that age to provide more data than is required to provide for the product. Once parental consent or authorization is …",
+          "locationHint": "coincidencia: \"children under\" (~offset 76755)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: under the age of, children under.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "prohibited_content": {
+      "status": "found",
+      "riskLevel": "medium",
+      "legalSummary": "Se identifican pasajes vinculados a las restricciones de uso y las categorías de contenido prohibido. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… for your Windows experiences. For example, to help you get the most out of your device, we may tell you about features you may not know about or that are new. If you are having a problem with your Windows device, you may be offered a solution. You …",
+          "locationHint": "coincidencia: \"you may not\" (~offset 233055)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: you may not.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    },
+    "commercial_use": {
+      "status": "found",
+      "riskLevel": "low",
+      "legalSummary": "Se identifican pasajes vinculados a la habilitación o restricción del uso comercial del servicio. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… not sell or rent student personal data; • not use or share student personal data for advertising or similar commercial purposes, such as behavioral targeting of advertisements to students; • not build a personal profile of a student, other than …",
+          "locationHint": "coincidencia: \"commercial purposes\" (~offset 66460)"
+        },
+        {
+          "quote": "… to re-identify the individual to whom the de-identified data relates. Disclosures of personal data for business or commercial purposes . As indicated in the Reasons we share personal data section, we share personal data with third parties for various …",
+          "locationHint": "coincidencia: \"commercial purposes\" (~offset 116996)"
+        },
+        {
+          "quote": "… in the Reasons we share personal data section, we share personal data with third parties for various business and commercial purposes. The primary business and commercial purposes for which we share personal data are the purposes of processing listed in …",
+          "locationHint": "coincidencia: \"commercial purposes\" (~offset 117147)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: commercial purposes.",
+      "appliesToModes": [
+        "business"
+      ],
+      "modeSpecificity": "mode_specific",
+      "modeEvidence": [
+        {
+          "quote": "… to re-identify the individual to whom the de-identified data relates. Disclosures of personal data for business or commercial purposes . As indicated in the Reasons we share personal data section, we share personal data with third parties for various …",
+          "locationHint": "coincidencia: \"commercial purposes\" (~offset 116996)"
+        }
+      ]
+    },
+    "api_references": {
+      "status": "found",
+      "riskLevel": "low",
+      "legalSummary": "Se identifican pasajes vinculados a las condiciones aplicables al uso de APIs. La cláusula podría configurar disposiciones relevantes; su alcance no surge con claridad del texto analizado y requeriría revisión legal humana.",
+      "evidence": [
+        {
+          "quote": "… practices than Microsoft Translator. For more information on the Microsoft Azure Cognitive Services Translator Text API, Custom Translator, and Translator Speech API, see the Enterprise and developer products section of this privacy …",
+          "locationHint": "coincidencia: \"api\" (~offset 205885)"
+        },
+        {
+          "quote": "… apps for which feedback can be sent. Feedback Hub determines the apps installed in your device through public APIs. Additionally, for HoloLens, Feedback Hub uses your camera and microphone when you choose to share surroundings and …",
+          "locationHint": "coincidencia: \"api\" (~offset 234002)"
+        }
+      ],
+      "notes": "Análisis generado por parser determinístico (coincidencia de palabras clave). Requiere revisión humana. Términos detectados: api.",
+      "appliesToModes": [],
+      "modeSpecificity": "general",
+      "modeEvidence": []
+    }
+  },
+  "metadata": {
+    "createdAt": "2026-06-15T13:43:10.058Z",
+    "parserVersion": "0.2.0",
+    "isMock": false,
+    "reviewStatus": "unreviewed",
+    "retrievedAt": "2026-06-15T13:43:09.489Z",
+    "fetcherVersion": "0.1.0",
+    "contentHash": "sha256:e97bb2c3f5e4e991100fec56c6030a56c4eaaa1be6404944cac937cf6364f264",
+    "sourceVerified": true,
+    "sourceStatus": "verified",
+    "extractionMethod": "html-to-text",
+    "canonicalUrl": "https://www.microsoft.com/en-us/privacy/privacystatement",
+    "finalUrl": "https://www.microsoft.com/en-us/privacy/privacystatement",
+    "fetchedPath": "data/fetched/microsoft-microsoft-365-privacy-statement-2026-06-15.html",
+    "extractedTextPath": "data/extracted/microsoft-microsoft-365-privacy-statement-2026-06-15.txt",
+    "extractedChars": 321193,
+    "providerId": "microsoft",
+    "productId": "microsoft-365",
+    "documentId": "privacy-statement"
+  }
+}

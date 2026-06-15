@@ -1,29 +1,96 @@
 import { loadAllLicenseAnalyses } from "@/lib/storage";
 import { providerSummaries } from "@/lib/derive";
+import { loadRegistry } from "@/lib/sources";
+import { COMPARISON_GROUP_LABEL, SOFTWARE_CATEGORY_LABEL } from "@/lib/analysisMeta";
 import { ProviderOverview } from "@/components/ProviderOverview";
 
 export const metadata = { title: "Proveedores — UP-Law-AILO" };
+
+interface RefProduct {
+  provider: string;
+  product: string;
+  category: string;
+  docCount: number;
+  ingested: boolean;
+}
 
 export default async function ProvidersPage() {
   const analyses = await loadAllLicenseAnalyses();
   const summaries = providerSummaries(analyses);
 
+  // Software de referencia (no IA) desde el registro, agrupado por grupo comparativo.
+  const ingestedIds = new Set(analyses.map((a) => a.metadata.productId).filter(Boolean));
+  const refByGroup = new Map<string, RefProduct[]>();
+  try {
+    const reg = await loadRegistry();
+    for (const prov of reg.providers) {
+      for (const prod of prov.products) {
+        if (prod.comparisonGroup === "ai") continue;
+        const list = refByGroup.get(prod.comparisonGroup) ?? [];
+        list.push({
+          provider: prov.providerName,
+          product: prod.productName,
+          category: prod.softwareCategory,
+          docCount: prod.documents.length,
+          ingested: ingestedIds.has(prod.productId),
+        });
+        refByGroup.set(prod.comparisonGroup, list);
+      }
+    }
+  } catch {
+    /* sin registro */
+  }
+  const refGroups = [...refByGroup.entries()];
+
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <header>
         <h1 className="text-xl font-bold text-slate-900">Proveedores</h1>
         <p className="text-sm text-slate-600">
-          Un proveedor por fila. Entrá a cada uno para ver su expediente organizado por modalidad de
-          contratación, con documentos existentes y faltantes.
+          Proveedores de IA con análisis cargados, y software tradicional incorporado como punto de
+          comparación académico. Entrá a cada proveedor de IA para ver su expediente por modalidad.
         </p>
       </header>
 
-      {summaries.length === 0 ? (
-        <p className="text-sm text-slate-500">No hay proveedores cargados.</p>
-      ) : (
-        <ProviderOverview summaries={summaries} />
-      )}
+      <section className="space-y-2">
+        <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Proveedores de IA</h2>
+        {summaries.length === 0 ? (
+          <p className="text-sm text-slate-500">No hay proveedores cargados.</p>
+        ) : (
+          <ProviderOverview summaries={summaries} />
+        )}
+      </section>
 
+      {refGroups.length > 0 && (
+        <section className="space-y-3">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Software de referencia (comparación académica)
+          </h2>
+          {refGroups.map(([groupKey, items]) => (
+            <div key={groupKey}>
+              <h3 className="mb-1 text-sm font-medium text-slate-800">{COMPARISON_GROUP_LABEL[groupKey] ?? groupKey}</h3>
+              <div className="overflow-hidden rounded border border-slate-200 bg-white">
+                {items.map((it) => (
+                  <div key={`${it.provider}-${it.product}`} className="flex items-center justify-between gap-4 border-b border-slate-100 px-4 py-2 text-sm last:border-0">
+                    <div>
+                      <span className="font-medium text-slate-900">{it.provider}</span>
+                      <span className="text-slate-500"> · {it.product}</span>
+                      <span className="ml-2 text-xs text-slate-400">{SOFTWARE_CATEGORY_LABEL[it.category] ?? it.category}</span>
+                    </div>
+                    <span className="text-xs text-slate-400">
+                      {it.ingested ? `${it.docCount} doc.` : `${it.docCount} doc. · pendiente de ingesta`}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+          <p className="text-xs leading-relaxed text-slate-500">
+            El software tradicional se registra con sus fuentes oficiales y queda pendiente de verificación e
+            ingesta (no se infiere su contenido). Sirve para distinguir qué riesgos son propios de la IA.
+          </p>
+        </section>
+      )}
     </div>
   );
 }

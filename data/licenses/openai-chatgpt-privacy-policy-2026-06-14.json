@@ -4,6 +4,10 @@
   "productName": "ChatGPT",
   "productTier": "All",
   "documentType": "Privacy Policy",
+  "softwareCategory": "ai_provider",
+  "comparisonGroup": "ai",
+  "comparativeBaseline": false,
+  "academicPurposeNotes": "",
   "contractingMode": "all",
   "appliesToModes": [
     "free",

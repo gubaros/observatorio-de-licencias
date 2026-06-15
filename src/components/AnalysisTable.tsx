@@ -12,7 +12,7 @@ import {
   EMPTY_FILTERS,
   type AnalysisFilterState,
 } from "@/lib/derive";
-import { MODE_LABELS } from "@/lib/analysisMeta";
+import { MODE_LABELS, COMPARISON_GROUP_LABEL } from "@/lib/analysisMeta";
 import { CATEGORY_BY_KEY } from "@/lib/categories";
 import { Dot, RiskCompact, PrivacyCompact, type Tone } from "./indicators";
 
@@ -408,6 +408,7 @@ function Filters({
       {/* Filtros avanzados */}
       {advanced && (
         <div className="flex flex-wrap items-end gap-3 border-t border-slate-100 pt-3">
+          <Sel label="Grupo" value={f.comparisonGroup} onChange={(v) => set({ comparisonGroup: v })} options={["ai", "traditional_software", "social_platform", "mobile_ecosystem"]} render={(g) => COMPARISON_GROUP_LABEL[g] ?? g} />
           <Sel label="Documento" value={f.documentType} onChange={(v) => set({ documentType: v })} options={options.documentTypes} />
           <Sel label="Fuente" value={f.source} onChange={(v) => set({ source: v })} options={["verified", "unverified"]} render={(s) => (s === "verified" ? "verificada" : "sin verificar")} />
           <Sel label="Revisión" value={f.review} onChange={(v) => set({ review: v })} options={["unreviewed", "needs_legal_review", "reviewed", "rejected"]} render={(r) => REVIEW_SHORT[r]?.label ?? r} />
