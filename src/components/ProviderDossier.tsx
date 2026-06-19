@@ -7,7 +7,7 @@ import { providerRegionLabel } from "@/domain/taxonomies/providerRegions";
 import { providerTypeLabel } from "@/domain/taxonomies/providerTypes";
 import { productNicheInfo } from "@/domain/taxonomies/productNiches";
 import { RiskCompact, PrivacyCompact, SourceCompact, ReviewCompact } from "./indicators";
-import { ProductLabelCard } from "./ProductLabelCard";
+import { ProductGondolaCard } from "./ProductGondolaCard";
 
 const SPECIFIC_MODES: ContractingMode[] = ["free", "paid_individual", "team", "business", "enterprise", "api"];
 
@@ -101,16 +101,17 @@ export function ProviderDossier({
         </section>
       )}
 
-      {/* Etiquetado frontal: resumen visual por producto × modalidad (octógonos,
-          cautelas y tabla nutricional). El detalle jurídico/fuentes queda debajo. */}
+      {/* Etiquetado frontal: góndola por producto × modalidad (octógonos con pie
+          E-Law, cautelas y cláusulas). El audit por documento/modalidad vive en
+          las secciones de modalidad de más abajo. */}
       <section className="space-y-4">
         <div>
           <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Etiquetado frontal</h2>
           <p className="text-sm text-slate-500">Por producto y modalidad. Deriva del corpus y remite a evidencia textual. No es un ranking.</p>
         </div>
-        <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
+        <div className="space-y-4">
           {products.map((productName) => (
-            <ProductLabelCard
+            <ProductGondolaCard
               key={productName}
               providerId={providerId}
               productName={productName}

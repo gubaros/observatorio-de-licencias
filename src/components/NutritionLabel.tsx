@@ -12,6 +12,10 @@ import type { NutritionLabelData, NutritionRow } from "@/domain/seals";
  * TABLA NUTRICIONAL del clausulado (capa 3), por producto × modalidad. Muestra
  * la lectura en lenguaje claro; la evidencia textual (citas) queda a un clic por
  * fila. El color solo refuerza: el estado y el riesgo van en texto.
+ *
+ * `variant`:
+ *  - "table" (default): tabla densa full-width (consola del expediente).
+ *  - "grid": dos columnas compactas (vista góndola).
  */
 
 const STATUS_TEXT: Record<CategoryFinding["status"], string> = {
@@ -32,7 +36,7 @@ const RISK_DOT: Record<RiskLevel, string> = {
   unknown: "text-slate-300",
 };
 
-export function NutritionLabel({ data }: { data: NutritionLabelData }) {
+export function NutritionLabel({ data, variant = "table" }: { data: NutritionLabelData; variant?: "grid" | "table" }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -92,23 +96,31 @@ export function NutritionLabel({ data }: { data: NutritionLabelData }) {
             </div>
           )}
 
-          <div className="overflow-x-auto border-t border-slate-200">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400">
-                  <th scope="col" className="px-3 py-2 font-medium">Cláusula</th>
-                  <th scope="col" className="px-3 py-2 font-medium">Estado</th>
-                  <th scope="col" className="px-3 py-2 font-medium">Riesgo</th>
-                  <th scope="col" className="px-3 py-2 font-medium">Lectura</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.rows.map((row) => (
-                  <RowView key={row.categoryKey} row={row} />
-                ))}
-              </tbody>
-            </table>
-          </div>
+          {variant === "table" ? (
+            <div className="overflow-x-auto border-t border-slate-200">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400">
+                    <th scope="col" className="px-3 py-2 font-medium">Cláusula</th>
+                    <th scope="col" className="px-3 py-2 font-medium">Estado</th>
+                    <th scope="col" className="px-3 py-2 font-medium">Riesgo</th>
+                    <th scope="col" className="px-3 py-2 font-medium">Lectura</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.rows.map((row) => (
+                    <RowView key={row.categoryKey} row={row} />
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 gap-2 border-t border-slate-200 p-3 sm:grid-cols-2">
+              {data.rows.map((row) => (
+                <GridCell key={row.categoryKey} row={row} />
+              ))}
+            </div>
+          )}
         </div>
       )}
     </section>
@@ -163,5 +175,40 @@ function RowView({ row }: { row: NutritionRow }) {
         </tr>
       )}
     </>
+  );
+}
+
+/** Celda de la variante "grid" (góndola): label + estado + riesgo + evidencia. */
+function GridCell({ row }: { row: NutritionRow }) {
+  const [open, setOpen] = useState(false);
+  const hasEvidence = row.evidence.length > 0;
+  return (
+    <div className="rounded border border-slate-200 p-2 text-sm">
+      <div className="flex items-baseline justify-between gap-2">
+        <span className="font-medium text-slate-800">{row.label}</span>
+        <span className="whitespace-nowrap text-xs text-slate-500">
+          <span className={RISK_DOT[row.riskLevel]} aria-hidden>●</span> {RISK_WORD[row.riskLevel]}
+        </span>
+      </div>
+      <p className="mt-0.5 text-xs text-slate-600">
+        <span className={STATUS_DOT[row.status]} aria-hidden>●</span> {STATUS_TEXT[row.status]}
+        {row.status === "found" && <> · {row.plainConcern}</>}
+        {hasEvidence && (
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            className="ml-2 align-baseline text-xs text-sky-700 hover:underline"
+          >
+            {open ? "ocultar" : "ev."}
+          </button>
+        )}
+      </p>
+      {open && hasEvidence && (
+        <div className="mt-2">
+          <EvidencePanel evidence={row.evidence} />
+        </div>
+      )}
+    </div>
   );
 }
