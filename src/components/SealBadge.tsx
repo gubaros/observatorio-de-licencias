@@ -1,76 +1,31 @@
-"use client";
-
-import { useState } from "react";
-import { MODE_LABELS } from "@/lib/contractingModes";
-import { EvidencePanel } from "./EvidencePanel";
-import type { Octagon } from "@/domain/seals";
-
 /**
- * SELLO de advertencia (capa 1, riesgo alto). El octógono es una EXCEPCIÓN
- * consciente a la reducción de chips del proyecto: se justifica por el DEBER DE
- * INFORMACIÓN (un usuario no abogado debe poder detectar de un vistazo las
- * cláusulas más gravosas).
+ * Octógono de advertencia (riesgo alto). TAMAÑO FIJO e idéntico para todos
+ * (112×112); solo la fuente se autoajusta, nunca la caja. Marco blanco + línea
+ * negra perimetral + cuerpo negro. Octágono PROPIO, deliberadamente distinto del
+ * sello oficial (Ley 27.642): el pie "UP Law" reemplaza la atribución estatal.
  *
- * Señal visual PROPIA, deliberadamente distinta del octógono oficial argentino
- * (cuya forma y color negro normado tienen un sentido jurídico-regulatorio
- * específico que no corresponde apropiarse): usamos un octógono con borde y
- * relleno suaves, no el sello normado. El SIGNIFICADO va en el texto, el ícono y
- * el `aria-label`; el color (rojo) solo refuerza.
+ * Es presentación pura: el significado va en el texto y en `aria-label`; el
+ * color (blanco/negro) no aporta semántica por sí solo. La expansión con
+ * `legalSummary` + evidencia la maneja el contenedor (ProductLabelCard).
  */
-
-/** Octógono propio (no normado). Decorativo: el significado está en el texto. */
-function OctagonShape() {
+export function SealBadge({ lines, label, foot = "UP Law" }: {
+  lines: string[]; label: string; foot?: string;
+}) {
+  const longest = Math.max(...lines.map((l) => l.length));
+  const SAFE_W = 56, CHAR = 0.62;
+  const fs = Math.max(8, Math.min(SAFE_W / (longest * CHAR), lines.length >= 3 ? 10.5 : 13));
+  const gap = fs + 1.5;
+  const startY = 46 - ((lines.length - 1) * gap) / 2 + fs / 3;
   return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0" aria-hidden="true">
-      <polygon
-        points="7.5,2 16.5,2 22,7.5 22,16.5 16.5,22 7.5,22 2,16.5 2,7.5"
-        className="fill-red-100 stroke-red-600"
-        strokeWidth="1.5"
-      />
-      <line x1="12" y1="7" x2="12" y2="13" className="stroke-red-700" strokeWidth="1.8" strokeLinecap="round" />
-      <circle cx="12" cy="16.5" r="1" className="fill-red-700" />
+    <svg viewBox="0 0 100 100" width={112} height={112} className="shrink-0"
+         role="img" aria-label={`Advertencia: ${label}`}>
+      <polygon points="29,1 71,1 99,29 99,71 71,99 29,99 1,71 1,29" fill="#fff" stroke="#000" strokeWidth="0.8" />
+      <polygon points="31.5,7 68.5,7 93,31.5 93,68.5 68.5,93 31.5,93 7,68.5 7,31.5" fill="none" stroke="#000" strokeWidth="1.4" />
+      <polygon points="33,12 67,12 88,33 88,67 67,88 33,88 12,67 12,33" fill="#000" />
+      <text textAnchor="middle" fill="#fff" fontWeight={700} fontFamily="var(--font-sans, sans-serif)" fontSize={fs}>
+        {lines.map((l, i) => <tspan key={i} x="50" y={startY + i * gap}>{l}</tspan>)}
+      </text>
+      <text x="50" y="78" textAnchor="middle" fill="#fff" fontSize="5.5" fontFamily="var(--font-sans, sans-serif)">{foot}</text>
     </svg>
-  );
-}
-
-export function SealBadge({ octagon }: { octagon: Octagon }) {
-  const [open, setOpen] = useState(false);
-  const modes = Array.from(new Set(octagon.sources.map((s) => MODE_LABELS[s.contractingMode]))).join(", ");
-
-  return (
-    <div className="rounded-md border border-red-200 bg-red-50/60">
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        aria-label={`Advertencia: ${octagon.label}. Riesgo alto. ${open ? "Ocultar" : "Ver"} evidencia.`}
-        className="flex w-full items-center gap-2 px-2.5 py-1.5 text-left hover:bg-red-50"
-      >
-        <OctagonShape />
-        <span className="min-w-0 flex-1">
-          <span className="block text-sm font-medium text-red-900">{octagon.label}</span>
-          <span className="block text-xs text-red-700/80">Advertencia · riesgo alto</span>
-        </span>
-        <span className="shrink-0 text-xs text-red-700">{open ? "ocultar" : "ver"}</span>
-      </button>
-
-      {open && (
-        <div className="space-y-3 border-t border-red-200 px-3 py-3 text-sm">
-          {octagon.sources.map((s, i) => (
-            <div key={`${s.analysisId}-${i}`} className="space-y-1.5">
-              <p className="text-xs text-slate-500">
-                Documento: {s.documentType} · modalidad {MODE_LABELS[s.contractingMode]}
-              </p>
-              {s.legalSummary && <p className="text-slate-700">{s.legalSummary}</p>}
-              <EvidencePanel evidence={s.evidence} />
-            </div>
-          ))}
-          {octagon.sources.length === 0 && (
-            <p className="text-slate-500">Sin datos suficientes.</p>
-          )}
-          <p className="text-xs text-slate-400">Procede de la modalidad: {modes}. No constituye conclusión jurídica.</p>
-        </div>
-      )}
-    </div>
   );
 }

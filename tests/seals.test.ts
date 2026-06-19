@@ -2,13 +2,14 @@ import { describe, it, expect } from "vitest";
 import { parseLicense, type ParseLicenseParams } from "../src/lib/parser";
 import {
   octogonosFor,
-  leyendasFor,
+  cautelasFor,
   nutritionLabel,
   docAppliesToMode,
   availableModesFor,
   defaultModeFor,
   OCTAGON_CATEGORIES,
   OCTAGON_LABELS,
+  OCTAGON_SEALS,
 } from "../src/domain/seals";
 import { CATEGORIES, CATEGORY_KEYS } from "../src/lib/categories";
 import type { LicenseAnalysis } from "../src/lib/schema";
@@ -50,9 +51,10 @@ describe("OCTAGON_CATEGORIES (single source of truth)", () => {
     expect(OCTAGON_CATEGORIES.map((c) => c.key).sort()).toEqual(fromCatalog);
   });
 
-  it("toda categoría octógono tiene una etiqueta clara declarada", () => {
+  it("toda categoría octógono tiene etiqueta y texto visible declarados", () => {
     for (const c of OCTAGON_CATEGORIES) {
       expect(OCTAGON_LABELS[c.key]).toBeTruthy();
+      expect(OCTAGON_SEALS[c.key]?.lines.length).toBeGreaterThan(0);
     }
   });
 });
@@ -119,34 +121,38 @@ describe("octogonosFor", () => {
     expect(octogonosFor([ent, free], "enterprise").map((s) => s.categoryKey)).toContain("training_use");
   });
 
-  it("cada sello anota el documento y la modalidad de origen", () => {
+  it("cada sello anota el documento, la modalidad de origen y su texto visible", () => {
     const a = mk({ id: "doc-1", contractingMode: "all", documentType: "Terms of Service", rawText: TRAIN });
     const seal = octogonosFor([a], "all").find((s) => s.categoryKey === "training_use")!;
     expect(seal.sources.length).toBeGreaterThan(0);
     expect(seal.sources[0].analysisId).toBe("doc-1");
     expect(seal.sources[0].contractingMode).toBe("all");
+    expect(seal.lines).toEqual(OCTAGON_SEALS.training_use.lines);
   });
 });
 
-describe("leyendasFor (capa 2, riesgo medio)", () => {
-  it("enciende 'Puede cambiar las reglas' cuando hay cambios unilaterales", () => {
+describe("cautelasFor (capa 2, riesgo medio)", () => {
+  it("enciende la cautela de cambios unilaterales", () => {
     const a = mk({ contractingMode: "all", rawText: MEDS });
-    const keys = leyendasFor([a], "all").map((l) => l.key);
+    const keys = cautelasFor([a], "all").map((c) => c.key);
     expect(keys).toContain("unilateral_changes");
   });
 
-  it("cada leyenda trae evidencia", () => {
+  it("cada cautela trae evidencia y texto visible", () => {
     const a = mk({ contractingMode: "all", rawText: MEDS });
-    const legends = leyendasFor([a], "all");
-    expect(legends.length).toBeGreaterThan(0);
-    for (const l of legends) expect(l.evidence.length).toBeGreaterThan(0);
+    const cautelas = cautelasFor([a], "all");
+    expect(cautelas.length).toBeGreaterThan(0);
+    for (const c of cautelas) {
+      expect(c.evidence.length).toBeGreaterThan(0);
+      expect(c.text.length).toBeGreaterThan(0);
+    }
   });
 
-  it("modalidad: leyenda de un doc enterprise no aparece en free", () => {
+  it("modalidad: cautela de un doc enterprise no aparece en free", () => {
     const ent = mk({ contractingMode: "enterprise", sourceScope: "mode_specific", rawText: MEDS });
     const free = mk({ contractingMode: "free", sourceScope: "mode_specific", rawText: PLAIN });
-    expect(leyendasFor([ent, free], "free").map((l) => l.key)).not.toContain("unilateral_changes");
-    expect(leyendasFor([ent, free], "enterprise").map((l) => l.key)).toContain("unilateral_changes");
+    expect(cautelasFor([ent, free], "free").map((c) => c.key)).not.toContain("unilateral_changes");
+    expect(cautelasFor([ent, free], "enterprise").map((c) => c.key)).toContain("unilateral_changes");
   });
 });
 
