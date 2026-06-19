@@ -15,7 +15,7 @@
  *  - LAS MODALIDADES NO SE TRASLADAN: la unidad es producto × modalidad. Un
  *    compromiso de un documento enterprise/commercial NO suprime una advertencia
  *    ni puebla una celda positiva de la vista general/free. `octogonosFor`,
- *    `leyendasFor` y `nutritionLabel` filtran ANTES por modalidad aplicable.
+ *    `cautelasFor` y `nutritionLabel` filtran ANTES por modalidad aplicable.
  *
  * El parámetro `mode` de estas funciones es la MODALIDAD de contratación (filtro
  * anti-traslado). El registro claro/jurídico es una decisión de presentación de
@@ -47,25 +47,31 @@ import { riskRationale, topRiskCategories, type RiskDriver } from "@/lib/derive"
 export const OCTAGON_CATEGORIES: CategoryConfig[] = CATEGORIES.filter((c) => c.riskWhenFound === "high");
 
 /**
- * Etiqueta en lenguaje CLARO de cada octógono. Es presentación (no severidad);
- * el significado completo va en la expansión (resumen jurídico + evidencia).
+ * Sellos por categoría: `lines` es el texto VISIBLE del octógono (multilínea, en
+ * mayúsculas para el grabado); `label` es la etiqueta jurídica usada en
+ * `aria-label` y en la expansión. Es presentación (no severidad).
  */
-export const OCTAGON_LABELS: Record<string, string> = {
-  training_use: "Usa tus datos para entrenar",
-  license_grant: "Licencia amplia sobre tu contenido",
-  liability_limitation: "Limita su responsabilidad",
-  arbitration: "Arbitraje / sin acción colectiva",
-  indemnity: "Te traslada el riesgo legal (indemnidad)",
-  warranties: "Sin garantías",
+export const OCTAGON_SEALS: Record<string, { lines: string[]; label: string }> = {
+  training_use: { lines: ["USA TUS", "DATOS"], label: "Usa tus datos para entrenar" },
+  license_grant: { lines: ["LICENCIA", "AMPLIA"], label: "Licencia amplia sobre tu contenido" },
+  liability_limitation: { lines: ["NO CUBRE", "DAÑOS"], label: "Limita su responsabilidad" },
+  arbitration: { lines: ["ARBITRAJE", "OBLIGATORIO"], label: "Arbitraje / sin acción colectiva" },
+  indemnity: { lines: ["TE TRASLADA", "EL RIESGO", "LEGAL"], label: "Te traslada el riesgo legal (indemnidad)" },
+  warranties: { lines: ["SIN", "GARANTÍAS"], label: "Sin garantías" },
 };
+
+/** Etiqueta jurídica clara de cada octógono (derivada de `OCTAGON_SEALS`). */
+export const OCTAGON_LABELS: Record<string, string> = Object.fromEntries(
+  Object.entries(OCTAGON_SEALS).map(([k, v]) => [k, v.label]),
+);
 
 // --- Catálogo de leyendas precautorias (riesgo medio) -----------------------
 
-export interface LegendDef {
+export interface CautelaDef {
   key: string;
-  /** Etiqueta en lenguaje claro. */
-  label: string;
-  /** Categorías cuya evidencia respalda la leyenda. */
+  /** Texto VISIBLE de la cautela (mayúsculas). */
+  text: string;
+  /** Categorías cuya evidencia respalda la cautela. */
   triggerKeys: string[];
   /** Predicado sobre las categorías de un documento aplicable. */
   test: (cats: LicenseAnalysis["categories"]) => boolean;
@@ -74,31 +80,31 @@ export interface LegendDef {
 const isFound = (c?: CategoryFinding) => c?.status === "found";
 
 /**
- * Leyendas de capa 2. Cada una se respalda con la evidencia de las categorías
- * `triggerKeys` que estén `found` en el documento aplicable.
+ * Cautelas de capa 2 (riesgo medio). Cada una se respalda con la evidencia de
+ * las categorías `triggerKeys` que estén `found` en el documento aplicable.
  */
-export const LEGEND_DEFS: LegendDef[] = [
+export const CAUTELA_DEFS: CautelaDef[] = [
   {
     key: "unilateral_changes",
-    label: "Puede cambiar las reglas",
+    text: "PUEDE CAMBIAR LAS REGLAS",
     triggerKeys: ["unilateral_changes"],
     test: (c) => isFound(c.unilateral_changes),
   },
   {
     key: "foreign_law",
-    label: "Ley/jurisdicción extranjera",
+    text: "LEY/JURISDICCIÓN EXTRANJERA",
     triggerKeys: ["governing_law", "jurisdiction"],
     test: (c) => isFound(c.governing_law) || isFound(c.jurisdiction),
   },
   {
     key: "retention_unclear_deletion",
-    label: "Retención indefinida / borrado poco claro",
+    text: "RETENCIÓN INDEFINIDA",
     triggerKeys: ["data_retention"],
     test: (c) => isFound(c.data_retention) && c.data_deletion?.status !== "found",
   },
   {
     key: "plan_differences",
-    label: "Reglas distintas según el plan",
+    text: "REGLAS DISTINTAS POR PLAN",
     triggerKeys: ["plan_differences"],
     test: (c) => isFound(c.plan_differences),
   },
@@ -117,7 +123,9 @@ export interface SealSource {
 
 export interface Octagon {
   categoryKey: string;
-  /** Etiqueta en lenguaje claro. */
+  /** Texto visible del octógono (multilínea, mayúsculas). */
+  lines: string[];
+  /** Etiqueta jurídica para a11y y expansión. */
   label: string;
   riskLevel: RiskLevel;
   sources: SealSource[];
@@ -125,9 +133,10 @@ export interface Octagon {
   evidence: Evidence[];
 }
 
-export interface Legend {
+export interface Cautela {
   key: string;
-  label: string;
+  /** Texto visible de la cautela (mayúsculas). */
+  text: string;
   triggerKeys: string[];
   sources: SealSource[];
   /** Evidencia agregada. Nunca vacía. */
@@ -216,9 +225,11 @@ export function octogonosFor(analyses: LicenseAnalysis[], mode: ContractingMode)
       }
     }
     if (sources.length === 0) continue;
+    const seal = OCTAGON_SEALS[cat.key];
     out.push({
       categoryKey: cat.key,
-      label: OCTAGON_LABELS[cat.key] ?? cat.label,
+      lines: seal?.lines ?? [cat.label.toUpperCase()],
+      label: seal?.label ?? cat.label,
       riskLevel: cat.riskWhenFound,
       sources,
       evidence: sources.flatMap((s) => s.evidence),
@@ -227,12 +238,12 @@ export function octogonosFor(analyses: LicenseAnalysis[], mode: ContractingMode)
   return out;
 }
 
-// --- Capa 2: leyendas precautorias ------------------------------------------
+// --- Capa 2: cautelas precautorias ------------------------------------------
 
-export function leyendasFor(analyses: LicenseAnalysis[], mode: ContractingMode): Legend[] {
+export function cautelasFor(analyses: LicenseAnalysis[], mode: ContractingMode): Cautela[] {
   const docs = applicableDocs(analyses, mode);
-  const out: Legend[] = [];
-  for (const def of LEGEND_DEFS) {
+  const out: Cautela[] = [];
+  for (const def of CAUTELA_DEFS) {
     const sources: SealSource[] = [];
     for (const a of docs) {
       if (!def.test(a.categories)) continue;
@@ -241,7 +252,7 @@ export function leyendasFor(analyses: LicenseAnalysis[], mode: ContractingMode):
         .map((k) => a.categories[k])
         .filter((c): c is CategoryFinding => !!c && c.status === "found" && c.evidence.length > 0)
         .flatMap((c) => c.evidence);
-      if (evidence.length === 0) continue; // nunca una leyenda sin evidencia
+      if (evidence.length === 0) continue; // nunca una cautela sin evidencia
       const primary = def.triggerKeys.map((k) => a.categories[k]).find((c) => c && c.status === "found");
       sources.push({
         analysisId: a.id,
@@ -254,7 +265,7 @@ export function leyendasFor(analyses: LicenseAnalysis[], mode: ContractingMode):
     if (sources.length === 0) continue;
     out.push({
       key: def.key,
-      label: def.label,
+      text: def.text,
       triggerKeys: def.triggerKeys,
       sources,
       evidence: sources.flatMap((s) => s.evidence),
